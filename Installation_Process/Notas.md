@@ -13,6 +13,7 @@
 * Desinstalar sysstat e instalarlo del repositorio Github
 
 
-* Primeros tests de monitoreo de Hardware:
-  * turbostat
-  * cpupower
+## Primeros tests de monitoreo de Hardware:
+
+* turbostat
+* cpupower
