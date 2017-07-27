@@ -11,7 +11,8 @@
 * Instalar el repositorio epel
 * Instalar los paquetes htop, tmux
 * Desinstalar sysstat e instalarlo del repositorio Github
-    
+
+
 * Primeros tests de monitoreo de Hardware:
   * turbostat
   * cpupower
