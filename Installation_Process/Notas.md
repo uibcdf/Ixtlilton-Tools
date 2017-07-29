@@ -26,18 +26,75 @@
 * Tras iniciar por primera vez:
   * Comprobar configuración de red:
   `ip address`
+  * si no hay red:
+  `dhclient ethx`
+  * mirar para que haya red al arranque que el fichero /etc/sysconfig/network-scripts/ifcfg-eth1 tiene la opción ONBOOT=yes
   * `yum update`
   * `reboot` en caso de haber actualizado kernel con el último comando.
 * Instalar paquetes de configuración base:
-`yum install @base @core @development @network-file-system-client`
-* Instalar paquetes de nodo de computación:
-`yum install @`
-* Instalar el repositorio epel
-* Instalar los paquetes htop, tmux
+`yum install @base @core @development @network-file-system-client @directory-client @guest-agents`
+* Instalar algunos paquetes de nodo de computación:
+`yum install @debugging @hardware-monitoring @remote-system-management @performance @compat-libraries`
+* Instalar algunos paquetes de nodo con gnome-desktop-environment
+`yum install @desktop-debugging @fonts @gnome-desktop @guest-desktop-agents @input-methods @legacy-x @networkmanager-submodules @x11`
+* Instalar el repositorio epel:
+`yum install epel-\* ; yum clean all; yum makecache`
+* Quito paquetes que se instalaron y no van a ser usados
+`yum remove libreoffice* cheese`
+* Instalo otros paquetes necesarios:
+`yum install htop tmux mc emacs xemacs libpciaccess-devel.x86_64 numactl-devel.x86_64 libX11-devel.x86_64 libxml2-devel.x86_64 cairo-devel.x86_64 terminator`
+`yum install numactl`
+**** Para que usa pedro el midnight commander?
+* Creo en /root un directorio provisional:
+`mkdir other_packages`
+* Instalo hwloc:
+`wget https://www.open-mpi.org/software/hwloc/v1.11/downloads/hwloc-1.11.7.tar.gz -P /root/other_packages/.`
+`cd /root/other_packages`
+`tar -zxvf hwloc-1.11.7.tar.gz`
+`cd hwloc-1.11.7`
+`./configure`
+`make`
+`make -j4`
+`make install`
+* Quito el sysstat oficial e instalo el de github
+`yum remove sysstat`
+`wget https://github.com/sysstat/sysstat/archive/master.zip`
+`mv sysstat-master sysstat-11.5.7`
+`cd sysstat-11.5.7`
+`./configure --prefix=/usr`
+`make`
+`make install`
+* Instalo ipmi
+`yum -y install OpenIPMI freeipmi ipmitool`
+`systemctl enable ipmi.service`
+`systemctl start ipmi.service`
+`systemctl status ipmi.service`
+* Instalo las librerias de Intel (todavía no tengo los compiladores)
+`scp -r 192.168.0.100:/root/other_packages/Intel other_packages/.`
+`cd /root/other_packages/Intel`
+`tar -zxvf l_mkl_2017.3.196.tgz`
+`tar -zxvf l_mpi_2017.3.196.tgz`
+`tar -zxvf l_daal_2017.3.196.tgz`
+`tar -zxvf l_ipp_2017.3.196.tgz`
+`tar -zxvf l_tbb_2017.6.196.tgz`
+`cd l_mkl_2017.3.196; ./install.sh`
+`cd ..`
+`cd l_mpi_2017.3.196; ./install.sh`
+`cd ..`
+`cd l_daal_2017.3.196; ./install.sh`
+`cd ..`
+`cd l_ipp_2017.3.196; ./install.sh`
+`cd ..`
+`cd l_tbb_2017.3.196; ./install.sh`
+`cd ..`
 
-yum-y install htop tmux
+### Corriendo el benchmark mp_linpack de mkl
+pedro editó el fichero HPL.dat poniendo el threshold a -16?
 
-* Desinstalar sysstat e instalarlo del repositorio Github
+### Tengo que probar estas librerias... 
+Los benchmarks son bastante impresionantes
+https://software.intel.com/en-us/distribution-for-python
+
 
 >> Pedro Creó una cuenta provisional llamada ixtlilton con password ixtli.2017
 
