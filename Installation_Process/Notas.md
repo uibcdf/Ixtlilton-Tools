@@ -26,6 +26,12 @@
 * Tras iniciar por primera vez:
   * Comprobar configuración de red:
   `ip address`
+  * `yum update`
+  * `reboot` en caso de haber actualizado kernel con el último comando.
+* Instalar paquetes de configuración base:
+`yum install @base @core @development @network-file-system-client`
+* Instalar paquetes de nodo de computación:
+`yum install @`
 * Instalar el repositorio epel
 * Instalar los paquetes htop, tmux
 
