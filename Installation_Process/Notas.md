@@ -56,21 +56,24 @@
 `make`
 `make -j4`
 `make install`
+`cd ..`
 * Quito el sysstat oficial e instalo el de github
 `yum remove sysstat`
 `wget https://github.com/sysstat/sysstat/archive/master.zip`
+`unzip master.zip`
 `mv sysstat-master sysstat-11.5.7`
 `cd sysstat-11.5.7`
 `./configure --prefix=/usr`
 `make`
 `make install`
+`cd ..`
 * Instalo ipmi
 `yum -y install OpenIPMI freeipmi ipmitool`
 `systemctl enable ipmi.service`
 `systemctl start ipmi.service`
 `systemctl status ipmi.service`
 * Instalo las librerias de Intel (todavía no tengo los compiladores)
-`scp -r 192.168.0.100:/root/other_packages/Intel other_packages/.`
+`scp -r 192.168.0.100:/root/other_packages/Intel /root/other_packages/.`
 `cd /root/other_packages/Intel`
 `tar -zxvf l_mkl_2017.3.196.tgz`
 `tar -zxvf l_mpi_2017.3.196.tgz`
