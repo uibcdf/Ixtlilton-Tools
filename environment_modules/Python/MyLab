@@ -1,0 +1,18 @@
+#%Module1.0#####################################################################
+##
+## modules Python/MyLab
+##
+## Myusr/share/modules/modulefiles/Python/MyLab
+##
+proc ModulesHelp { } {
+        global version modroot
+
+        puts stderr "Python/MyLab - sets the environment for MyLab (dprada github)"
+}
+
+module-whatis   "Sets the environment for using MyLab (dprada github)"
+
+# for Tcl script use only
+
+append-path    PYTHONPATH	/opt/MyLab
+

@@ -38,7 +38,7 @@ systemctl start ipmi.service
 systemctl status ipmi.service
 
 # Additional packages
-yum -y install environment-modules tcl
+yum -y install environment-modules tcl tk
 
 # Instalo las librerias de Intel (todavía no tengo los compiladores)
 scp -r 192.168.0.100:/root/other_packages/Intel /root/other_packages/.
@@ -93,3 +93,22 @@ numactl
 numactl_m0
 
 ipmitool chassis bootdev bios
+
+## UIBCDF GitHub admin tools and files
+(some examples in /media/diego/Thorin/diego/Myusr/share/modules/modulefiles)
+
+git clone https://github.com/uibcdf/Ixtlilton /root/Admin_Tools_and_Files
+
+## MyLab
+
+mkdir /opt/MyLab
+git clone https://github.com/dprada/MyTools /opt/MyLab/MyTools
+git clone https://github.com/dprada/MyTools /opt/MyLab/MyKinLab
+git clone https://github.com/dprada/MyTools /opt/MyLab/MyMDLab
+git clone https://github.com/dprada/MyTools /opt/MyLab/MyMolLab
+git clone https://github.com/dprada/MyTools /opt/MyLab/MyMathLab
+git clone https://github.com/dprada/MyTools /opt/MyLab/MyNetLab
+git clone https://github.com/dprada/MyTools /opt/MyLab/MyPlotLab
+
+mkdir -p /etc/modulefiles/Python
+cp /root/Admin_Tools_and_Files/environment_modules/Python/MyLab /etc/modulefiles/Python/MyLab
