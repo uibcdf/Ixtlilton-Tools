@@ -112,3 +112,13 @@ git clone https://github.com/dprada/MyTools /opt/MyLab/MyPlotLab
 
 mkdir -p /etc/modulefiles/Python
 cp /root/Admin_Tools_and_Files/environment_modules/Python/MyLab /etc/modulefiles/Python/MyLab
+
+## Anaconda (miniconda)
+
+wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh /root/.
+bash /root/Miniconda3-latest-Linux-x86_64.sh -p /opt/miniconda3
+mkdir -p /etc/modulefiles/Python
+cp /root/Admin_Tools_and_Files/environment_modules/Python/Anaconda /etc/modulefiles/Python/Anaconda
+
+conda create -n pylab3 python=3.6 anaconda
+conda create -n pylab2 python=2.7 anaconda

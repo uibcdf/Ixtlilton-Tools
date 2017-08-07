@@ -1,0 +1,18 @@
+#%Module1.0#####################################################################
+##
+## modules Python/Anaconda2
+##
+## Myusr/share/modules/modulefiles/Python/Anaconda2
+##
+proc ModulesHelp { } {
+        global version modroot
+
+        puts stderr "Python/Anaconda - sets the Environment for Anaconda in /opt/miniconda3"
+}
+
+module-whatis   "Sets the environment for using Anaconda"
+
+# for Tcl script use only
+
+append-path    PATH	         /opt/miniconda3/bin
+
