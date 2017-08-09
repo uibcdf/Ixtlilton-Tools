@@ -1,0 +1,30 @@
+#%Module1.0#####################################################################
+##
+## modules CUDA/7.5
+##
+## Myusr/share/modules/modulefiles/CUDA/7.5
+##
+proc ModulesHelp { } {
+        global version modroot
+
+        puts stderr "CUDA/7.5 - sets the Environment for CUDA 7.5.18 in my home directory"
+}
+
+module-whatis   "Sets the environment for using CUDA 7.5.18"
+
+# for Tcl script use only
+set     topdir          /usr/local/cuda-7.5
+set     version         7.5.18
+set     sys             linux86
+
+setenv 		CUDA_HOME	$topdir
+prepend-path    PATH            $topdir/bin
+prepend-path    LD_LIBRARY_PATH $topdir/lib64
+prepend-path    INCLUDE		$topdir/include
+prepend-path    CPATH		$topdir/include
+prepend-path    MANPATH		$topdir/doc/man
+
+
+
+
+
