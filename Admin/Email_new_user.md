@@ -52,11 +52,10 @@ Instala alguna de las siguientes aplicaciones:
 - 2FA Authenticator
 
 Abre la aplicación y escanea el código QR personal que encontrarás adjunto a este email.
-Tu aplicación ya te muestra en el celular una combinación de 6 dígitos que se renueva cada 30
-segundos. Necesitarás introducir ese número al hacer una conexión ssh despues de tu contraseña.
+Tu aplicación ya te muestra en el celular una combinación de 6 dígitos que se renueva cada 30 segundos.
+Necesitarás introducir ese número al hacer una conexión ssh despues de tu contraseña.
 
-Guarda el segundo fichero adjunto al email. Son las claves con las que podrás recuperar tu acceso
-en caso de perder el celular.
+Guarda el segundo fichero adjunto al email. Son las claves con las que podrás recuperar tu acceso en caso de perder el celular.
 
 # Políticas de uso
 
@@ -72,8 +71,7 @@ Encontrarás información útil para comprender:
 
 Haz un uso responsable de los recursos.
 Respeta las normas y políticas de uso.
-Un comportamiento deliberadamente no adecuado conlleva la limitación o la suspensión de esta
-cuenta.
+Un comportamiento deliberadamente no adecuado conlleva la limitación o la suspensión de esta cuenta.
 
 Recibe un cordial saludo.
 Diego Prada.
