@@ -6,9 +6,9 @@ A continuación encontrarás las instrucciones de acceso a Ixtlilton.
 Visita https://github.com/uibcdf/Ixtlilton para conocer sus políticas de uso.
 Recuerda, el desconocimiento de las normas no exime de su complimiento.
 
----- Acceso ----
+# Acceso
 
-# Desde el laboratorio:
+## Desde el laboratorio:
 
 Para acceder a Ixtlilton desde la red del laboratorio basta ejecutar ssh:
 
@@ -37,7 +37,7 @@ Contraseña: r@punz311
 La contraseña que se te está otorgando tiene una validez de 24 horas. Recuerda cambiarla por una
 que únicamente tu conozcas antes de que se bloquee la cuenta.
 
-# Desde fuera del laboratorio
+## Desde fuera del laboratorio
 
 Te recordamos que la dirección IP para acceder a Ixtlilton desde fuera de la red de laboratorio se
 te comunicará por otra vía. Ponte en contacto con nosotros si no la sabes ya.
@@ -58,7 +58,7 @@ segundos. Necesitarás introducir ese número al hacer una conexión ssh despues
 Guarda el segundo fichero adjunto al email. Son las claves con las que podrás recuperar tu acceso
 en caso de perder el celular.
 
---- Políticas de uso ---
+# Políticas de uso
 
 Visita la documentación relativa a las políticas de uso en https://github.com/uibcdf/Ixtlilton.
 Encontrarás información útil para comprender:
@@ -68,7 +68,7 @@ Encontrarás información útil para comprender:
 	- Las políticas de submisión de trabajos.
 	- La arquitectura de Ixtlilton.
 
---- Advertencia ---
+# Advertencia
 
 Haz un uso responsable de los recursos.
 Respeta las normas y políticas de uso.
