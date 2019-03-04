@@ -1,4 +1,5 @@
->>> Tu acceso a Ixtlilton
+# Tu acceso a Ixtlilton
+-----------------------
 
 Estimado XXXXX,
 
