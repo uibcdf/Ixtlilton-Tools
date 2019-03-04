@@ -3,7 +3,7 @@
 Estimado XXXXX,
 
 A continuación encontrarás las instrucciones de acceso a Ixtlilton. 
-Visita https://github.com/uibcdf/Ixtlilton para conocer las Políticas de uso.
+Visita https://github.com/uibcdf/Ixtlilton para conocer sus políticas de uso.
 Recuerda, el desconocimiento de las normas no exime de su complimiento.
 
 ---- Acceso ----
