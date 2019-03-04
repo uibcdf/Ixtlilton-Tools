@@ -2,9 +2,11 @@
 
 Estimado XXXXX,
 
----- Acceso ----
+A continuación encontrarás las instrucciones de acceso a Ixtlilton. 
+Visita https://github.com/uibcdf/Ixtlilton para conocer las Políticas de uso.
+Recuerda, el desconocimiento de las normas no exime de su complimiento.
 
-A continuación encontrarás las instrucciones de acceso a Ixtlilton.
+---- Acceso ----
 
 # Desde el laboratorio:
 
