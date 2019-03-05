@@ -9,7 +9,7 @@
 ## About
 
 - Hardware
-- File System
+- File system
 - Queues
 - Slurm
 - Connecting to Ixtlilton
@@ -18,8 +18,19 @@
 
 ## Instructions for users
 
-- [Using Conda](docs/user/anaconda.md)
+- Environment modules
+    - [Using Conda](docs/user/anaconda.md)
+
+- Jobs submission and managment
+    - Jobs and Slurm
+    - Submission
+    - Interactive session
+    - Queues policies
 
 ## Documentation for administrators
 
 ## General rules and policies
+
+- Different user types.
+- File system.
+- Queues.
