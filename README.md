@@ -21,13 +21,15 @@
 - Environment modules
     - [Using Conda](docs/user/anaconda.md)
 
-- Jobs submission and managment
+- Jobs submission and management
     - Jobs and Slurm
     - Submission
     - Interactive session
     - Queues policies
 
 ## Documentation for administrators
+
+- [Adding new users](docs/admin/new_user.md)
 
 ## General rules and policies
 
