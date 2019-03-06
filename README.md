@@ -18,6 +18,8 @@
 
 ## Instructions for users
 
+- [File system](docs/user/user_file_system.md)
+
 - Environment modules
     - [Using Conda](docs/user/anaconda.md)
 

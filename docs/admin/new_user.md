@@ -1,5 +1,19 @@
 # Instructions to set up a new user
 
+## Adding new user
+
+```
+export NEW_USER_NAME='xxxx'
+
+## User file system
+
+```
+mkdir /work/$NEW_USER_NAME
+mkdir /scratch/$NEW_USER_NAME
+chown -R $NEW_USER_NAME:$NEW_USER_NAME /work/$NEW_USER_NAME
+chown -R $NEW_USER_NAME:$NEW_USER_NAME /scratch/$NEW_USER_NAME
+```
+
 ## Ssh set up
 
 ### Double Factor
