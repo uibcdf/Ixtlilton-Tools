@@ -2,13 +2,13 @@
 
 ## The global file system
 
-+ --- + --- + --- +
+| Mounted Volume | Size | Type |
+| -------------- | ---- | ---- |
 | / | 223 Gb | SSD |
 | /home | 465.8 Gb | SSD |
 | /HOT_DATA | 465.8 Gb | SSD |
 | /DATA | 8.2 Tb | Raid 5 HDD |
 | /COLD_STORAGE_ROOM | 11 Tb | Raid 5 HDD |
-+ --- + --- + --- +
 
 
 ### ROOT
