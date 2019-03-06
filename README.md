@@ -9,7 +9,7 @@
 ## About
 
 - Hardware
-- File system
+- [File system](docs/about/file_system.md)
 - Queues
 - Slurm
 - Connecting to Ixtlilton
@@ -19,6 +19,8 @@
 ## Instructions for users
 
 - [File system](docs/user/user_file_system.md)
+
+- Environment variables
 
 - Environment modules
     - [Using Conda](docs/user/anaconda.md)
