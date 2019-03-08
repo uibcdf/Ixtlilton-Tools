@@ -27,10 +27,12 @@ chmod a-w /HOTDATA/Projects/EBNA1
 chmod a-w /DATA/Projects/EBNA1
 chmod g+rw /HOTDATA/Projects/EBNA1 
 chmod g+rw /DATA/Projects/EBNA1
+chmod g+s /HOTDATA/Projects/EBNA1 
+chmod g+s /DATA/Projects/EBNA1
 ```
 
 This way, both directories have rigths to be written and read by any coworker belonging to the
-group `wg_EBNA1`.
+group `wg_EBNA1`. And the same will happen to every file or subdirectory inside them.
 
 Finnally, lets define the members of the group:
 
@@ -52,4 +54,4 @@ module load cluster_tools
 make_new_project_setup -n EBNA1 -u username1 username2
 ```
 
-The script defines the groupid as the lowest unocupied integer in the range 10000 to 10001.
+The script defines the groupid as the lowest unocupied integer in the range 10000 to 11000.
