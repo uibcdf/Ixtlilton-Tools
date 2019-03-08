@@ -31,6 +31,10 @@
     - Interactive session
     - Queues policies
 
+## Workflows
+
+- [Setting up a new project](docs/lab/new_project.md)
+
 ## Documentation for administrators
 
 - [Adding new users](docs/admin/new_user.md)
