@@ -23,6 +23,7 @@
 - Environment variables
 
 - Environment modules
+    - [Environment Module System](docs/user/environment_modules.md)
     - [Using Conda](docs/user/anaconda.md)
 
 - Jobs submission and management
@@ -45,3 +46,4 @@
 - Different user types.
 - File system.
 - Queues.
+
