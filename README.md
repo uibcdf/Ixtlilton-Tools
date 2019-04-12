@@ -3,7 +3,6 @@
 **[Admin](#Documentation-for-administrators)** |
 **[Rules and Policies](#General-rules-and-policies)**
 
-
 # Ixtlilton
 
 ## About
