@@ -4,6 +4,7 @@
 
 ```
 export NEW_USER_NAME='xxxx'
+```
 
 ## User file system
 
@@ -14,7 +15,20 @@ chown -R $NEW_USER_NAME:$NEW_USER_NAME /work/$NEW_USER_NAME
 chown -R $NEW_USER_NAME:$NEW_USER_NAME /scratch/$NEW_USER_NAME
 ```
 
-## Ssh set up
+## Local opt structure in the users home
+
+To help the user keep things well organised a local 'opt' dir is created with 'apps', 'bin', 'etc',
+'modulefiles' and 'src' inside.
+
+```
+mkdir /home/$NEW_USER_NAME/opt
+mkdir /home/$NEW_USER_NAME/opt/apps
+mkdir /home/$NEW_USER_NAME/opt/bin
+mkdir /home/$NEW_USER_NAME/opt/etc
+mkdir /home/$NEW_USER_NAME/opt/modulefiles
+mkdir /home/$NEW_USER_NAME/opt/src
+chown -R $NEW_USER_NAME:$NEW_USER_NAME /work/$NEW_USER_NAME
+```
 
 ### Double Factor
 

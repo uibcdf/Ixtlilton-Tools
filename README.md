@@ -37,6 +37,7 @@
 
 ## Documentation for administrators
 
+- [Environment Module System](docs/admin/environment_modules.md)
 - [Adding new users](docs/admin/new_user.md)
 
 ## General rules and policies
