@@ -15,7 +15,7 @@
    - From on-site
    - From off-site
 
-## Instructions for users
+## Documentation for users
 
 - [File system](docs/user/user_file_system.md)
 
@@ -39,6 +39,7 @@
 
 - [Environment Module System](docs/admin/environment_modules.md)
 - [Adding new users](docs/admin/new_user.md)
+- [Managing the conda envs](docs/admin/admin_conda.md)
 
 ## General rules and policies
 
