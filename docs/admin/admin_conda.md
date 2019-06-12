@@ -45,4 +45,37 @@ UIBCDF_lab               /opt2/apps/conda/gcc-4.8.5_miniconda/envs/UIBCDF_lab
 
 ## Managing the conda environments
 
+The conda envs are administrated by a user named 'anaconda':
+
+```
+su anaconda
+```
+
+This means that only the user 'anaconda' has the right to install, update or remove packages and
+environments.
+
+Once the user has been logged in, the module to be managed needs to be loaded:
+
+```
+module load conda
+```
+
+At this point the administration of conda is as done normally. Some info about the channels and
+installation configuration can be found with:
+
+```bash
+conda info
+```
+
+The list of environments is obtained with:
+
+```bash
+conda info --envs
+```
+
+### UIBCDF_lab environment
+
+This is the most stable environment to perform standard work at the UIBCDF. The environment is
+kept updated in a central repository ([see instructions here](https://github.com/uibcdf/UIBCDF_lab)).
+
 
