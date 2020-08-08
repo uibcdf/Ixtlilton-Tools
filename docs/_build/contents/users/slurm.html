@@ -1,0 +1,525 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>SLURM &mdash; Ixtlilton 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="UIBCDF project’s workflow" href="workflow_UIBCDF.html" />
+    <link rel="prev" title="Git" href="git.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Ixtlilton
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../about/hardware.html">Hardware</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../about/hardware.html#ixtlilton">Ixtlilton</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about/hardware.html#section-cpus-computation">Section CPUs computation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about/hardware.html#section-gpus-computation">Section GPUs computation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about/hardware.html#section-storage">Section Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about/hardware.html#todo-list">TODO list:</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../about/hardware.html#notas">Notas:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/hardware.html#definicion-de-colas">Definición de colas:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/hardware.html#dudas">Dudas:</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../about/hardware.html#aqui-mas">Aqui mas:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../about/hardware.html#cluster-admin">Cluster Admin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about/hardware.html#descripcion-de-los-componentes">Descripción de los Componentes:</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../about/hardware.html#redes">Redes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../about/hardware.html#switches">Switches</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../about/hardware.html#router">Router</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../about/hardware.html#wifi">Wifi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../about/hardware.html#nas">NAS</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../about/hardware.html#nodo-master">Nodo Master</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/hardware.html#nodos-cpus">Nodos CPUs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/hardware.html#nodos-gpus">Nodos GPUs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/hardware.html#nodos-storage">Nodos Storage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/hardware.html#workstations">Workstations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/hardware.html#impresora">Impresora</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../about/hardware.html#host-file">HOST FILE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about/hardware.html#software-administration">Software administration:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about/hardware.html#os">OS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about/hardware.html#mpi-options">MPI Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about/hardware.html#provisioning-software">Provisioning Software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about/hardware.html#configuration-management">Configuration Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about/hardware.html#resource-and-job-scheduler">Resource and Job Scheduler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about/hardware.html#ssh">SSH</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about/hardware.html#volumen-y-home-en-ixtlilton">Volumen y home en ixtlilton</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../about/software.html">Software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/file_system.html">File system</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../about/file_system.html#the-global-file-system">The global file system</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../about/file_system.html#root">ROOT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/file_system.html#home">HOME</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/file_system.html#data">DATA</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../about/file_system.html#work">Work</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../about/file_system.html#projects">Projects</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../about/file_system.html#hot-data">HOT_DATA</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../about/file_system.html#scratch">Scratch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../about/file_system.html#id1">Projects</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../about/file_system.html#cold-storage-room">COLD_STORAGE_ROOM</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../about/file_system.html#archive">Archive</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../about/file_system.html#backups">Backups</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../about/file_system.html#sharing-projects-data">Sharing projects data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about/file_system.html#finished-projects">Finished projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about/file_system.html#a-slave-node-file-system">A slave node file system.</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../about/file_system.html#local">Local</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/file_system.html#imported-by-nfs">Imported by NFS</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../about/file_system.html#the-user-file-system">The user file system</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Documentation for users</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="login.html">Login</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="login.html#importing-opengl">Importing OpenGL</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="login.html#ubuntu">Ubuntu</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="login.html#option-1">Option 1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="login.html#option-2">Option 2</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="login.html#login-via-ssh-without-password">Login via ssh without password</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="user_file_system.html">File system</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user_file_system.html#the-global-file-system">The global file system</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_file_system.html#the-user-file-system">The user file system</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user_file_system.html#home">Home</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user_file_system.html#work">Work</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user_file_system.html#scratch">Scratch</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="environment_variables.html">Environment variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment_modules.html">Environment modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="environment_modules.html#instalacion-y-configuracion">Instalación y Configuración</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="environment_modules.html#modulos-comunes">Módulos comunes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="environment_modules.html#modulos-de-cada-usuario">Módulos de cada usuario</a></li>
+<li class="toctree-l3"><a class="reference internal" href="environment_modules.html#useful-commands">Useful commands:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="environment_modules.html#mas-informacion">Más información</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="environment_modules.html#sources-br">Sources: <br /></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="anaconda.html">Conda</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="anaconda.html#creating-your-own-conda-environments">Creating your own conda environments</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="jupyter.html">Jupyter</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="jupyter.html#jupyterhub">JupyterHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jupyter.html#sources">Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jupyter.html#id1"></a></li>
+<li class="toctree-l2"><a class="reference internal" href="jupyter.html#jupyter-notebook-extensions">Jupyter Notebook Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jupyter.html#environments">Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jupyter.html#mdlab2">MDLab2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jupyter.html#jupyterlab">JupyterLab</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="git.html">Git</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">SLURM</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#using-slurm">Using Slurm</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#submitting-a-job">Submitting a job</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#script-submission-instructions-slu">Script submission instructions (*.slu)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="workflow_UIBCDF.html">UIBCDF project’s workflow</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="workflow_UIBCDF.html#setting-up-a-new-project">Setting up a new project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workflow_UIBCDF.html#a-single-script-to-do-it-for-you">A single script to do it for you.</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Administration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../administrators/admin_and_monitoring.html">Administration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../administrators/admin_and_monitoring.html#bash-scripting">Bash scripting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../administrators/hardware.html">Hardware</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../administrators/hardware.html#motherboard">MotherBoard</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../administrators/hardware.html#version-de-bios-minima-recomendada">Versión de Bios mínima recomendada</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../administrators/hardware.html#opciones-de-la-bios-para-max-performance">Opciones de la bios para max performance</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../administrators/volumes_and_file_system.html">Volumes and File System</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../administrators/volumes_and_file_system.html#volumes">Volumes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../administrators/volumes_and_file_system.html#master-node">Master Node</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../administrators/volumes_and_file_system.html#root-and-home-volume">Root and Home Volume</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../administrators/volumes_and_file_system.html#data-volume">DATA Volume</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../administrators/volumes_and_file_system.html#storage-node">Storage Node</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../administrators/volumes_and_file_system.html#cold-storage-room">Cold Storage Room</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../administrators/volumes_and_file_system.html#slave-gpus-nodes-nodo01-and-nodo02">Slave GPUs Nodes (Nodo01 and Nodo02)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../administrators/volumes_and_file_system.html#localdata-volume">LocalDATA Volume</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../administrators/volumes_and_file_system.html#tempdata-volume">TempDATA Volume</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../administrators/volumes_and_file_system.html#nfs-imported-volumes">NFS imported Volumes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../administrators/volumes_and_file_system.html#slave-cpus-nodes-nodo03-y-nodo04">Slave CPUs Nodes (Nodo03 y Nodo04)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../administrators/volumes_and_file_system.html#id1">TempDATA Volume</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../administrators/volumes_and_file_system.html#id2">NFS imported Volumes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../administrators/volumes_and_file_system.html#file-system">File System</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../administrators/volumes_and_file_system.html#admin-file-system">Admin File System</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../administrators/volumes_and_file_system.html#admin">Admin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../administrators/volumes_and_file_system.html#hardware">Hardware</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../administrators/volumes_and_file_system.html#users-file-system">Users File System</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../administrators/volumes_and_file_system.html#user-home">User Home</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../administrators/volumes_and_file_system.html#scratch">Scratch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../administrators/volumes_and_file_system.html#work">Work</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../administrators/volumes_and_file_system.html#shared-file-system">Shared File System</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../administrators/volumes_and_file_system.html#projects">Projects</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../administrators/volumes_and_file_system.html#id4">Archive</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../administrators/volumes_and_file_system.html#id5">Backups</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../administrators/users_and_groups.html">Users and Groups</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../administrators/users_and_groups.html#uibcdf-user">UIBCDF User</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../administrators/users_and_groups.html#new-user">New User</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../administrators/users_and_groups.html#internal">Internal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../administrators/users_and_groups.html#with-lab-rights">With lab rights</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../administrators/users_and_groups.html#external">External</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../administrators/users_and_groups.html#groups">Groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../administrators/users_and_groups.html#adding-new-user">Adding new user</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../administrators/users_and_groups.html#user-file-system">User file system</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../administrators/users_and_groups.html#local-opt-structure-in-the-users-home">Local opt structure in the users home</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../administrators/users_and_groups.html#double-factor">Double Factor</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../administrators/users_and_groups.html#comunication-with-the-new-user">Comunication with the new user</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../administrators/environment_modules.html">Environment Modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../administrators/environment_modules.html#sources-br">Sources: <br /></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../administrators/environment_modules.html#in-ixtlilton-centos-7">In Ixtlilton (Centos 7)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../administrators/environment_modules.html#in-a-workstation-ubuntu">In a workstation (Ubuntu)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../administrators/environment_modules.html#example">Example:</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../administrators/environment_modules.html#marking-a-version-as-default">Marking a version as default</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../administrators/environment_modules.html#useful-commands">Useful commands:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../administrators/conda.html">Conda</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../administrators/conda.html#installing-conda-for-multiple-users">Installing Conda for multiple users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../administrators/conda.html#conda-administration">Conda administration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../administrators/conda.html#conda-info">Conda info</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../administrators/conda.html#update-conda">Update conda</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../administrators/conda.html#create-environment-for-all-users">Create environment for all users</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../administrators/conda.html#activate-environment">Activate environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../administrators/conda.html#install-packages-in-environment">Install packages in environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../administrators/conda.html#update-environment">Update environment</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../administrators/conda.html#uibcdf-lab-conda-environments">UIBCDF_lab conda environments</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../administrators/conda.html#uibcdf-lab">UIBCDF_lab</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../administrators/slurm.html">SLURM</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../administrators/slurm.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../administrators/slurm.html#administration">Administration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../administrators/network.html">Networks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../administrators/network.html#interactive-network">Interactive network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../administrators/network.html#nfs-network">NFS network</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tools/X.html">X</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Ixtlilton</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>SLURM</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/contents/users/slurm.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="slurm">
+<h1>SLURM<a class="headerlink" href="#slurm" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="using-slurm">
+<h2>Using Slurm<a class="headerlink" href="#using-slurm" title="Permalink to this headline">¶</a></h2>
+<p>Diplaying compute nodes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scontrol</span> <span class="n">show</span> <span class="n">nodes</span>
+</pre></div>
+</div>
+<p>To display the job queue:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scontrol</span> <span class="n">show</span> <span class="n">jobs</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scontrol</span> <span class="n">show</span> <span class="n">daemons</span>
+<span class="n">salloc</span>
+<span class="n">sinfo</span>
+<span class="n">squeue</span>
+<span class="n">smap</span>
+<span class="n">sview</span>
+<span class="n">scontrol</span> <span class="n">show</span> <span class="n">config</span>
+<span class="n">sstat</span>
+<span class="n">sreport</span>
+</pre></div>
+</div>
+<div class="section" id="submitting-a-job">
+<h3>Submitting a job<a class="headerlink" href="#submitting-a-job" title="Permalink to this headline">¶</a></h3>
+<p>To easily identify the submission bash scripts to slurm, the extension *.slu will be used.
+Examples of these files will be stored in github in order to share submission instructions in ixtlilton or any other cluster used by the UIBCDF members.</p>
+<p>In addition to the templates, in the following sections some useful variables and instructions are described.</p>
+<p>Once the bash script is ready, the command to submit it is:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sbatch script_run.slu
+</pre></div>
+</div>
+</div>
+<div class="section" id="script-submission-instructions-slu">
+<h3>Script submission instructions (*.slu)<a class="headerlink" href="#script-submission-instructions-slu" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="workflow_UIBCDF.html" class="btn btn-neutral float-right" title="UIBCDF project’s workflow" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="git.html" class="btn btn-neutral float-left" title="Git" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, UIBCDF Lab at the Mexico City Childrens Hospital Federico Gomez and the authors.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

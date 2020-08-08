@@ -59,7 +59,8 @@ extensions = [
     'sphinx.ext.githubpages',
     'sphinxcontrib.bibtex',
     'nbsphinx',
-    'recommonmark'
+    'recommonmark',
+    'sphinx_markdown_tables'
 ]
 
 autosummary_generate = True
