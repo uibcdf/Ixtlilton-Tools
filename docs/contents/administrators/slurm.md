@@ -274,3 +274,71 @@ scontrol show config
 sstat
 sreport
 ```
+
+### Daemons
+
+```bash
+scontrol show daemons
+```
+
+```bash
+systemctl status slurmd.service
+```
+
+### Show the partitions
+
+```bash
+sinfo
+```
+
+```bash
+scontrol show partitions
+```
+### Updating the configuration and restarting the daemons
+
+See script update_and_restart_slurmd.sh.
+
+### How to add a new node
+
+Stop slurmctld
+Add/remove nodes in slurm.conf
+update_and_restart_slurmd
+
+### How to create a new partition
+
+Edit the file '/etc/slurm/slurm.conf' and in the section '#PARTITIONS' add the corresponding new
+line:
+
+```
+PartitionName=tests Nodes=ixtlilton Default=YES PriorityJobFactor=20000 MaxTime=INFINITE State=UP OverSubscribe=NO Shared=Yes
+PartitionName=mds Nodes=node01,node02,node03,node04 Default=NO PriorityJobFactor=10000 MaxTime=INFINITE State=UP OverSubscribe=NO Shared=Yes
+PartitionName=gpus Nodes=ixtlilton,node01,node02,node03,node04 Default=NO PriorityJobFactor=10000 MaxTime=INFINITE State=UP OverSubscribe=NO Shared=Yes
+PartitionName=guests Nodes=node04 Default=NO PriorityJobFactor=10000 MaxTime=168:00:00 State=UP OverSubscribe=NO Shared=Yes
+```
+
+For the changes in the configuration file to take effect:
+
+```bash
+update_and_restart_slurmd
+```
+
+### Limiting users access to partitions
+
+Access to partitions can be limited to unix groups. In the partitions definition section of
+'/etc/slurm.conf' a new variable must be added to the partition with the number of the groups comma
+separated:
+
+```
+PartitionName=tests Nodes=ixtlilton Default=YES PriorityJobFactor=20000 MaxTime=INFINITE State=UP OverSubscribe=NO Shared=Yes AllowGroups=liliana,diego
+PartitionName=mds Nodes=node01,node02,node03,node04 Default=NO PriorityJobFactor=10000 MaxTime=INFINITE State=UP OverSubscribe=NO Shared=Yes AllowGroups=liliana,diego
+PartitionName=gpus Nodes=ixtlilton,node01,node02,node03,node04 Default=NO PriorityJobFactor=10000 MaxTime=INFINITE State=UP OverSubscribe=NO Shared=Yes AllowGroups=liliana,diego
+PartitionName=guests Nodes=node04 Default=NO PriorityJobFactor=10000 MaxTime=168:00:00 State=UP OverSubscribe=NO Shared=Yes AllowGroups=guest
+```
+
+After editing the file, the slurm daemon needs to be restarted:
+
+```bash
+update_and_restart_slurmd
+update_and_restart_slurmd
+```
+
