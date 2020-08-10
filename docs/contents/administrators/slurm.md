@@ -342,3 +342,12 @@ update_and_restart_slurmd
 update_and_restart_slurmd
 ```
 
+
+> **_More Info:_**    
+> https://slurm.schedmd.com/
+> https://wiki.fysik.dtu.dk/niflheim/Slurm_configuration     
+> https://www.dkrz.de/up/systems/mistral/running-jobs/slurm-introduction
+> http://bioinformatics-core-shared-training.github.io/hpc/SLURM-Summary.pdf
+> https://github.com/B-UMMI/INNUENDO/wiki/4.-Setting-up-SLURM-partitions-and-nodes
+> https://vsoch.github.io/lessons/sherlock-jobs/
+> 

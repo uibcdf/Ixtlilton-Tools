@@ -160,6 +160,7 @@
 </ul>
 <p class="caption"><span class="caption-text">Documentation for users</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="contents/users/quick_start.html">Introduction and quick start</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contents/users/login.html">Login</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="contents/users/login.html#importing-opengl">Importing OpenGL</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="contents/users/login.html#ubuntu">Ubuntu</a><ul>
@@ -184,20 +185,37 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="contents/users/environment_variables.html">Environment variables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contents/users/environment_modules.html">Environment modules</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="contents/users/environment_modules.html#instalacion-y-configuracion">Instalación y Configuración</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="contents/users/environment_modules.html#modulos-comunes">Módulos comunes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="contents/users/environment_modules.html#modulos-de-cada-usuario">Módulos de cada usuario</a></li>
-<li class="toctree-l3"><a class="reference internal" href="contents/users/environment_modules.html#useful-commands">Useful commands:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents/users/environment_modules.html#what-is-an-environment-module-system">What is an environment module system?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents/users/environment_modules.html#lmod">Lmod</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="contents/users/environment_modules.html#listing-the-available-modules">Listing the available modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="contents/users/environment_modules.html#looking-for-a-module">Looking for a module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="contents/users/environment_modules.html#loading-modules">Loading modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="contents/users/environment_modules.html#showing-loaded-modules">Showing loaded modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="contents/users/environment_modules.html#unloading-modules">Unloading modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="contents/users/environment_modules.html#default-modules">Default modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="contents/users/environment_modules.html#printing-out-information-about-modules">Printing out information about modules</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="contents/users/environment_modules.html#mas-informacion">Más información</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="contents/users/environment_modules.html#sources-br">Sources: <br /></a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents/users/environment_modules.html#your-own-environment-modules">Your own environment modules</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contents/users/conda.html">Conda</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="contents/users/conda.html#what-s-conda">What’s conda?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents/users/conda.html#the-channels-and-the-condarc-file">The channels and the .condarc file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents/users/conda.html#the-environments">The environments</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="contents/users/conda.html#activation">Activation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="contents/users/conda.html#deactivation">Deactivation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="contents/users/conda.html#list-of-installed-packages">List of installed packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="contents/users/conda.html#installing-packages">Installing packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="contents/users/conda.html#removing-packages">Removing packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="contents/users/conda.html#updating-packages">Updating packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="contents/users/conda.html#the-uibcdf-environments">The UIBCDF environments</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="contents/users/conda.html#uibcdf-lab">UIBCDF_lab</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="contents/users/anaconda.html">Conda</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="contents/users/anaconda.html#creating-your-own-conda-environments">Creating your own conda environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents/users/conda.html#your-own-conda-environments">Your own conda environments</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="contents/users/jupyter.html">Jupyter</a><ul>
@@ -210,10 +228,18 @@
 <li class="toctree-l2"><a class="reference internal" href="contents/users/jupyter.html#jupyterlab">JupyterLab</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="contents/users/git.html">Git</a></li>
-<li class="toctree-l1"><a class="reference internal" href="contents/users/slurm.html">SLURM</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="contents/users/slurm.html#using-slurm">Using Slurm</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="contents/users/slurm.html#submitting-a-job">Submitting a job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contents/users/git.html">Git</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="contents/users/git.html#what-is-git">What is Git?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents/users/git.html#your-user-parameters">Your user parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contents/users/slurm.html">Slurm</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="contents/users/slurm.html#what-is-slurm">What is Slurm?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents/users/slurm.html#computing-nodes">Computing nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents/users/slurm.html#partitions">Partitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents/users/slurm.html#the-job-queue">The job queue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents/users/slurm.html#jobs">Jobs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents/users/slurm.html#submitting-a-job">Submitting a job</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="contents/users/slurm.html#script-submission-instructions-slu">Script submission instructions (*.slu)</a></li>
 </ul>
 </li>
@@ -312,6 +338,15 @@
 <li class="toctree-l3"><a class="reference internal" href="contents/administrators/environment_modules.html#useful-commands">Useful commands:</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="contents/administrators/environment_modules.html#instalacion-y-configuracion">Instalación y Configuración</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="contents/administrators/environment_modules.html#modulos-de-cada-usuario">Módulos de cada usuario</a></li>
+<li class="toctree-l3"><a class="reference internal" href="contents/administrators/environment_modules.html#id1">Useful commands:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="contents/administrators/environment_modules.html#mas-informacion">Más información</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="contents/administrators/environment_modules.html#id2">Sources: <br /></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="contents/administrators/conda.html">Conda</a><ul>
@@ -333,7 +368,15 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="contents/administrators/slurm.html">SLURM</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="contents/administrators/slurm.html#installation">Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="contents/administrators/slurm.html#administration">Administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents/administrators/slurm.html#administration">Administration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="contents/administrators/slurm.html#daemons">Daemons</a></li>
+<li class="toctree-l3"><a class="reference internal" href="contents/administrators/slurm.html#show-the-partitions">Show the partitions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="contents/administrators/slurm.html#updating-the-configuration-and-restarting-the-daemons">Updating the configuration and restarting the daemons</a></li>
+<li class="toctree-l3"><a class="reference internal" href="contents/administrators/slurm.html#how-to-add-a-new-node">How to add a new node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="contents/administrators/slurm.html#how-to-create-a-new-partition">How to create a new partition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="contents/administrators/slurm.html#limiting-users-access-to-partitions">Limiting users access to partitions</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="contents/administrators/network.html">Networks</a><ul>

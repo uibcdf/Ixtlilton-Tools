@@ -161,6 +161,7 @@
 </ul>
 <p class="caption"><span class="caption-text">Documentation for users</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../users/quick_start.html">Introduction and quick start</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../users/login.html">Login</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../users/login.html#importing-opengl">Importing OpenGL</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../users/login.html#ubuntu">Ubuntu</a><ul>
@@ -185,20 +186,37 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../users/environment_variables.html">Environment variables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../users/environment_modules.html">Environment modules</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../users/environment_modules.html#instalacion-y-configuracion">Instalación y Configuración</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../users/environment_modules.html#modulos-comunes">Módulos comunes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../users/environment_modules.html#modulos-de-cada-usuario">Módulos de cada usuario</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../users/environment_modules.html#useful-commands">Useful commands:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../users/environment_modules.html#what-is-an-environment-module-system">What is an environment module system?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../users/environment_modules.html#lmod">Lmod</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../users/environment_modules.html#listing-the-available-modules">Listing the available modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../users/environment_modules.html#looking-for-a-module">Looking for a module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../users/environment_modules.html#loading-modules">Loading modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../users/environment_modules.html#showing-loaded-modules">Showing loaded modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../users/environment_modules.html#unloading-modules">Unloading modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../users/environment_modules.html#default-modules">Default modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../users/environment_modules.html#printing-out-information-about-modules">Printing out information about modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../users/environment_modules.html#your-own-environment-modules">Your own environment modules</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../users/environment_modules.html#mas-informacion">Más información</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../users/environment_modules.html#sources-br">Sources: <br /></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../users/conda.html">Conda</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../users/conda.html#what-s-conda">What’s conda?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../users/conda.html#the-channels-and-the-condarc-file">The channels and the .condarc file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../users/conda.html#the-environments">The environments</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../users/conda.html#activation">Activation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../users/conda.html#deactivation">Deactivation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../users/conda.html#list-of-installed-packages">List of installed packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../users/conda.html#installing-packages">Installing packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../users/conda.html#removing-packages">Removing packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../users/conda.html#updating-packages">Updating packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../users/conda.html#the-uibcdf-environments">The UIBCDF environments</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../users/conda.html#uibcdf-lab">UIBCDF_lab</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../users/anaconda.html">Conda</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../users/anaconda.html#creating-your-own-conda-environments">Creating your own conda environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../users/conda.html#your-own-conda-environments">Your own conda environments</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../users/jupyter.html">Jupyter</a><ul>
@@ -313,6 +331,15 @@
 <li class="toctree-l3"><a class="reference internal" href="#useful-commands">Useful commands:</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#instalacion-y-configuracion">Instalación y Configuración</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#modulos-de-cada-usuario">Módulos de cada usuario</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Useful commands:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#mas-informacion">Más información</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Sources: <br /></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="conda.html">Conda</a><ul>
@@ -334,7 +361,15 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="slurm.html">SLURM</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="slurm.html#installation">Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="slurm.html#administration">Administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="slurm.html#administration">Administration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="slurm.html#daemons">Daemons</a></li>
+<li class="toctree-l3"><a class="reference internal" href="slurm.html#show-the-partitions">Show the partitions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="slurm.html#updating-the-configuration-and-restarting-the-daemons">Updating the configuration and restarting the daemons</a></li>
+<li class="toctree-l3"><a class="reference internal" href="slurm.html#how-to-add-a-new-node">How to add a new node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="slurm.html#how-to-create-a-new-partition">How to create a new partition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="slurm.html#limiting-users-access-to-partitions">Limiting users access to partitions</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="network.html">Networks</a><ul>
@@ -529,6 +564,59 @@ $ module show xxx
 $ module switch xxx yyy
 </pre></div>
 </div>
+<p>La versión de gestor de Environment Modules instalada en ixtlilton es la llamada Lmod:</p>
+<p>Documentation:    http://lmod.readthedocs.org
+Github:           https://github.com/TACC/Lmod
+Sourceforge:      https://lmod.sf.net
+TACC Homepage:    https://www.tacc.utexas.edu/research-development/tacc-projects/lmod</p>
+<p>Sobre el concepto general de Environment Modules puedes encontrar más información al final del notebook.</p>
+</div>
+</div>
+<div class="section" id="instalacion-y-configuracion">
+<h2>Instalación y Configuración<a class="headerlink" href="#instalacion-y-configuracion" title="Permalink to this headline">¶</a></h2>
+<p>https://lmod.readthedocs.io/en/latest/030_installing.html</p>
+<p>Comprobando las rutas donde los módulos pueden ser compartidos:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat <span class="si">${</span><span class="nv">MODULESHOME</span><span class="si">}</span>/init/.modulespath
+</pre></div>
+</div>
+<div class="section" id="modulos-de-cada-usuario">
+<h3>Módulos de cada usuario<a class="headerlink" href="#modulos-de-cada-usuario" title="Permalink to this headline">¶</a></h3>
+<p>A local folder in my home directory is created for my modules:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mkdir -p ~/Myusr/share/modules/modulefiles
+</pre></div>
+</div>
+<p>I add a new line in my .bashrc:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">MODULEPATH</span><span class="o">=</span><span class="nv">$MODULEPATH</span>:/home/diego/Myusr/share/modules/modulefiles
+</pre></div>
+</div>
+</div>
+<div class="section" id="id1">
+<h3>Useful commands:<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Where xxx and yyy are names of modules available:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ module <span class="nb">help</span>
+$ module avail
+$ module list
+$ module load xxx
+$ module <span class="nb">help</span> xxx
+$ module whatis xxx
+$ module show xxx
+$ module switch xxx yyy
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="mas-informacion">
+<h2>Más información<a class="headerlink" href="#mas-informacion" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3>Sources: <br /><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="http://%01%01https://en.wikipedia.org/wiki/Environment_Modules_%28software%29">wikipedia.org</a>, <br />
+<a class="reference external" href="http://modules.sourceforge.net/">modules.sourceforge.net</a>, <br /> <a class="reference external" href="http://www.admin-magazine.com/HPC/Articles/Environment-Modules">admin-magazine.com/…/Environment-Modules</a> (this one is good), <br />
+<a class="reference external" href="http://sourceforge.net/p/modules/wiki/FAQ/">sourceforge.net/p/modules/…</a> (this one is good), <br />
+<a class="reference external" href="https://www.nersc.gov/users/software/nersc-user-environment/modules/">https://www.nersc.gov/…/modules/</a> (this one is good), <br />
+<a class="reference external" href="http://modules.sourceforge.net/man/module.html">…/man/module.html</a> (the files structure described here is not the right one for ubuntu), <br />
+<a class="reference external" href="http://modules.sourceforge.net/man/modulefile.html">…/man/modulefile.html</a> <br /></p>
+<p>http://modules.sourceforge.net/
+https://en.wikipedia.org/wiki/Environment_Modules_(software)</p>
 </div>
 </div>
 </div>

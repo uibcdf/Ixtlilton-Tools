@@ -20,11 +20,12 @@ Ixtlilton
    :caption: Documentation for users
    :maxdepth: 1
 
+   contents/users/quick_start.md
    contents/users/login.md
    contents/users/user_file_system.md
    contents/users/environment_variables.md
    contents/users/environment_modules.md
-   contents/users/anaconda.md
+   contents/users/conda.md
    contents/users/jupyter.md
    contents/users/git.md
    contents/users/slurm.md

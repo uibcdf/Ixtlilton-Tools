@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>SLURM &mdash; Ixtlilton 0.1 documentation</title>
+  <title>Slurm &mdash; Ixtlilton 0.1 documentation</title>
   
 
   
@@ -161,6 +161,7 @@
 </ul>
 <p class="caption"><span class="caption-text">Documentation for users</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quick_start.html">Introduction and quick start</a></li>
 <li class="toctree-l1"><a class="reference internal" href="login.html">Login</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="login.html#importing-opengl">Importing OpenGL</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="login.html#ubuntu">Ubuntu</a><ul>
@@ -185,20 +186,37 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="environment_variables.html">Environment variables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="environment_modules.html">Environment modules</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="environment_modules.html#instalacion-y-configuracion">Instalación y Configuración</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="environment_modules.html#modulos-comunes">Módulos comunes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="environment_modules.html#modulos-de-cada-usuario">Módulos de cada usuario</a></li>
-<li class="toctree-l3"><a class="reference internal" href="environment_modules.html#useful-commands">Useful commands:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment_modules.html#what-is-an-environment-module-system">What is an environment module system?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment_modules.html#lmod">Lmod</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="environment_modules.html#listing-the-available-modules">Listing the available modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="environment_modules.html#looking-for-a-module">Looking for a module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="environment_modules.html#loading-modules">Loading modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="environment_modules.html#showing-loaded-modules">Showing loaded modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="environment_modules.html#unloading-modules">Unloading modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="environment_modules.html#default-modules">Default modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="environment_modules.html#printing-out-information-about-modules">Printing out information about modules</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="environment_modules.html#mas-informacion">Más información</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="environment_modules.html#sources-br">Sources: <br /></a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment_modules.html#your-own-environment-modules">Your own environment modules</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="conda.html">Conda</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="conda.html#what-s-conda">What’s conda?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conda.html#the-channels-and-the-condarc-file">The channels and the .condarc file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conda.html#the-environments">The environments</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="conda.html#activation">Activation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conda.html#deactivation">Deactivation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conda.html#list-of-installed-packages">List of installed packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conda.html#installing-packages">Installing packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conda.html#removing-packages">Removing packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conda.html#updating-packages">Updating packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conda.html#the-uibcdf-environments">The UIBCDF environments</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="conda.html#uibcdf-lab">UIBCDF_lab</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="anaconda.html">Conda</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="anaconda.html#creating-your-own-conda-environments">Creating your own conda environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conda.html#your-own-conda-environments">Your own conda environments</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="jupyter.html">Jupyter</a><ul>
@@ -211,10 +229,18 @@
 <li class="toctree-l2"><a class="reference internal" href="jupyter.html#jupyterlab">JupyterLab</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="git.html">Git</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">SLURM</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#using-slurm">Using Slurm</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#submitting-a-job">Submitting a job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git.html">Git</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="git.html#what-is-git">What is Git?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#your-user-parameters">Your user parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Slurm</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-slurm">What is Slurm?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#computing-nodes">Computing nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#partitions">Partitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-job-queue">The job queue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#jobs">Jobs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#submitting-a-job">Submitting a job</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#script-submission-instructions-slu">Script submission instructions (*.slu)</a></li>
 </ul>
 </li>
@@ -313,6 +339,15 @@
 <li class="toctree-l3"><a class="reference internal" href="../administrators/environment_modules.html#useful-commands">Useful commands:</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../administrators/environment_modules.html#instalacion-y-configuracion">Instalación y Configuración</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../administrators/environment_modules.html#modulos-de-cada-usuario">Módulos de cada usuario</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../administrators/environment_modules.html#id1">Useful commands:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../administrators/environment_modules.html#mas-informacion">Más información</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../administrators/environment_modules.html#id2">Sources: <br /></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../administrators/conda.html">Conda</a><ul>
@@ -334,7 +369,15 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../administrators/slurm.html">SLURM</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../administrators/slurm.html#installation">Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../administrators/slurm.html#administration">Administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../administrators/slurm.html#administration">Administration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../administrators/slurm.html#daemons">Daemons</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../administrators/slurm.html#show-the-partitions">Show the partitions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../administrators/slurm.html#updating-the-configuration-and-restarting-the-daemons">Updating the configuration and restarting the daemons</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../administrators/slurm.html#how-to-add-a-new-node">How to add a new node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../administrators/slurm.html#how-to-create-a-new-partition">How to create a new partition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../administrators/slurm.html#limiting-users-access-to-partitions">Limiting users access to partitions</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../administrators/network.html">Networks</a><ul>
@@ -391,7 +434,7 @@
     
       <li><a href="../../index.html">Docs</a> &raquo;</li>
         
-      <li>SLURM</li>
+      <li>Slurm</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -435,37 +478,163 @@
 }
 </style>
 <div class="section" id="slurm">
-<h1>SLURM<a class="headerlink" href="#slurm" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="using-slurm">
-<h2>Using Slurm<a class="headerlink" href="#using-slurm" title="Permalink to this headline">¶</a></h2>
-<p>Diplaying compute nodes:</p>
+<h1>Slurm<a class="headerlink" href="#slurm" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="what-is-slurm">
+<h2>What is Slurm?<a class="headerlink" href="#what-is-slurm" title="Permalink to this headline">¶</a></h2>
+<p>Slurm is an open-source workload manager and job scheduler for unix HPC clusters. Everything in the
+cluster related with the running jobs, the queues and partitions, the scheduling and the resources available at
+each moment, is then supervised and managed by Slurm.</p>
+</div>
+<div class="section" id="computing-nodes">
+<h2>Computing nodes<a class="headerlink" href="#computing-nodes" title="Permalink to this headline">¶</a></h2>
+<p>Detailed information about the computing nodes can be printed out with the command:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scontrol</span> <span class="n">show</span> <span class="n">nodes</span>
 </pre></div>
 </div>
-<p>To display the job queue:</p>
+<p>or</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sinfo</span> <span class="o">-</span><span class="n">N</span> <span class="o">-</span><span class="n">l</span>
+</pre></div>
+</div>
+<p>Having a look to the description of Ixtlilton’s hardware is useful to understand the resources
+managed by slurm. Here is a brief description of the nodes as slurm knows them:</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Name</th>
+<th>IP</th>
+<th>CPUs</th>
+<th>Threads</th>
+<th>Memory</th>
+<th>GPUs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ixtlilton</td>
+<td>192.168.0.100</td>
+<td>20</td>
+<td>20</td>
+<td>62000</td>
+<td>GTX1080 (2x)</td>
+</tr>
+<tr>
+<td>node01</td>
+<td>192.168.0.1</td>
+<td>20</td>
+<td>20</td>
+<td>62000</td>
+<td>GTX1080Ti (3x)</td>
+</tr>
+<tr>
+<td>node02</td>
+<td>192.168.0.2</td>
+<td>20</td>
+<td>20</td>
+<td>62000</td>
+<td>GTX1080 (2x), GTX1080Ti (1x)</td>
+</tr>
+<tr>
+<td>node03</td>
+<td>192.168.0.3</td>
+<td>20</td>
+<td>20</td>
+<td>50000</td>
+<td>GTX1080Ti (3x)</td>
+</tr>
+<tr>
+<td>node04</td>
+<td>192.168.0.4</td>
+<td>20</td>
+<td>20</td>
+<td>62000</td>
+<td>GTX1080Ti (3x)</td>
+</tr>
+</tbody>
+</table></div>
+<div class="section" id="partitions">
+<h2>Partitions<a class="headerlink" href="#partitions" title="Permalink to this headline">¶</a></h2>
+<p>Slurm works with sets of nodes or partitions of the cluster resources with special settings and
+rights. This partitions can be defined also as job queues. Before giving more details on this, lets
+see the partitions defined in Ixtlilton:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sinfo
+</pre></div>
+</div>
+<p>For UIBCDF lab members there are four partitions or job queues.</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Name</th>
+<th>Nodes</th>
+<th>Wall time</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tests</td>
+<td>ixtlilton</td>
+<td>6 hours</td>
+<td>Tests and short runs</td>
+</tr>
+<tr>
+<td>gpus</td>
+<td>ixtlilton and nodes[01-04]</td>
+<td>infinite</td>
+<td>Partition with all gpus for demanding gpu jobs</td>
+</tr>
+<tr>
+<td>mds</td>
+<td>nodes[01-04]</td>
+<td>infinite</td>
+<td>Partition for standard molecular dynamics simulations</td>
+</tr>
+</tbody>
+</table><p>For UIBCDF guests there is only a partition.</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Name</th>
+<th>Nodes</th>
+<th>Wall time</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>guests</td>
+<td>node04</td>
+<td>7 days</td>
+<td>Job running queue for guests</td>
+</tr>
+</tbody>
+</table></div>
+<div class="section" id="the-job-queue">
+<h2>The job queue<a class="headerlink" href="#the-job-queue" title="Permalink to this headline">¶</a></h2>
+<p>To display all jobs in the queue:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>squeue
+</pre></div>
+</div>
+<p>If only your jobs have to be printed out:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>squeue -u $USER
+</pre></div>
+</div>
+<p>The lab guests will have access only to the jobqueue and info regarding the partition ‘guests’.</p>
+</div>
+<div class="section" id="jobs">
+<h2>Jobs<a class="headerlink" href="#jobs" title="Permalink to this headline">¶</a></h2>
+<p>To display all jobs with detailed info:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scontrol</span> <span class="n">show</span> <span class="n">jobs</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scontrol</span> <span class="n">show</span> <span class="n">daemons</span>
-<span class="n">salloc</span>
-<span class="n">sinfo</span>
-<span class="n">squeue</span>
-<span class="n">smap</span>
-<span class="n">sview</span>
-<span class="n">scontrol</span> <span class="n">show</span> <span class="n">config</span>
-<span class="n">sstat</span>
-<span class="n">sreport</span>
-</pre></div>
 </div>
 <div class="section" id="submitting-a-job">
-<h3>Submitting a job<a class="headerlink" href="#submitting-a-job" title="Permalink to this headline">¶</a></h3>
+<h2>Submitting a job<a class="headerlink" href="#submitting-a-job" title="Permalink to this headline">¶</a></h2>
 <p>To easily identify the submission bash scripts to slurm, the extension *.slu will be used.
 Examples of these files will be stored in github in order to share submission instructions in ixtlilton or any other cluster used by the UIBCDF members.</p>
 <p>In addition to the templates, in the following sections some useful variables and instructions are described.</p>
 <p>Once the bash script is ready, the command to submit it is:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sbatch script_run.slu
 </pre></div>
-</div>
 </div>
 <div class="section" id="script-submission-instructions-slu">
 <h3>Script submission instructions (*.slu)<a class="headerlink" href="#script-submission-instructions-slu" title="Permalink to this headline">¶</a></h3>

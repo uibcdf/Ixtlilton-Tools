@@ -37,7 +37,7 @@
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Conda" href="anaconda.html" />
+    <link rel="next" title="Conda" href="conda.html" />
     <link rel="prev" title="Environment variables" href="environment_variables.html" /> 
 </head>
 
@@ -161,6 +161,7 @@
 </ul>
 <p class="caption"><span class="caption-text">Documentation for users</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quick_start.html">Introduction and quick start</a></li>
 <li class="toctree-l1"><a class="reference internal" href="login.html">Login</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="login.html#importing-opengl">Importing OpenGL</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="login.html#ubuntu">Ubuntu</a><ul>
@@ -185,20 +186,37 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="environment_variables.html">Environment variables</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Environment modules</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#instalacion-y-configuracion">Instalación y Configuración</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#modulos-comunes">Módulos comunes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#modulos-de-cada-usuario">Módulos de cada usuario</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#useful-commands">Useful commands:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-an-environment-module-system">What is an environment module system?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lmod">Lmod</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#listing-the-available-modules">Listing the available modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#looking-for-a-module">Looking for a module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#loading-modules">Loading modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#showing-loaded-modules">Showing loaded modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#unloading-modules">Unloading modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#default-modules">Default modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#printing-out-information-about-modules">Printing out information about modules</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#mas-informacion">Más información</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#sources-br">Sources: <br /></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#your-own-environment-modules">Your own environment modules</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="conda.html">Conda</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="conda.html#what-s-conda">What’s conda?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conda.html#the-channels-and-the-condarc-file">The channels and the .condarc file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conda.html#the-environments">The environments</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="conda.html#activation">Activation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conda.html#deactivation">Deactivation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conda.html#list-of-installed-packages">List of installed packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conda.html#installing-packages">Installing packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conda.html#removing-packages">Removing packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conda.html#updating-packages">Updating packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conda.html#the-uibcdf-environments">The UIBCDF environments</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="conda.html#uibcdf-lab">UIBCDF_lab</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="anaconda.html">Conda</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="anaconda.html#creating-your-own-conda-environments">Creating your own conda environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conda.html#your-own-conda-environments">Your own conda environments</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="jupyter.html">Jupyter</a><ul>
@@ -313,6 +331,15 @@
 <li class="toctree-l3"><a class="reference internal" href="../administrators/environment_modules.html#useful-commands">Useful commands:</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../administrators/environment_modules.html#instalacion-y-configuracion">Instalación y Configuración</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../administrators/environment_modules.html#modulos-de-cada-usuario">Módulos de cada usuario</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../administrators/environment_modules.html#id1">Useful commands:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../administrators/environment_modules.html#mas-informacion">Más información</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../administrators/environment_modules.html#id2">Sources: <br /></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../administrators/conda.html">Conda</a><ul>
@@ -334,7 +361,15 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../administrators/slurm.html">SLURM</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../administrators/slurm.html#installation">Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../administrators/slurm.html#administration">Administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../administrators/slurm.html#administration">Administration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../administrators/slurm.html#daemons">Daemons</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../administrators/slurm.html#show-the-partitions">Show the partitions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../administrators/slurm.html#updating-the-configuration-and-restarting-the-daemons">Updating the configuration and restarting the daemons</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../administrators/slurm.html#how-to-add-a-new-node">How to add a new node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../administrators/slurm.html#how-to-create-a-new-partition">How to create a new partition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../administrators/slurm.html#limiting-users-access-to-partitions">Limiting users access to partitions</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../administrators/network.html">Networks</a><ul>
@@ -436,61 +471,146 @@
 </style>
 <div class="section" id="environment-modules">
 <h1>Environment modules<a class="headerlink" href="#environment-modules" title="Permalink to this headline">¶</a></h1>
-<p>La versión de gestor de Environment Modules instalada en ixtlilton es la llamada Lmod:</p>
-<p>Documentation:    http://lmod.readthedocs.org
-Github:           https://github.com/TACC/Lmod
-Sourceforge:      https://lmod.sf.net
-TACC Homepage:    https://www.tacc.utexas.edu/research-development/tacc-projects/lmod</p>
-<p>Sobre el concepto general de Environment Modules puedes encontrar más información al final del notebook.</p>
-<div class="section" id="instalacion-y-configuracion">
-<h2>Instalación y Configuración<a class="headerlink" href="#instalacion-y-configuracion" title="Permalink to this headline">¶</a></h2>
-<p>https://lmod.readthedocs.io/en/latest/030_installing.html</p>
-<p>Comprobando las rutas donde los módulos pueden ser compartidos:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat <span class="si">${</span><span class="nv">MODULESHOME</span><span class="si">}</span>/init/.modulespath
+<div class="section" id="what-is-an-environment-module-system">
+<h2>What is an environment module system?<a class="headerlink" href="#what-is-an-environment-module-system" title="Permalink to this headline">¶</a></h2>
+<p>An HPC cluster needs to be used by different users with different needs.
+With this in mind, installing the scientific software in the operating system is not functional.
+Some times different versions of the same software is needed. Some times the software required has
+dependencies with compatibility issues. In this sceneario, having an environment modules manager is highly
+recommended. This is one of the best ways to dinamically change the users environment
+(environmental variables such as binary paths, library paths, etc).</p>
+</div>
+<div class="section" id="lmod">
+<h2>Lmod<a class="headerlink" href="#lmod" title="Permalink to this headline">¶</a></h2>
+<p>To work with environment modules, Ixtlilton operates with Lmod. As user, in principle you only need
+to know how to check the modules available for you, and how to load and unload them.</p>
+<div class="section" id="listing-the-available-modules">
+<h3>Listing the available modules<a class="headerlink" href="#listing-the-available-modules" title="Permalink to this headline">¶</a></h3>
+<p>The following command shows the list of modules available for you to be used:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module avail
 </pre></div>
 </div>
-<div class="section" id="modulos-comunes">
-<h3>Módulos comunes<a class="headerlink" href="#modulos-comunes" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="modulos-de-cada-usuario">
-<h3>Módulos de cada usuario<a class="headerlink" href="#modulos-de-cada-usuario" title="Permalink to this headline">¶</a></h3>
-<p>A local folder in my home directory is created for my modules:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mkdir -p ~/Myusr/share/modules/modulefiles
+<p>or</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module spider
 </pre></div>
 </div>
-<p>I add a new line in my .bashrc:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">MODULEPATH</span><span class="o">=</span><span class="nv">$MODULEPATH</span>:/home/diego/Myusr/share/modules/modulefiles
+<p>Notice that modules are located in different places. Those in <code class="docutils literal notranslate"><span class="pre">/opt/modulefiles</span></code> and
+<code class="docutils literal notranslate"><span class="pre">/opt2/modulefiles</span></code> are managed by the cluster administrators. The modules you can find there
+correspond to already compiled software that you load and unloaded. As you will see at the end of
+this document, your user can also define modules locally and only available for you.</p>
+</div>
+<div class="section" id="looking-for-a-module">
+<h3>Looking for a module<a class="headerlink" href="#looking-for-a-module" title="Permalink to this headline">¶</a></h3>
+<p>Modules can be located with a keyword this way:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module keyword
 </pre></div>
 </div>
-</div>
-<div class="section" id="useful-commands">
-<h3>Useful commands:<a class="headerlink" href="#useful-commands" title="Permalink to this headline">¶</a></h3>
-<p>Where xxx and yyy are names of modules available:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ module <span class="nb">help</span>
-$ module avail
-$ module list
-$ module load xxx
-$ module <span class="nb">help</span> xxx
-$ module whatis xxx
-$ module show xxx
-$ module switch xxx yyy
+<p>or</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module spider keyword
 </pre></div>
 </div>
 </div>
+<div class="section" id="loading-modules">
+<h3>Loading modules<a class="headerlink" href="#loading-modules" title="Permalink to this headline">¶</a></h3>
+<p>To load a module:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module load gromacs/intel-2018_mkl_2019.1
+</pre></div>
 </div>
-<div class="section" id="mas-informacion">
-<h2>Más información<a class="headerlink" href="#mas-informacion" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="sources-br">
-<h3>Sources: <br /><a class="headerlink" href="#sources-br" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference external" href="http://%01%01https://en.wikipedia.org/wiki/Environment_Modules_%28software%29">wikipedia.org</a>, <br />
-<a class="reference external" href="http://modules.sourceforge.net/">modules.sourceforge.net</a>, <br /> <a class="reference external" href="http://www.admin-magazine.com/HPC/Articles/Environment-Modules">admin-magazine.com/…/Environment-Modules</a> (this one is good), <br />
-<a class="reference external" href="http://sourceforge.net/p/modules/wiki/FAQ/">sourceforge.net/p/modules/…</a> (this one is good), <br />
-<a class="reference external" href="https://www.nersc.gov/users/software/nersc-user-environment/modules/">https://www.nersc.gov/…/modules/</a> (this one is good), <br />
-<a class="reference external" href="http://modules.sourceforge.net/man/module.html">…/man/module.html</a> (the files structure described here is not the right one for ubuntu), <br />
-<a class="reference external" href="http://modules.sourceforge.net/man/modulefile.html">…/man/modulefile.html</a> <br /></p>
-<p>http://modules.sourceforge.net/
-https://en.wikipedia.org/wiki/Environment_Modules_(software)</p>
+<p>Some modules depend on others. Lmod usually handle this without out disturbing the user. If this is
+not the case, a message like this one will be returned with information of the modules the user
+needs to load as dependencies:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Lmod has detected the following error:  Cannot load module <span class="s2">&quot;gromacs/gcc-4.8.5_ownfftw_2019.1&quot;</span>. At least one of these module<span class="o">(</span>s<span class="o">)</span> must be loaded:
+   openmpi/gcc-4.8.5_CUDA-10.0_4.0.0 cmake/gcc-4.8.5_3.13.4 CUDA/gcc-4.8.5_10.0
+
+While processing the following module<span class="o">(</span>s<span class="o">)</span>:
+    Module fullname                   Module Filename
+    ---------------                   ---------------
+    gromacs/gcc-4.8.5_ownfftw_2019.1  /opt2/modulefiles/gromacs/gcc-4.8.5_ownfftw_2019.1
+</pre></div>
 </div>
+</div>
+<div class="section" id="showing-loaded-modules">
+<h3>Showing loaded modules<a class="headerlink" href="#showing-loaded-modules" title="Permalink to this headline">¶</a></h3>
+<p>To show the loaded modules:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module list
+</pre></div>
+</div>
+</div>
+<div class="section" id="unloading-modules">
+<h3>Unloading modules<a class="headerlink" href="#unloading-modules" title="Permalink to this headline">¶</a></h3>
+<p>To unload a module:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module unload gromacs/gcc-4.8.5_ownfftw_2019.1
+</pre></div>
+</div>
+<p>Notice that the module loaded as dependencies will be also unloaded.</p>
+<p>If all loaded modules need to be unloaded at once, you can type:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module purge
+</pre></div>
+</div>
+</div>
+<div class="section" id="default-modules">
+<h3>Default modules<a class="headerlink" href="#default-modules" title="Permalink to this headline">¶</a></h3>
+<p>Module names are long. When a program was compiled in different flavors (version, compilation
+options, etc) this is specified in the name. For example, you can find gromacs in at least two
+versions in the output of <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">avail</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>----------- /opt2/modulefiles -------------
+   gromacs/gcc-4.8.5_ownfftw_2019.1 <span class="o">(</span>D<span class="o">)</span>
+   gromacs/gcc-6.4.0_ownfftw_2019.1  
+</pre></div>
+</div>
+<p>When this happens, there is always a module marked with “(D)”. This is default module. If only the
+name of the family of modules, in this case ‘gromacs’ is invoked as argument of <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">load</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module load gromacs
+</pre></div>
+</div>
+<p>the default module is loaded:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module list
+
+Currently Loaded Modules:
+  <span class="m">1</span><span class="o">)</span> CUDA/gcc-4.8.5_10.0   <span class="m">2</span><span class="o">)</span> cmake/gcc-4.8.5_3.13.4   <span class="m">3</span><span class="o">)</span> openmpi/gcc-4.8.5_CUDA-10.0_4.0.0   <span class="m">4</span><span class="o">)</span> gromacs/gcc-4.8.5_ownfftw_2019.1
+</pre></div>
+</div>
+</div>
+<div class="section" id="printing-out-information-about-modules">
+<h3>Printing out information about modules<a class="headerlink" href="#printing-out-information-about-modules" title="Permalink to this headline">¶</a></h3>
+<p>There are some different commands to print out information about a specific module. It is worth
+giving a try to each of them, the resulting level of detail in the output is different.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module <span class="nb">help</span> gromacs/gcc-4.8.5_ownfftw_2019.1
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module whatis gromacs/gcc-4.8.5_ownfftw_2019.1
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module show gromacs
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module spider gromacs
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="your-own-environment-modules">
+<h2>Your own environment modules<a class="headerlink" href="#your-own-environment-modules" title="Permalink to this headline">¶</a></h2>
+<p>Every user can have its own environment modules: private and locally stored in their home directories.</p>
+<p>It is suggested that for this purpose, the software to be loaded as modules is placed in your
+<code class="docutils literal notranslate"><span class="pre">~/opt</span></code> directory. For example, if you need to install XXX in the version 4.7:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir -p ~/opt/XXX/4.7
+</pre></div>
+</div>
+<p>Once the proper compilation was finished, you can store the modulefile with the loading
+instructions in the directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~/opt/modulefiles
+</pre></div>
+</div>
+<p>The former directory is checked for environment modules by default for every user. If you want to
+include other directories with modulefiles, chech the the variable ‘MODULEPATH’ is rewritten with
+the following line in your ‘~/.bashrc’ file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">MODULEPATH</span><span class="o">=</span><span class="nv">$MODULEPATH</span>:/home/username/directories_path_to/modulefiles
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong><em>More Info:</em></strong><br />http://lmod.readthedocs.org<br />https://github.com/TACC/Lmod<br />https://lmod.sf.net<br />https://www.tacc.utexas.edu/research-development/tacc-projects/lmod<br />http://modules.sourceforge.net/<br />https://en.wikipedia.org/wiki/Environment_Modules_(software)<br />http://%01%01https://en.wikipedia.org/wiki/Environment_Modules_%28software%29<br />http://modules.sourceforge.net/<br />http://www.admin-magazine.com/HPC/Articles/Environment-Modules<br />http://sourceforge.net/p/modules/wiki/FAQ/<br />https://www.nersc.gov/users/software/nersc-user-environment/modules/<br />http://modules.sourceforge.net/man/module.html<br />http://modules.sourceforge.net/man/modulefile.html</p>
+</div></blockquote>
 </div>
 </div>
 
@@ -502,7 +622,7 @@ https://en.wikipedia.org/wiki/Environment_Modules_(software)</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="anaconda.html" class="btn btn-neutral float-right" title="Conda" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="conda.html" class="btn btn-neutral float-right" title="Conda" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="environment_variables.html" class="btn btn-neutral float-left" title="Environment variables" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Environment variables &mdash; Ixtlilton 0.1 documentation</title>
+  <title>Introduction and quick start &mdash; Ixtlilton 0.1 documentation</title>
   
 
   
@@ -37,8 +37,8 @@
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Environment modules" href="environment_modules.html" />
-    <link rel="prev" title="File system" href="user_file_system.html" /> 
+    <link rel="next" title="Login" href="login.html" />
+    <link rel="prev" title="File system" href="../about/file_system.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -161,7 +161,7 @@
 </ul>
 <p class="caption"><span class="caption-text">Documentation for users</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="quick_start.html">Introduction and quick start</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction and quick start</a></li>
 <li class="toctree-l1"><a class="reference internal" href="login.html">Login</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="login.html#importing-opengl">Importing OpenGL</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="login.html#ubuntu">Ubuntu</a><ul>
@@ -184,20 +184,18 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Environment variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment_variables.html">Environment variables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="environment_modules.html">Environment modules</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="environment_modules.html#what-is-an-environment-module-system">What is an environment module system?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="environment_modules.html#lmod">Lmod</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="environment_modules.html#listing-the-available-modules">Listing the available modules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="environment_modules.html#looking-for-a-module">Looking for a module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="environment_modules.html#loading-modules">Loading modules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="environment_modules.html#showing-loaded-modules">Showing loaded modules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="environment_modules.html#unloading-modules">Unloading modules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="environment_modules.html#default-modules">Default modules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="environment_modules.html#printing-out-information-about-modules">Printing out information about modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment_modules.html#instalacion-y-configuracion">Instalación y Configuración</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="environment_modules.html#modulos-comunes">Módulos comunes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="environment_modules.html#modulos-de-cada-usuario">Módulos de cada usuario</a></li>
+<li class="toctree-l3"><a class="reference internal" href="environment_modules.html#useful-commands">Useful commands:</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="environment_modules.html#your-own-environment-modules">Your own environment modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment_modules.html#mas-informacion">Más información</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="environment_modules.html#sources-br">Sources: <br /></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="conda.html">Conda</a><ul>
@@ -214,9 +212,9 @@
 <li class="toctree-l4"><a class="reference internal" href="conda.html#uibcdf-lab">UIBCDF_lab</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="conda.html#your-own-conda-environments">Your own conda environments</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="conda.html#your-own-conda-environments">Your own conda environments</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="jupyter.html">Jupyter</a><ul>
@@ -229,20 +227,10 @@
 <li class="toctree-l2"><a class="reference internal" href="jupyter.html#jupyterlab">JupyterLab</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="git.html">Git</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="git.html#what-is-git">What is Git?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git.html#your-user-parameters">Your user parameters</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="slurm.html">Slurm</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="slurm.html#what-is-slurm">What is Slurm?</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="slurm.html#the-computing-nodes">The computing nodes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="slurm.html#partitions">Partitions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="slurm.html#the-job-queue">The job queue</a></li>
-<li class="toctree-l3"><a class="reference internal" href="slurm.html#jobs">Jobs</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="slurm.html#submitting-a-job">Submitting a job</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="git.html">Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="slurm.html">SLURM</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="slurm.html#using-slurm">Using Slurm</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="slurm.html#submitting-a-job">Submitting a job</a></li>
 <li class="toctree-l3"><a class="reference internal" href="slurm.html#script-submission-instructions-slu">Script submission instructions (*.slu)</a></li>
 </ul>
 </li>
@@ -341,15 +329,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../administrators/environment_modules.html#useful-commands">Useful commands:</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../administrators/environment_modules.html#instalacion-y-configuracion">Instalación y Configuración</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../administrators/environment_modules.html#modulos-de-cada-usuario">Módulos de cada usuario</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../administrators/environment_modules.html#id1">Useful commands:</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../administrators/environment_modules.html#mas-informacion">Más información</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../administrators/environment_modules.html#id2">Sources: <br /></a></li>
-</ul>
-</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../administrators/conda.html">Conda</a><ul>
@@ -436,13 +415,13 @@
     
       <li><a href="../../index.html">Docs</a> &raquo;</li>
         
-      <li>Environment variables</li>
+      <li>Introduction and quick start</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../../_sources/contents/users/environment_variables.md.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/contents/users/quick_start.md.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -479,11 +458,9 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="environment-variables">
-<h1>Environment variables<a class="headerlink" href="#environment-variables" title="Permalink to this headline">¶</a></h1>
-<p><strong>To be written</strong></p>
-<p>Description of the bin and library paths… as well as modulefile paths of every user.</p>
-<p>The same with the alias: cdw, cds, cdh.</p>
+<div class="section" id="introduction-and-quick-start">
+<h1>Introduction and quick start<a class="headerlink" href="#introduction-and-quick-start" title="Permalink to this headline">¶</a></h1>
+<p>TOC</p>
 </div>
 
 
@@ -494,10 +471,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="environment_modules.html" class="btn btn-neutral float-right" title="Environment modules" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="login.html" class="btn btn-neutral float-right" title="Login" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="user_file_system.html" class="btn btn-neutral float-left" title="File system" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../about/file_system.html" class="btn btn-neutral float-left" title="File system" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
