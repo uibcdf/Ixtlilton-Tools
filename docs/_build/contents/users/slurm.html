@@ -209,7 +209,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#the-job-queue">The job queue</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#jobs">Jobs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#submitting-a-job">Submitting a job</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#script-submission-instructions-slu">Script submission instructions (*.slu)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#script-submission-instructions-slurm">Script submission instructions (*.slurm)</a></li>
 </ul>
 </li>
 </ul>
@@ -296,6 +296,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../administrators/users_and_groups.html#comunication-with-the-new-user">Comunication with the new user</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../administrators/users_and_groups.html#password-ip-and-port">Password, ip and port</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../administrators/environment_modules.html">Environment Modules</a><ul>
@@ -622,15 +623,15 @@ see the partitions defined in Ixtlilton:</p>
 </div>
 <div class="section" id="submitting-a-job">
 <h2>Submitting a job<a class="headerlink" href="#submitting-a-job" title="Permalink to this headline">¶</a></h2>
-<p>To easily identify the submission bash scripts to slurm, the extension *.slu will be used.
+<p>To easily identify the submission bash scripts to slurm, the extension *.slurm will be used.
 Examples of these files will be stored in github in order to share submission instructions in ixtlilton or any other cluster used by the UIBCDF members.</p>
 <p>In addition to the templates, in the following sections some useful variables and instructions are described.</p>
 <p>Once the bash script is ready, the command to submit it is:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sbatch script_run.slu
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sbatch script_run.slurm
 </pre></div>
 </div>
-<div class="section" id="script-submission-instructions-slu">
-<h3>Script submission instructions (*.slu)<a class="headerlink" href="#script-submission-instructions-slu" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="script-submission-instructions-slurm">
+<h3>Script submission instructions (*.slurm)<a class="headerlink" href="#script-submission-instructions-slurm" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
 </div>

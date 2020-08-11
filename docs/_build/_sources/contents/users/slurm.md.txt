@@ -85,7 +85,7 @@ scontrol show jobs
 
 ## Submitting a job
 
-To easily identify the submission bash scripts to slurm, the extension *.slu will be used.
+To easily identify the submission bash scripts to slurm, the extension *.slurm will be used.
 Examples of these files will be stored in github in order to share submission instructions in ixtlilton or any other cluster used by the UIBCDF members.
 
 In addition to the templates, in the following sections some useful variables and instructions are described.
@@ -93,8 +93,8 @@ In addition to the templates, in the following sections some useful variables an
 Once the bash script is ready, the command to submit it is:
 
 ```bash
-sbatch script_run.slu
+sbatch script_run.slurm
 ```
 
-### Script submission instructions (*.slu)
+### Script submission instructions (*.slurm)
 
