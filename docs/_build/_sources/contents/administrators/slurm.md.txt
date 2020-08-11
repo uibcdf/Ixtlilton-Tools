@@ -1,4 +1,4 @@
-# SLURM
+# Slurm
 
 Sources: 
 https://slurm.schedmd.com/quickstart_admin.html \

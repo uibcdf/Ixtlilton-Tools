@@ -1,6 +1,8 @@
 # Jupyter
 
 
+** THIS DOCUMENT IS IN CONSTRUCTION **
+
 conda install jupyter jupyter_contrib_nbextensions ipywidgets widgetsnbextension nb_conda nb_anacondacloud
 
 ## JupyterHub

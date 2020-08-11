@@ -1,54 +1,42 @@
 # Login
 
-```
-ssh -X -Y user@192.168.0.100
-```
+## Login from the UIBCDF local network
 
-## Importing OpenGL
-
-By default the X server does not import OpenGL.
-The solution is allowing indirect GLX in the client. To check if the problem was solved one of the following commands executed in Ixtlilton should print no errors:
-```
-glxinfo
-glxgears
-```
-
-### Ubuntu
-
-#### Option 1
-Edit the file /usr/share/lightdm/lightdm.conf.d/50-xserver-command.conf
-```
-[SeatDefaults]
-# Dump core
-xserver-command=X -core +iglx
-```
-After which you either reboot or Ctrl-Alt-F1, login, and 'sudo service lightdm restart'.
-
-#### Option 2
-
-Edit the file /etc/X11/xorg.conf
+If you are using a machine in the UIBCDF lab, the conexion will be done via SSH enabling trusted
+X11 forwarding (-Y) if necessary:
 
 ```
-Section "ServerFlags"  
-    Option "AllowIndirectGLX" "on"  
-    Option "IndirectGLX" "on"  
-EndSection
+ssh user@192.168.0.100
 ```
 
-After which reboot the client.
-
-## Login via ssh without password
-
-At the workstation with your user:
+or
 
 ```
-ssh-keygen -t rsa
-ssh-copy-id -i ~/.ssh/id_rsa.pub ixtlilton 
-# With empty passphrase
+ssh -Y user@192.168.0.100 # Exporting X11 is discourage, only special needs
 ```
 
-At Ixtlilton with your user:
+If your machine is regularly working with Ixtlilton, there are two actions you can take to make
+your life easier. Add Ixtlilton to the list of known hosts names in the file (/etc/hosts) with the
+following line:
+
+```bash
+192.168.0.100 ixtlilton
+```
+
+This way your user can connect just with:
 
 ```
-ssh-copy-id -i ~/.ssh/id_rsa.pub nauta
+ssh ixtlilton
 ```
+
+If your machine is a workstation of the lab, you can ask to the administrators to enable the SSH
+connection without password.
+
+## Login from outside the UIBCDF local network
+
+To enter Ixtlilton remotely from outside the lab network you will receive instructions from the
+administrators regarding the following two things:
+
+   - The way to connect remotely via ssh
+   - The activation of your multi-factor authentication
+

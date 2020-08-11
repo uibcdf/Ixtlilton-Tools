@@ -44,17 +44,20 @@ sinfo
 
 For UIBCDF lab members there are four partitions or job queues.
 
-| Name | Nodes | Wall time | Description |
+| Name | Nodes | Wall time | Priority |Description |
 | ---- | ----- | --------- | ----------- |
-| tests | ixtlilton | 6 hours | Tests and short runs |
-| gpus  | ixtlilton and nodes[01-04]| infinite | Partition with all gpus for demanding gpu jobs|
-| mds | nodes[01-04] | infinite | Partition for standard molecular dynamics simulations |
+| tests | ixtlilton | 6 hours | High |Tests and short runs |
+| gpus  | ixtlilton and nodes[01-04]| 7 days | Normal |Partition with all gpus for gpu jobs|
+| gpus_prior  | ixtlilton and nodes[01-04]| Infinity | Top | Partition with all gpus for high priority gpu jobs|
+| normal | nodes[01-04] | 7 days | Normal |Partition for standard molecular dynamics simulations |
+| prior | nodes[01-04] | Infinity | Top | Partition for standard molecular dynamics simulations |
+
 
 For UIBCDF guests there is only a partition.
 
-| Name | Nodes | Wall time | Description |
-| ---- | ----- | --------- | ----------- |
-| guests | node04 | 7 days | Job running queue for guests |
+| Name | Nodes | Wall time | Priority | Description |
+| ---- | ----- | --------- | ----------- | -------- |
+| guests | node02 | 1 day  | Low | Queue for invited guests with projects out of the lab interest |
 
 ## The job queue
 

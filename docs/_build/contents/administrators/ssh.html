@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Networks &mdash; Ixtlilton 0.1 documentation</title>
+  <title>SSH &mdash; Ixtlilton 0.1 documentation</title>
   
 
   
@@ -37,8 +37,8 @@
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="X" href="../tools/X.html" />
-    <link rel="prev" title="SSH" href="ssh.html" /> 
+    <link rel="next" title="Networks" href="network.html" />
+    <link rel="prev" title="SLURM" href="slurm.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -85,9 +85,45 @@
               <p class="caption"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../about/hardware.html">Hardware</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../about/hardware.html#ixtlilton-master">Ixtlilton (master)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../about/hardware.html#computing-nodes">Computing nodes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../about/hardware.html#storage">Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about/hardware.html#ixtlilton">Ixtlilton</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about/hardware.html#section-cpus-computation">Section CPUs computation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about/hardware.html#section-gpus-computation">Section GPUs computation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about/hardware.html#section-storage">Section Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about/hardware.html#todo-list">TODO list:</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../about/hardware.html#notas">Notas:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/hardware.html#definicion-de-colas">Definición de colas:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/hardware.html#dudas">Dudas:</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../about/hardware.html#aqui-mas">Aqui mas:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../about/hardware.html#cluster-admin">Cluster Admin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about/hardware.html#descripcion-de-los-componentes">Descripción de los Componentes:</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../about/hardware.html#redes">Redes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../about/hardware.html#switches">Switches</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../about/hardware.html#router">Router</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../about/hardware.html#wifi">Wifi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../about/hardware.html#nas">NAS</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../about/hardware.html#nodo-master">Nodo Master</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/hardware.html#nodos-cpus">Nodos CPUs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/hardware.html#nodos-gpus">Nodos GPUs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/hardware.html#nodos-storage">Nodos Storage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/hardware.html#workstations">Workstations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/hardware.html#impresora">Impresora</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../about/hardware.html#host-file">HOST FILE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about/hardware.html#software-administration">Software administration:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about/hardware.html#os">OS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about/hardware.html#mpi-options">MPI Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about/hardware.html#provisioning-software">Provisioning Software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about/hardware.html#configuration-management">Configuration Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about/hardware.html#resource-and-job-scheduler">Resource and Job Scheduler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about/hardware.html#ssh">SSH</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about/hardware.html#volumen-y-home-en-ixtlilton">Volumen y home en ixtlilton</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../about/software.html">Software</a></li>
@@ -125,6 +161,7 @@
 </ul>
 <p class="caption"><span class="caption-text">Documentation for users</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../users/quick_start.html">Introduction and quick start</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../users/login.html">Login</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../users/login.html#login-from-the-uibcdf-local-network">Login from the UIBCDF local network</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../users/login.html#login-from-outside-the-uibcdf-local-network">Login from outside the UIBCDF local network</a></li>
@@ -134,25 +171,13 @@
 <li class="toctree-l2"><a class="reference internal" href="../users/user_file_system.html#the-global-file-system">The global file system</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../users/user_file_system.html#the-user-file-system">The user file system</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../users/user_file_system.html#home">Home</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../users/user_file_system.html#your-bin-directory">Your bin directory</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../users/user_file_system.html#your-opt-directory">Your opt directory</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../users/user_file_system.html#work">Work</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../users/user_file_system.html#scratch">Scratch</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../users/environment_variables.html">Environment variables and shell aliases</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../users/environment_variables.html#environment-variables">Environment variables</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../users/environment_variables.html#user-file-system-variables">User file system variables</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../users/environment_variables.html#path-variable">Path variable</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../users/environment_variables.html#library-variables">Library variables</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../users/environment_variables.html#environment-modulefiles">Environment modulefiles</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../users/environment_variables.html#shell-aliases">Shell aliases</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../users/environment_variables.html">Environment variables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../users/environment_modules.html">Environment modules</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../users/environment_modules.html#what-is-an-environment-module-system">What is an environment module system?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../users/environment_modules.html#lmod">Lmod</a><ul>
@@ -335,7 +360,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="slurm.html">Slurm</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="slurm.html">SLURM</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="slurm.html#installation">Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="slurm.html#administration">Administration</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="slurm.html#daemons">Daemons</a></li>
@@ -348,21 +373,21 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="ssh.html">SSH</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="ssh.html#importing-opengl">Importing OpenGL</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="ssh.html#ubuntu">Ubuntu</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="ssh.html#option-1">Option 1</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ssh.html#option-2">Option 2</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">SSH</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#importing-opengl">Importing OpenGL</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ubuntu">Ubuntu</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#option-1">Option 1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#option-2">Option 2</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="ssh.html#login-via-ssh-without-password">Login via ssh without password</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#login-via-ssh-without-password">Login via ssh without password</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Networks</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#interactive-network">Interactive network</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#nfs-network">NFS network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="network.html">Networks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="network.html#interactive-network">Interactive network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="network.html#nfs-network">NFS network</a></li>
 </ul>
 </li>
 </ul>
@@ -414,13 +439,13 @@
     
       <li><a href="../../index.html">Docs</a> &raquo;</li>
         
-      <li>Networks</li>
+      <li>SSH</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../../_sources/contents/administrators/network.md.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/contents/administrators/ssh.md.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -457,92 +482,54 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="networks">
-<h1>Networks<a class="headerlink" href="#networks" title="Permalink to this headline">¶</a></h1>
-<p>The local network of the UIBCDF is 192.168.0.255
-According with this there is an ip range definition for the cluster 1-100.</p>
-<div class="section" id="interactive-network">
-<h2>Interactive network<a class="headerlink" href="#interactive-network" title="Permalink to this headline">¶</a></h2>
-<p>The cluster occupies the range 1-100 in the local interactive network in the lab 192.168.0.255.
-In the following table the ips are detailed.</p>
-<table border="1" class="docutils">
-<thead>
-<tr>
-<th align="left">IP or range</th>
-<th align="left">Hostname</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">100</td>
-<td align="left">ixtlilton (master)</td>
-</tr>
-<tr>
-<td align="left">1</td>
-<td align="left">node01</td>
-</tr>
-<tr>
-<td align="left">2</td>
-<td align="left">node02</td>
-</tr>
-<tr>
-<td align="left">3</td>
-<td align="left">node03</td>
-</tr>
-<tr>
-<td align="left">4</td>
-<td align="left">node04</td>
-</tr>
-</tbody>
-</table><p>Despite of being a peripherical, given that the cluster has no storage server
-nodes, it hosts now the volume /ColdStorageRoom with the partitions “archive” and “backups”.</p>
-<table border="1" class="docutils">
-<thead>
-<tr>
-<th align="left">IP or range</th>
-<th align="left">Hostname</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">203</td>
-<td align="left">NAS</td>
-</tr>
-</tbody>
-</table></div>
-<div class="section" id="nfs-network">
-<h2>NFS network<a class="headerlink" href="#nfs-network" title="Permalink to this headline">¶</a></h2>
-<p>An additional network is set to carry the flow regarding the NFS imported volumes: 172.17.255.255.</p>
-<table border="1" class="docutils">
-<thead>
-<tr>
-<th align="left">IP or range</th>
-<th align="left">Hostname</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">253.253</td>
-<td align="left">ixtlilton (master)</td>
-</tr>
-<tr>
-<td align="left">1.1</td>
-<td align="left">node01</td>
-</tr>
-<tr>
-<td align="left">1.2</td>
-<td align="left">node02</td>
-</tr>
-<tr>
-<td align="left">1.3</td>
-<td align="left">node03</td>
-</tr>
-<tr>
-<td align="left">1.4</td>
-<td align="left">node04</td>
-</tr>
-</tbody>
-</table></div>
+<div class="section" id="ssh">
+<h1>SSH<a class="headerlink" href="#ssh" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="importing-opengl">
+<h2>Importing OpenGL<a class="headerlink" href="#importing-opengl" title="Permalink to this headline">¶</a></h2>
+<p>By default the X server does not import OpenGL.
+The solution is allowing indirect GLX in the client. To check if the problem was solved one of the following commands executed in Ixtlilton should print no errors:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">glxinfo</span>
+<span class="n">glxgears</span>
+</pre></div>
+</div>
+<div class="section" id="ubuntu">
+<h3>Ubuntu<a class="headerlink" href="#ubuntu" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="option-1">
+<h4>Option 1<a class="headerlink" href="#option-1" title="Permalink to this headline">¶</a></h4>
+<p>Edit the file /usr/share/lightdm/lightdm.conf.d/50-xserver-command.conf</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">SeatDefaults</span><span class="p">]</span>
+<span class="c1"># Dump core</span>
+<span class="n">xserver</span><span class="o">-</span><span class="n">command</span><span class="o">=</span><span class="n">X</span> <span class="o">-</span><span class="n">core</span> <span class="o">+</span><span class="n">iglx</span>
+</pre></div>
+</div>
+<p>After which you either reboot or Ctrl-Alt-F1, login, and ‘sudo service lightdm restart’.</p>
+</div>
+<div class="section" id="option-2">
+<h4>Option 2<a class="headerlink" href="#option-2" title="Permalink to this headline">¶</a></h4>
+<p>Edit the file /etc/X11/xorg.conf</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Section</span> <span class="s2">&quot;ServerFlags&quot;</span>  
+    <span class="n">Option</span> <span class="s2">&quot;AllowIndirectGLX&quot;</span> <span class="s2">&quot;on&quot;</span>  
+    <span class="n">Option</span> <span class="s2">&quot;IndirectGLX&quot;</span> <span class="s2">&quot;on&quot;</span>  
+<span class="n">EndSection</span>
+</pre></div>
+</div>
+<p>After which reboot the client.</p>
+</div>
+</div>
+</div>
+<div class="section" id="login-via-ssh-without-password">
+<h2>Login via ssh without password<a class="headerlink" href="#login-via-ssh-without-password" title="Permalink to this headline">¶</a></h2>
+<p>At the workstation with your user:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span><span class="o">-</span><span class="n">keygen</span> <span class="o">-</span><span class="n">t</span> <span class="n">rsa</span>
+<span class="n">ssh</span><span class="o">-</span><span class="n">copy</span><span class="o">-</span><span class="nb">id</span> <span class="o">-</span><span class="n">i</span> <span class="o">~/.</span><span class="n">ssh</span><span class="o">/</span><span class="n">id_rsa</span><span class="o">.</span><span class="n">pub</span> <span class="n">ixtlilton</span> 
+<span class="c1"># With empty passphrase</span>
+</pre></div>
+</div>
+<p>At Ixtlilton with your user:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span><span class="o">-</span><span class="n">copy</span><span class="o">-</span><span class="nb">id</span> <span class="o">-</span><span class="n">i</span> <span class="o">~/.</span><span class="n">ssh</span><span class="o">/</span><span class="n">id_rsa</span><span class="o">.</span><span class="n">pub</span> <span class="n">nauta</span>
+</pre></div>
+</div>
+</div>
 </div>
 
 
@@ -553,10 +540,10 @@ nodes, it hosts now the volume /ColdStorageRoom with the partitions “archive�
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../tools/X.html" class="btn btn-neutral float-right" title="X" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="network.html" class="btn btn-neutral float-right" title="Networks" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="ssh.html" class="btn btn-neutral float-left" title="SSH" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="slurm.html" class="btn btn-neutral float-left" title="SLURM" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -38,7 +38,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="File system" href="user_file_system.html" />
-    <link rel="prev" title="File system" href="../about/file_system.html" /> 
+    <link rel="prev" title="Introduction and quick start" href="quick_start.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -161,16 +161,10 @@
 </ul>
 <p class="caption"><span class="caption-text">Documentation for users</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quick_start.html">Introduction and quick start</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Login</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#importing-opengl">Importing OpenGL</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#ubuntu">Ubuntu</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#option-1">Option 1</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#option-2">Option 2</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#login-via-ssh-without-password">Login via ssh without password</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#login-from-the-uibcdf-local-network">Login from the UIBCDF local network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#login-from-outside-the-uibcdf-local-network">Login from outside the UIBCDF local network</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="user_file_system.html">File system</a><ul>
@@ -185,20 +179,37 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="environment_variables.html">Environment variables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="environment_modules.html">Environment modules</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="environment_modules.html#instalacion-y-configuracion">Instalación y Configuración</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="environment_modules.html#modulos-comunes">Módulos comunes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="environment_modules.html#modulos-de-cada-usuario">Módulos de cada usuario</a></li>
-<li class="toctree-l3"><a class="reference internal" href="environment_modules.html#useful-commands">Useful commands:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment_modules.html#what-is-an-environment-module-system">What is an environment module system?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment_modules.html#lmod">Lmod</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="environment_modules.html#listing-the-available-modules">Listing the available modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="environment_modules.html#looking-for-a-module">Looking for a module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="environment_modules.html#loading-modules">Loading modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="environment_modules.html#showing-loaded-modules">Showing loaded modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="environment_modules.html#unloading-modules">Unloading modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="environment_modules.html#default-modules">Default modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="environment_modules.html#printing-out-information-about-modules">Printing out information about modules</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="environment_modules.html#mas-informacion">Más información</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="environment_modules.html#sources-br">Sources: <br /></a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment_modules.html#your-own-environment-modules">Your own environment modules</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="conda.html">Conda</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="conda.html#what-s-conda">What’s conda?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conda.html#the-channels-and-the-condarc-file">The channels and the .condarc file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conda.html#the-environments">The environments</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="conda.html#activation">Activation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conda.html#deactivation">Deactivation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conda.html#list-of-installed-packages">List of installed packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conda.html#installing-packages">Installing packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conda.html#removing-packages">Removing packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conda.html#updating-packages">Updating packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conda.html#the-uibcdf-environments">The UIBCDF environments</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="conda.html#uibcdf-lab">UIBCDF_lab</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="anaconda.html">Conda</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="anaconda.html#creating-your-own-conda-environments">Creating your own conda environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conda.html#your-own-conda-environments">Your own conda environments</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="jupyter.html">Jupyter</a><ul>
@@ -211,10 +222,18 @@
 <li class="toctree-l2"><a class="reference internal" href="jupyter.html#jupyterlab">JupyterLab</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="git.html">Git</a></li>
-<li class="toctree-l1"><a class="reference internal" href="slurm.html">SLURM</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="slurm.html#using-slurm">Using Slurm</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="slurm.html#submitting-a-job">Submitting a job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git.html">Git</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="git.html#what-is-git">What is Git?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#your-user-parameters">Your user parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="slurm.html">Slurm</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="slurm.html#what-is-slurm">What is Slurm?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="slurm.html#computing-nodes">Computing nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="slurm.html#partitions">Partitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="slurm.html#the-job-queue">The job queue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="slurm.html#jobs">Jobs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="slurm.html#submitting-a-job">Submitting a job</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="slurm.html#script-submission-instructions-slu">Script submission instructions (*.slu)</a></li>
 </ul>
 </li>
@@ -313,6 +332,15 @@
 <li class="toctree-l3"><a class="reference internal" href="../administrators/environment_modules.html#useful-commands">Useful commands:</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../administrators/environment_modules.html#instalacion-y-configuracion">Instalación y Configuración</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../administrators/environment_modules.html#modulos-de-cada-usuario">Módulos de cada usuario</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../administrators/environment_modules.html#id1">Useful commands:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../administrators/environment_modules.html#mas-informacion">Más información</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../administrators/environment_modules.html#id2">Sources: <br /></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../administrators/conda.html">Conda</a><ul>
@@ -334,7 +362,27 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../administrators/slurm.html">SLURM</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../administrators/slurm.html#installation">Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../administrators/slurm.html#administration">Administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../administrators/slurm.html#administration">Administration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../administrators/slurm.html#daemons">Daemons</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../administrators/slurm.html#show-the-partitions">Show the partitions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../administrators/slurm.html#updating-the-configuration-and-restarting-the-daemons">Updating the configuration and restarting the daemons</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../administrators/slurm.html#how-to-add-a-new-node">How to add a new node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../administrators/slurm.html#how-to-create-a-new-partition">How to create a new partition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../administrators/slurm.html#limiting-users-access-to-partitions">Limiting users access to partitions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../administrators/ssh.html">SSH</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../administrators/ssh.html#importing-opengl">Importing OpenGL</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../administrators/ssh.html#ubuntu">Ubuntu</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../administrators/ssh.html#option-1">Option 1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../administrators/ssh.html#option-2">Option 2</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../administrators/ssh.html#login-via-ssh-without-password">Login via ssh without password</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../administrators/network.html">Networks</a><ul>
@@ -436,54 +484,38 @@
 </style>
 <div class="section" id="login">
 <h1>Login<a class="headerlink" href="#login" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="o">-</span><span class="n">X</span> <span class="o">-</span><span class="n">Y</span> <span class="n">user</span><span class="o">@</span><span class="mf">192.168</span><span class="o">.</span><span class="mf">0.100</span>
+<div class="section" id="login-from-the-uibcdf-local-network">
+<h2>Login from the UIBCDF local network<a class="headerlink" href="#login-from-the-uibcdf-local-network" title="Permalink to this headline">¶</a></h2>
+<p>If you are using a machine in the UIBCDF lab, the conexion will be done via SSH enabling trusted
+X11 forwarding (-Y) if necessary:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="n">user</span><span class="o">@</span><span class="mf">192.168</span><span class="o">.</span><span class="mf">0.100</span>
 </pre></div>
 </div>
-<div class="section" id="importing-opengl">
-<h2>Importing OpenGL<a class="headerlink" href="#importing-opengl" title="Permalink to this headline">¶</a></h2>
-<p>By default the X server does not import OpenGL.
-The solution is allowing indirect GLX in the client. To check if the problem was solved one of the following commands executed in Ixtlilton should print no errors:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">glxinfo</span>
-<span class="n">glxgears</span>
+<p>or</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="o">-</span><span class="n">Y</span> <span class="n">user</span><span class="o">@</span><span class="mf">192.168</span><span class="o">.</span><span class="mf">0.100</span> <span class="c1"># Exporting X11 is discourage, only special needs</span>
 </pre></div>
 </div>
-<div class="section" id="ubuntu">
-<h3>Ubuntu<a class="headerlink" href="#ubuntu" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="option-1">
-<h4>Option 1<a class="headerlink" href="#option-1" title="Permalink to this headline">¶</a></h4>
-<p>Edit the file /usr/share/lightdm/lightdm.conf.d/50-xserver-command.conf</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">SeatDefaults</span><span class="p">]</span>
-<span class="c1"># Dump core</span>
-<span class="n">xserver</span><span class="o">-</span><span class="n">command</span><span class="o">=</span><span class="n">X</span> <span class="o">-</span><span class="n">core</span> <span class="o">+</span><span class="n">iglx</span>
+<p>If your machine is regularly working with Ixtlilton, there are two actions you can take to make
+your life easier. Add Ixtlilton to the list of known hosts names in the file (/etc/hosts) with the
+following line:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">192</span>.168.0.100 ixtlilton
 </pre></div>
 </div>
-<p>After which you either reboot or Ctrl-Alt-F1, login, and ‘sudo service lightdm restart’.</p>
-</div>
-<div class="section" id="option-2">
-<h4>Option 2<a class="headerlink" href="#option-2" title="Permalink to this headline">¶</a></h4>
-<p>Edit the file /etc/X11/xorg.conf</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Section</span> <span class="s2">&quot;ServerFlags&quot;</span>  
-    <span class="n">Option</span> <span class="s2">&quot;AllowIndirectGLX&quot;</span> <span class="s2">&quot;on&quot;</span>  
-    <span class="n">Option</span> <span class="s2">&quot;IndirectGLX&quot;</span> <span class="s2">&quot;on&quot;</span>  
-<span class="n">EndSection</span>
+<p>This way your user can connect just with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="n">ixtlilton</span>
 </pre></div>
 </div>
-<p>After which reboot the client.</p>
+<p>If your machine is a workstation of the lab, you can ask to the administrators to enable the SSH
+connection without password.</p>
 </div>
-</div>
-</div>
-<div class="section" id="login-via-ssh-without-password">
-<h2>Login via ssh without password<a class="headerlink" href="#login-via-ssh-without-password" title="Permalink to this headline">¶</a></h2>
-<p>At the workstation with your user:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span><span class="o">-</span><span class="n">keygen</span> <span class="o">-</span><span class="n">t</span> <span class="n">rsa</span>
-<span class="n">ssh</span><span class="o">-</span><span class="n">copy</span><span class="o">-</span><span class="nb">id</span> <span class="o">-</span><span class="n">i</span> <span class="o">~/.</span><span class="n">ssh</span><span class="o">/</span><span class="n">id_rsa</span><span class="o">.</span><span class="n">pub</span> <span class="n">ixtlilton</span> 
-<span class="c1"># With empty passphrase</span>
-</pre></div>
-</div>
-<p>At Ixtlilton with your user:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span><span class="o">-</span><span class="n">copy</span><span class="o">-</span><span class="nb">id</span> <span class="o">-</span><span class="n">i</span> <span class="o">~/.</span><span class="n">ssh</span><span class="o">/</span><span class="n">id_rsa</span><span class="o">.</span><span class="n">pub</span> <span class="n">nauta</span>
-</pre></div>
-</div>
+<div class="section" id="login-from-outside-the-uibcdf-local-network">
+<h2>Login from outside the UIBCDF local network<a class="headerlink" href="#login-from-outside-the-uibcdf-local-network" title="Permalink to this headline">¶</a></h2>
+<p>To enter Ixtlilton remotely from outside the lab network you will receive instructions from the
+administrators regarding the following two things:</p>
+<ul class="simple">
+<li><p>The way to connect remotely via ssh</p></li>
+<li><p>The activation of your multi-factor authentication</p></li>
+</ul>
 </div>
 </div>
 
@@ -498,7 +530,7 @@ The solution is allowing indirect GLX in the client. To check if the problem was
         <a href="user_file_system.html" class="btn btn-neutral float-right" title="File system" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../about/file_system.html" class="btn btn-neutral float-left" title="File system" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="quick_start.html" class="btn btn-neutral float-left" title="Introduction and quick start" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

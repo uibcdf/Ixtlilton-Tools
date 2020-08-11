@@ -20,7 +20,6 @@ Ixtlilton
    :caption: Documentation for users
    :maxdepth: 1
 
-   contents/users/quick_start.md
    contents/users/login.md
    contents/users/user_file_system.md
    contents/users/environment_variables.md
@@ -43,6 +42,7 @@ Ixtlilton
    contents/administrators/environment_modules.md
    contents/administrators/conda.md
    contents/administrators/slurm.md
+   contents/administrators/ssh.md
    contents/administrators/network.md
 
 .. toctree::

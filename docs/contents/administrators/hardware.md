@@ -18,3 +18,11 @@ https://www.asus.com/us/Motherboards/Z10PED16_WS/HelpDesk_CPU/
 
 https://github.com/bravegag/z9pe-d8_ws-optimization-guide
 
+<!-- processor: lscpu -->
+<!-- ram: free -m -->
+<!-- storage: lsblk -->
+<!-- graphics: lspci | grep VGA      o      sudo lshw -C video -->
+<!-- network: lspci | egrep -i --color 'network|ethernet'   o   lshw -class network -->
+<!-- motherboard: sudo dmidecode | grep -A4 'Base Board' -->
+<!-- os and kernel: less /etc/*elease -->
+

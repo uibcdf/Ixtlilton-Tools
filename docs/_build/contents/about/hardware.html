@@ -85,45 +85,9 @@
               <p class="caption"><span class="caption-text">About</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Hardware</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#ixtlilton">Ixtlilton</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#section-cpus-computation">Section CPUs computation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#section-gpus-computation">Section GPUs computation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#section-storage">Section Storage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#todo-list">TODO list:</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#notas">Notas:</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#definicion-de-colas">Definición de colas:</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#dudas">Dudas:</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#aqui-mas">Aqui mas:</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#cluster-admin">Cluster Admin</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#descripcion-de-los-componentes">Descripción de los Componentes:</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#redes">Redes</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#switches">Switches</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#router">Router</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#wifi">Wifi</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#nas">NAS</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#nodo-master">Nodo Master</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#nodos-cpus">Nodos CPUs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#nodos-gpus">Nodos GPUs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#nodos-storage">Nodos Storage</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#workstations">Workstations</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#impresora">Impresora</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#host-file">HOST FILE</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#software-administration">Software administration:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#os">OS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#mpi-options">MPI Options</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#provisioning-software">Provisioning Software</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#configuration-management">Configuration Management</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#resource-and-job-scheduler">Resource and Job Scheduler</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#ssh">SSH</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#volumen-y-home-en-ixtlilton">Volumen y home en ixtlilton</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ixtlilton-master">Ixtlilton (master)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#computing-nodes">Computing nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#storage">Storage</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="software.html">Software</a></li>
@@ -162,43 +126,65 @@
 <p class="caption"><span class="caption-text">Documentation for users</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../users/login.html">Login</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../users/login.html#importing-opengl">Importing OpenGL</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../users/login.html#ubuntu">Ubuntu</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../users/login.html#option-1">Option 1</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../users/login.html#option-2">Option 2</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../users/login.html#login-via-ssh-without-password">Login via ssh without password</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../users/login.html#login-from-the-uibcdf-local-network">Login from the UIBCDF local network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../users/login.html#login-from-outside-the-uibcdf-local-network">Login from outside the UIBCDF local network</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../users/user_file_system.html">File system</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../users/user_file_system.html#the-global-file-system">The global file system</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../users/user_file_system.html#the-user-file-system">The user file system</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../users/user_file_system.html#home">Home</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../users/user_file_system.html#your-bin-directory">Your bin directory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../users/user_file_system.html#your-opt-directory">Your opt directory</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../users/user_file_system.html#work">Work</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../users/user_file_system.html#scratch">Scratch</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../users/environment_variables.html">Environment variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../users/environment_variables.html">Environment variables and shell aliases</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../users/environment_variables.html#environment-variables">Environment variables</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../users/environment_variables.html#user-file-system-variables">User file system variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../users/environment_variables.html#path-variable">Path variable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../users/environment_variables.html#library-variables">Library variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../users/environment_variables.html#environment-modulefiles">Environment modulefiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../users/environment_variables.html#shell-aliases">Shell aliases</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../users/environment_modules.html">Environment modules</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../users/environment_modules.html#instalacion-y-configuracion">Instalación y Configuración</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../users/environment_modules.html#modulos-comunes">Módulos comunes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../users/environment_modules.html#modulos-de-cada-usuario">Módulos de cada usuario</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../users/environment_modules.html#useful-commands">Useful commands:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../users/environment_modules.html#what-is-an-environment-module-system">What is an environment module system?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../users/environment_modules.html#lmod">Lmod</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../users/environment_modules.html#listing-the-available-modules">Listing the available modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../users/environment_modules.html#looking-for-a-module">Looking for a module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../users/environment_modules.html#loading-modules">Loading modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../users/environment_modules.html#showing-loaded-modules">Showing loaded modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../users/environment_modules.html#unloading-modules">Unloading modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../users/environment_modules.html#default-modules">Default modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../users/environment_modules.html#printing-out-information-about-modules">Printing out information about modules</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../users/environment_modules.html#mas-informacion">Más información</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../users/environment_modules.html#sources-br">Sources: <br /></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../users/environment_modules.html#your-own-environment-modules">Your own environment modules</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../users/conda.html">Conda</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../users/conda.html#what-s-conda">What’s conda?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../users/conda.html#the-channels-and-the-condarc-file">The channels and the .condarc file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../users/conda.html#the-environments">The environments</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../users/conda.html#activation">Activation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../users/conda.html#deactivation">Deactivation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../users/conda.html#list-of-installed-packages">List of installed packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../users/conda.html#installing-packages">Installing packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../users/conda.html#removing-packages">Removing packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../users/conda.html#updating-packages">Updating packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../users/conda.html#the-uibcdf-environments">The UIBCDF environments</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../users/conda.html#uibcdf-lab">UIBCDF_lab</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../users/anaconda.html">Conda</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../users/anaconda.html#creating-your-own-conda-environments">Creating your own conda environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../users/conda.html#your-own-conda-environments">Your own conda environments</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../users/jupyter.html">Jupyter</a><ul>
@@ -211,10 +197,18 @@
 <li class="toctree-l2"><a class="reference internal" href="../users/jupyter.html#jupyterlab">JupyterLab</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../users/git.html">Git</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../users/slurm.html">SLURM</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../users/slurm.html#using-slurm">Using Slurm</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../users/slurm.html#submitting-a-job">Submitting a job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../users/git.html">Git</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../users/git.html#what-is-git">What is Git?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../users/git.html#your-user-parameters">Your user parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../users/slurm.html">Slurm</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../users/slurm.html#what-is-slurm">What is Slurm?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../users/slurm.html#computing-nodes">Computing nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../users/slurm.html#partitions">Partitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../users/slurm.html#the-job-queue">The job queue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../users/slurm.html#jobs">Jobs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../users/slurm.html#submitting-a-job">Submitting a job</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../users/slurm.html#script-submission-instructions-slu">Script submission instructions (*.slu)</a></li>
 </ul>
 </li>
@@ -313,6 +307,15 @@
 <li class="toctree-l3"><a class="reference internal" href="../administrators/environment_modules.html#useful-commands">Useful commands:</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../administrators/environment_modules.html#instalacion-y-configuracion">Instalación y Configuración</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../administrators/environment_modules.html#modulos-de-cada-usuario">Módulos de cada usuario</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../administrators/environment_modules.html#id1">Useful commands:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../administrators/environment_modules.html#mas-informacion">Más información</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../administrators/environment_modules.html#id2">Sources: <br /></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../administrators/conda.html">Conda</a><ul>
@@ -332,9 +335,29 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../administrators/slurm.html">SLURM</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../administrators/slurm.html">Slurm</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../administrators/slurm.html#installation">Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../administrators/slurm.html#administration">Administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../administrators/slurm.html#administration">Administration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../administrators/slurm.html#daemons">Daemons</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../administrators/slurm.html#show-the-partitions">Show the partitions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../administrators/slurm.html#updating-the-configuration-and-restarting-the-daemons">Updating the configuration and restarting the daemons</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../administrators/slurm.html#how-to-add-a-new-node">How to add a new node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../administrators/slurm.html#how-to-create-a-new-partition">How to create a new partition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../administrators/slurm.html#limiting-users-access-to-partitions">Limiting users access to partitions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../administrators/ssh.html">SSH</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../administrators/ssh.html#importing-opengl">Importing OpenGL</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../administrators/ssh.html#ubuntu">Ubuntu</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../administrators/ssh.html#option-1">Option 1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../administrators/ssh.html#option-2">Option 2</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../administrators/ssh.html#login-via-ssh-without-password">Login via ssh without password</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../administrators/network.html">Networks</a><ul>
@@ -436,8 +459,8 @@
 </style>
 <div class="section" id="hardware">
 <h1>Hardware<a class="headerlink" href="#hardware" title="Permalink to this headline">¶</a></h1>
-<!-- processor: lscpu --><!-- ram: free -m --><!-- storage: lsblk --><!-- graphics: lspci | grep VGA      o      sudo lshw -C video --><!-- network: lspci | egrep -i --color 'network|ethernet'   o   lshw -class network --><!-- motherboard: sudo dmidecode | grep -A4 'Base Board' --><!-- os and kernel: less /etc/*elease --><div class="section" id="ixtlilton">
-<h2>Ixtlilton<a class="headerlink" href="#ixtlilton" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="ixtlilton-master">
+<h2>Ixtlilton (master)<a class="headerlink" href="#ixtlilton-master" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils">
 <thead>
 <tr>
@@ -460,7 +483,7 @@
 </tr>
 <tr>
 <td><strong>graphics</strong></td>
-<td>Chipset Integrated ASPEED Graphics Family <br/> Nvidia GeForce GT 710</td>
+<td>Chipset Integrated ASPEED Graphics Family <br/> Nvidia GeForce GT 710  <br/> 2 x Nvidia GeForce GTX 1080</td>
 </tr>
 <tr>
 <td><strong>network</strong></td>
@@ -479,19 +502,14 @@
 <td>3.10.0-327.el7.x86_64</td>
 </tr>
 </tbody>
-</table><blockquote>
-<div><p><em><strong>Note</strong></em>: This node should be included in the “CPUs computation” section. Once the cluster has some storage server nodes,
-the directory /work with the raid 5 should not be here but in the storage section.
-This node should also execute tasks from the queues “test” and “short”.</p>
-</div></blockquote>
-</div>
-<div class="section" id="section-cpus-computation">
-<h2>Section CPUs computation<a class="headerlink" href="#section-cpus-computation" title="Permalink to this headline">¶</a></h2>
+</table></div>
+<div class="section" id="computing-nodes">
+<h2>Computing nodes<a class="headerlink" href="#computing-nodes" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils">
 <thead>
 <tr>
 <th></th>
-<th>2 Nodes</th>
+<th>Any Node</th>
 </tr>
 </thead>
 <tbody>
@@ -528,226 +546,62 @@ This node should also execute tasks from the queues “test” and “short”.<
 <td>3.10.0-514.16.1.el7.x86_64</td>
 </tr>
 </tbody>
-</table></div>
-<div class="section" id="section-gpus-computation">
-<h2>Section GPUs computation<a class="headerlink" href="#section-gpus-computation" title="Permalink to this headline">¶</a></h2>
-<table border="1" class="docutils">
+</table><table border="1" class="docutils">
 <thead>
 <tr>
 <th></th>
-<th>2 Nodes</th>
+<th>node01</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>processor</strong></td>
-<td>2 Sockets: Intel(R) Xeon(R) CPU E5-2630 v4 @ 2.20GHz <br/> 10 Cores per Socket * 2 Threads per core = 40 threads</td>
-</tr>
-<tr>
-<td><strong>ram</strong></td>
-<td>64 Gb</td>
-</tr>
-<tr>
-<td><strong>storage</strong></td>
-<td>250 Gb SSD [ / -home included-] <br/> 2x3Tb raid5 (5.5Tb) [ /local_storage ]</td>
-</tr>
-<tr>
 <td><strong>graphics</strong></td>
-<td>Chipset Integrated ASPEED Graphics Family <br/> (2x) Nvidia GeForce GTX 1080</td>
-</tr>
-<tr>
-<td><strong>network</strong></td>
-<td>(2x) Intel Corporation I210 Gigabit Network Connection</td>
-</tr>
-<tr>
-<td><strong>motherboard</strong></td>
-<td>ASUSTeK COMPUTER INC., Z10PE-D16 WS</td>
-</tr>
-<tr>
-<td><strong>os</strong></td>
-<td>centos 7.3.1611</td>
-</tr>
-<tr>
-<td><strong>kernel</strong></td>
-<td>3.10.0-514.16.1.el7.x86_64</td>
+<td>3 x  Nvidia GeForce GTX 1080 Ti</td>
 </tr>
 </tbody>
-</table><blockquote>
-<div><p><em><strong>Note</strong></em>: This nodes should have 4 GPUs. They should also have a fast communication among them.</p>
-</div></blockquote>
-</div>
-<div class="section" id="section-storage">
-<h2>Section Storage<a class="headerlink" href="#section-storage" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="todo-list">
-<h2>TODO list:<a class="headerlink" href="#todo-list" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>[x] task 1</p></li>
-<li><p>[x] task 2</p></li>
-<li><p>[ ] task 3</p></li>
-<li><p>[ ] task 4</p></li>
-</ul>
-<div class="section" id="notas">
-<h3>Notas:<a class="headerlink" href="#notas" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Todos los raid están montados via software (mdadm).</p></li>
-</ul>
-</div>
-<div class="section" id="definicion-de-colas">
-<h3>Definición de colas:<a class="headerlink" href="#definicion-de-colas" title="Permalink to this headline">¶</a></h3>
-<p>Creo que el nodo master debería de estar tambien haciendo trabajos para el gestor pero sólo para los “tests” y las tareas “cortas”.</p>
-</div>
-<div class="section" id="dudas">
-<h3>Dudas:<a class="headerlink" href="#dudas" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Pusimos un kernel con hyperthreading. Hemos hecho bien?</p></li>
-</ul>
-<div class="section" id="aqui-mas">
-<h4>Aqui mas:<a class="headerlink" href="#aqui-mas" title="Permalink to this headline">¶</a></h4>
-</div>
-</div>
-</div>
-<div class="section" id="cluster-admin">
-<h2>Cluster Admin<a class="headerlink" href="#cluster-admin" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="descripcion-de-los-componentes">
-<h2>Descripción de los Componentes:<a class="headerlink" href="#descripcion-de-los-componentes" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="redes">
-<h3>Redes<a class="headerlink" href="#redes" title="Permalink to this headline">¶</a></h3>
-<p>IP Rangos:
-193.168.0.1 - 19                       (DHCP WIFI)
-193.168.0.20 - 49                     (Workstations)
-193.168.0.50 - 99                     (Perifericos y equipo de laboratorio)
-193.168.0.100 - 101                (Ixtlilton)
-193.168.0.102 - 253                (Nodos CPU y GPU)
-193.168.0.254                          (Router)</p>
-<div class="section" id="switches">
-<h4>Switches<a class="headerlink" href="#switches" title="Permalink to this headline">¶</a></h4>
-<p>2 Switches (uno por rack)</p>
-</div>
-<div class="section" id="router">
-<h4>Router<a class="headerlink" href="#router" title="Permalink to this headline">¶</a></h4>
-<p>193.168.0.254
-uibcdf
-adm1n4147</p>
-</div>
-<div class="section" id="wifi">
-<h4>Wifi<a class="headerlink" href="#wifi" title="Permalink to this headline">¶</a></h4>
-<p>Hay dos puntos de anclaje: UIBCDF y UIBCDF5G</p>
-<p>193.168.0.51
-admin
-adm1n4147</p>
-</div>
-<div class="section" id="nas">
-<h4>NAS<a class="headerlink" href="#nas" title="Permalink to this headline">¶</a></h4>
-<p>En la próxima compra esto quedará para uso de backups de usuarios (nauta y spika)
-197.168.0.50
-uibcdf
-adm1n4147</p>
-<p>para ssh:
-ssh sshd&#64;192.168.0.203
-adm1n4147</p>
-</div>
-</div>
-<div class="section" id="nodo-master">
-<h3>Nodo Master<a class="headerlink" href="#nodo-master" title="Permalink to this headline">¶</a></h3>
-<p>193.168.0.100           Ixtlilton
-193.168.0.101           Ixtlilton-2</p>
-<p>Operating System: CentOS Linux 7 (Core)
-CPE OS Name: cpe:/o:centos:centos:7
-Kernel: Linux 3.10.0-327.el7.x86_64</p>
-</div>
-<div class="section" id="nodos-cpus">
-<h3>Nodos CPUs<a class="headerlink" href="#nodos-cpus" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="nodos-gpus">
-<h3>Nodos GPUs<a class="headerlink" href="#nodos-gpus" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="nodos-storage">
-<h3>Nodos Storage<a class="headerlink" href="#nodos-storage" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="workstations">
-<h3>Workstations<a class="headerlink" href="#workstations" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="impresora">
-<h3>Impresora<a class="headerlink" href="#impresora" title="Permalink to this headline">¶</a></h3>
-<p>http://193.168.0.52/general/status.html</p>
-</div>
-</div>
-<hr class="docutils" />
-<div class="section" id="host-file">
-<h2>HOST FILE<a class="headerlink" href="#host-file" title="Permalink to this headline">¶</a></h2>
-<p>193.168.0.254 router
-193.168.0.50  nas
-193.168.0.51  wifi
-193.168.0.52  printer</p>
-<p>193.168.0.20 spika
-193.168.0.21 spika-2
-193.168.0.22 nauta
-193.168.0.23 nauta-2</p>
-<p>193.168.0.100 ixtlilton
-193.168.0.101 ixtlilton-2</p>
-<p>193.168.0.102 cpu01
-193.168.0.103 cpu01-2
-193.168.0.104 cpu02
-193.168.0.105 cpu02-2</p>
-<p>193.168.0.140 gpu01
-193.168.0.141 gpu01-2
-193.168.0.142 gpu02
-193.168.0.143 gpu02-2</p>
-</div>
-<div class="section" id="software-administration">
-<h2>Software administration:<a class="headerlink" href="#software-administration" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="os">
-<h2>OS<a class="headerlink" href="#os" title="Permalink to this headline">¶</a></h2>
-<p><em><strong>Dilema:</strong></em>
-OS disto:  CentOS, Ubuntu, Debian, TOSS, etc?</p>
-<p><em><strong>Respuesta:</strong></em>
-Me gustaría probar ubuntu por que estoy mas habituado y por que esta bien actualizado y soportado por una comunidad grande.</p>
-<p>Voy a usar CentOS siendo conservador porque está más extendido en el uso de entornos HPC. Es robusto y compatible, no está actualizado y por eso mi pega… usa kernel 3 y no 4. Pero la verions 7 esta mante4nida hasta el año 25 y la verdad es que ubuntu server LTS esta soportado oficilamente solo 5 años.</p>
-</div>
-<div class="section" id="mpi-options">
-<h2>MPI Options<a class="headerlink" href="#mpi-options" title="Permalink to this headline">¶</a></h2>
-<p><em><strong>Dilema:</strong></em>
-MPICH2, MVAPICH2, Open MPI, Intel MPI, ?</p>
-<p><em><strong>Respuesta:</strong></em>
-Open MPI?</p>
-</div>
-<div class="section" id="provisioning-software">
-<h2>Provisioning Software<a class="headerlink" href="#provisioning-software" title="Permalink to this headline">¶</a></h2>
-<p><em><strong>Dilema:</strong></em></p>
-<p>Cobbler, Warewulf, xCAT, Openstack, Platform HPC</p>
-<p><em><strong>Respuesta:</strong></em></p>
-</div>
-<div class="section" id="configuration-management">
-<h2>Configuration Management<a class="headerlink" href="#configuration-management" title="Permalink to this headline">¶</a></h2>
-<p><em><strong>Dilema:</strong></em>
-Warewulf, Puppet, Chef, Ansible, ?</p>
-<p><em><strong>Respuesta:</strong></em></p>
-</div>
-<div class="section" id="resource-and-job-scheduler">
-<h2>Resource and Job Scheduler<a class="headerlink" href="#resource-and-job-scheduler" title="Permalink to this headline">¶</a></h2>
-<p><em><strong>Dilema:</strong></em>
-Torque, Lava, Maui, Moab, SLURM, Grid Engine, Son of Grid Engine, Univa, Platform LSF, etc… others?</p>
-<p><em><strong>Respuesta:</strong></em></p>
-</div>
-<div class="section" id="ssh">
-<h2>SSH<a class="headerlink" href="#ssh" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>Cada usuario tiene que ser miembro del grupo sshusers (he licitado en /etc/ssh/sshd_config solo por grupo podria hacerlo por usuarios).</p></li>
-<li><p>No he desviado el puerto todavía</p></li>
-<li></li>
-</ul>
-</div>
-<div class="section" id="volumen-y-home-en-ixtlilton">
-<h2>Volumen y home en ixtlilton<a class="headerlink" href="#volumen-y-home-en-ixtlilton" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>Creo que sería mejor que hiciera un solo volumen con lvm: https://askubuntu.com/questions/7002/how-to-set-up-multiple-hard-drives-as-one-volume</p></li>
-</ul>
-<p>He exportado las cosas…
-He creado en Ixtlilton un volumen llamado scratch que será para el futuro incorporar un disco de ssd y poner algo ahí que tenga una lectura-escritura más rápida que el work. scratch tendrá que tener fecha de caducidad o cuota -probablemente baste con cuota… esto lo tengo que pensar-</p>
-<p>Tengo que arreglar el tema de los permisos… buscar nfs use mapping.</p>
+</table><table border="1" class="docutils">
+<thead>
+<tr>
+<th></th>
+<th>node02</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>graphics</strong></td>
+<td>2 x  Nvidia GeForce GTX 1080 <br/> 1 x  Nvidia GeForce GTX 1080 Ti</td>
+</tr>
+</tbody>
+</table><table border="1" class="docutils">
+<thead>
+<tr>
+<th></th>
+<th>node03</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>graphics</strong></td>
+<td>3 x  Nvidia GeForce GTX 1080 Ti</td>
+</tr>
+</tbody>
+</table><table border="1" class="docutils">
+<thead>
+<tr>
+<th></th>
+<th>node04</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>graphics</strong></td>
+<td>3 x  Nvidia GeForce GTX 1080 Ti</td>
+</tr>
+</tbody>
+</table></div>
+<div class="section" id="storage">
+<h2>Storage<a class="headerlink" href="#storage" title="Permalink to this headline">¶</a></h2>
+<p>** TO BE WRITTEN**</p>
 </div>
 </div>
 

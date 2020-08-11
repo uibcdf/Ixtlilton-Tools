@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Environment variables &mdash; Ixtlilton 0.1 documentation</title>
+  <title>Environment variables and shell aliases &mdash; Ixtlilton 0.1 documentation</title>
   
 
   
@@ -85,45 +85,9 @@
               <p class="caption"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../about/hardware.html">Hardware</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../about/hardware.html#ixtlilton">Ixtlilton</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../about/hardware.html#section-cpus-computation">Section CPUs computation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../about/hardware.html#section-gpus-computation">Section GPUs computation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../about/hardware.html#section-storage">Section Storage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../about/hardware.html#todo-list">TODO list:</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../about/hardware.html#notas">Notas:</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../about/hardware.html#definicion-de-colas">Definición de colas:</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../about/hardware.html#dudas">Dudas:</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../about/hardware.html#aqui-mas">Aqui mas:</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../about/hardware.html#cluster-admin">Cluster Admin</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../about/hardware.html#descripcion-de-los-componentes">Descripción de los Componentes:</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../about/hardware.html#redes">Redes</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../about/hardware.html#switches">Switches</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../about/hardware.html#router">Router</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../about/hardware.html#wifi">Wifi</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../about/hardware.html#nas">NAS</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../about/hardware.html#nodo-master">Nodo Master</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../about/hardware.html#nodos-cpus">Nodos CPUs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../about/hardware.html#nodos-gpus">Nodos GPUs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../about/hardware.html#nodos-storage">Nodos Storage</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../about/hardware.html#workstations">Workstations</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../about/hardware.html#impresora">Impresora</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../about/hardware.html#host-file">HOST FILE</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../about/hardware.html#software-administration">Software administration:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../about/hardware.html#os">OS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../about/hardware.html#mpi-options">MPI Options</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../about/hardware.html#provisioning-software">Provisioning Software</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../about/hardware.html#configuration-management">Configuration Management</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../about/hardware.html#resource-and-job-scheduler">Resource and Job Scheduler</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../about/hardware.html#ssh">SSH</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../about/hardware.html#volumen-y-home-en-ixtlilton">Volumen y home en ixtlilton</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about/hardware.html#ixtlilton-master">Ixtlilton (master)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about/hardware.html#computing-nodes">Computing nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about/hardware.html#storage">Storage</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../about/software.html">Software</a></li>
@@ -161,30 +125,34 @@
 </ul>
 <p class="caption"><span class="caption-text">Documentation for users</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="quick_start.html">Introduction and quick start</a></li>
 <li class="toctree-l1"><a class="reference internal" href="login.html">Login</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="login.html#importing-opengl">Importing OpenGL</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="login.html#ubuntu">Ubuntu</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="login.html#option-1">Option 1</a></li>
-<li class="toctree-l4"><a class="reference internal" href="login.html#option-2">Option 2</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="login.html#login-via-ssh-without-password">Login via ssh without password</a></li>
+<li class="toctree-l2"><a class="reference internal" href="login.html#login-from-the-uibcdf-local-network">Login from the UIBCDF local network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="login.html#login-from-outside-the-uibcdf-local-network">Login from outside the UIBCDF local network</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="user_file_system.html">File system</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="user_file_system.html#the-global-file-system">The global file system</a></li>
 <li class="toctree-l2"><a class="reference internal" href="user_file_system.html#the-user-file-system">The user file system</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="user_file_system.html#home">Home</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user_file_system.html#your-bin-directory">Your bin directory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user_file_system.html#your-opt-directory">Your opt directory</a></li>
 <li class="toctree-l3"><a class="reference internal" href="user_file_system.html#work">Work</a></li>
 <li class="toctree-l3"><a class="reference internal" href="user_file_system.html#scratch">Scratch</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Environment variables</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Environment variables and shell aliases</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#environment-variables">Environment variables</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#user-file-system-variables">User file system variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#path-variable">Path variable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#library-variables">Library variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#environment-modulefiles">Environment modulefiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#shell-aliases">Shell aliases</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="environment_modules.html">Environment modules</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="environment_modules.html#what-is-an-environment-module-system">What is an environment module system?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="environment_modules.html#lmod">Lmod</a><ul>
@@ -235,13 +203,11 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="slurm.html">Slurm</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="slurm.html#what-is-slurm">What is Slurm?</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="slurm.html#the-computing-nodes">The computing nodes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="slurm.html#partitions">Partitions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="slurm.html#the-job-queue">The job queue</a></li>
-<li class="toctree-l3"><a class="reference internal" href="slurm.html#jobs">Jobs</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="slurm.html#what-is-slurm">What is Slurm?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="slurm.html#computing-nodes">Computing nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="slurm.html#partitions">Partitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="slurm.html#the-job-queue">The job queue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="slurm.html#jobs">Jobs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="slurm.html#submitting-a-job">Submitting a job</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="slurm.html#script-submission-instructions-slu">Script submission instructions (*.slu)</a></li>
 </ul>
@@ -369,7 +335,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../administrators/slurm.html">SLURM</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../administrators/slurm.html">Slurm</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../administrators/slurm.html#installation">Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../administrators/slurm.html#administration">Administration</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../administrators/slurm.html#daemons">Daemons</a></li>
@@ -380,6 +346,18 @@
 <li class="toctree-l3"><a class="reference internal" href="../administrators/slurm.html#limiting-users-access-to-partitions">Limiting users access to partitions</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../administrators/ssh.html">SSH</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../administrators/ssh.html#importing-opengl">Importing OpenGL</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../administrators/ssh.html#ubuntu">Ubuntu</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../administrators/ssh.html#option-1">Option 1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../administrators/ssh.html#option-2">Option 2</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../administrators/ssh.html#login-via-ssh-without-password">Login via ssh without password</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../administrators/network.html">Networks</a><ul>
@@ -436,7 +414,7 @@
     
       <li><a href="../../index.html">Docs</a> &raquo;</li>
         
-      <li>Environment variables</li>
+      <li>Environment variables and shell aliases</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -479,11 +457,90 @@
     text-align: unset;
 }
 </style>
+<div class="section" id="environment-variables-and-shell-aliases">
+<h1>Environment variables and shell aliases<a class="headerlink" href="#environment-variables-and-shell-aliases" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="environment-variables">
-<h1>Environment variables<a class="headerlink" href="#environment-variables" title="Permalink to this headline">¶</a></h1>
-<p><strong>To be written</strong></p>
-<p>Description of the bin and library paths… as well as modulefile paths of every user.</p>
-<p>The same with the alias: cdw, cds, cdh.</p>
+<h2>Environment variables<a class="headerlink" href="#environment-variables" title="Permalink to this headline">¶</a></h2>
+<p>Some environment variables were modified at the moment of creating your user to modify its
+behaviour. Some other variables described here are unix default environment variables. Knowing them
+makes the interaction with your Ixtlilton user easier.</p>
+<p>As you probably already know, you can print out in the terminal all your user environment variables
+with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span>
+</pre></div>
+</div>
+<div class="section" id="user-file-system-variables">
+<h3>User file system variables<a class="headerlink" href="#user-file-system-variables" title="Permalink to this headline">¶</a></h3>
+<p>There are some variables you should know to be used as shortcuts of directories. This can make your
+bash scripting lighter. Execute in your terminal the following commands to see these variables:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="nv">$USER</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="nv">$HOME</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="nv">$WORK</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="nv">$SCRATCH</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="nv">$DATA</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="nv">$HOTDATA</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="path-variable">
+<h3>Path variable<a class="headerlink" href="#path-variable" title="Permalink to this headline">¶</a></h3>
+<p>Your Path variable includes now your ‘$HOME/user/bin’ directory. Try in your terminal:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="nv">$PATH</span>
+</pre></div>
+</div>
+<p>Binnaries and executable files placed in this directory will be invokable by you in your terminal
+at any place and moment.</p>
+</div>
+<div class="section" id="library-variables">
+<h3>Library variables<a class="headerlink" href="#library-variables" title="Permalink to this headline">¶</a></h3>
+<p>If you need to include libraries locally in your user to be called by compilers, e.g., make use of
+your directories <code class="docutils literal notranslate"><span class="pre">$HOME/user/lib</span></code>, <code class="docutils literal notranslate"><span class="pre">$HOME/user/lib32</span></code>, and <code class="docutils literal notranslate"><span class="pre">$HOME/user/lib64</span></code>. They are already in
+your environment variables usually referred with this purpose:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="nv">$LIBRARY_PATH</span>
+</pre></div>
+</div>
+<p>and</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="nv">$LD_LIBRARY_PATH</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="environment-modulefiles">
+<h3>Environment modulefiles<a class="headerlink" href="#environment-modulefiles" title="Permalink to this headline">¶</a></h3>
+<p>The environment modules will manage the work with applications software locally installed in your
+user. As you saw in <a class="reference internal" href="user_file_system.html"><span class="doc">the despcription of your user file system</span></a>, there is
+place to where Lmod will look for your modulefiles: <code class="docutils literal notranslate"><span class="pre">$HOME/opt/modulefiles</span></code>. The way to communicate
+this to Lmod is including this path in your MODULEPATH environment variable:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="nv">$MODULEPATH</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="shell-aliases">
+<h2>Shell aliases<a class="headerlink" href="#shell-aliases" title="Permalink to this headline">¶</a></h2>
+<p>There are some aliases already defined for your user:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># go to your home directory</span>
+cdh
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># go to your scratch directory</span>
+cds
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># go to your work directory</span>
+cdw
+</pre></div>
+</div>
+</div>
 </div>
 
 
