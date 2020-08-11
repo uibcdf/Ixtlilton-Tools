@@ -108,3 +108,6 @@ An email using the [following template](email_new_user.md) is send to the new us
 information for the user and general user's instructions. Copy the template into the email body and
 edit the text with the new username password and attach the user's QR and codes snapshots.
 
+## Password, ip and port
+
+The user password with ip and port will be sent via [TMWSD](https://thismessagewillselfdestruct.com/)
