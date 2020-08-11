@@ -540,14 +540,47 @@ see the partitions defined in Ixtlilton:</p>
 </pre></div>
 </div>
 <p>For UIBCDF lab members there are four partitions or job queues.</p>
-<p>| Name | Nodes | Wall time | Priority |Description |
-| —- | —– | ——— | ———– |
-| tests | ixtlilton | 6 hours | High |Tests and short runs |
-| gpus  | ixtlilton and nodes[01-04]| 7 days | Normal |Partition with all gpus for gpu jobs|
-| gpus_prior  | ixtlilton and nodes[01-04]| Infinity | Top | Partition with all gpus for high priority gpu jobs|
-| normal | nodes[01-04] | 7 days | Normal |Partition for standard molecular dynamics simulations |
-| prior | nodes[01-04] | Infinity | Top | Partition for standard molecular dynamics simulations |</p>
-<p>For UIBCDF guests there is only a partition.</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Name</th>
+<th>Nodes</th>
+<th>Wall time</th>
+<th>Priority</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tests</td>
+<td>ixtlilton</td>
+<td>6 hours</td>
+<td>High</td>
+<td>Tests and short jobs</td>
+</tr>
+<tr>
+<td>normal</td>
+<td>nodes[01-04]</td>
+<td>7 days</td>
+<td>Normal</td>
+<td>Normal jobs</td>
+</tr>
+<tr>
+<td>prior</td>
+<td>nodes[01-04]</td>
+<td>Infinity</td>
+<td>Top</td>
+<td>High priority jobs</td>
+</tr>
+<tr>
+<td>gpus_prior</td>
+<td>ixtlilton and nodes[01-04]</td>
+<td>Infinity</td>
+<td>Top</td>
+<td>High priority gpu jobs</td>
+</tr>
+</tbody>
+</table><p>For UIBCDF guests there is only a partition.</p>
 <table border="1" class="docutils">
 <thead>
 <tr>
@@ -564,7 +597,7 @@ see the partitions defined in Ixtlilton:</p>
 <td>node02</td>
 <td>1 day</td>
 <td>Low</td>
-<td>Queue for invited guests with projects out of the lab interest</td>
+<td>Queue for external friends with projects out of the lab interest</td>
 </tr>
 </tbody>
 </table></div>
