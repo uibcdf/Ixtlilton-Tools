@@ -1,0 +1,12 @@
+channels:
+- uibcdf/label/dev
+- uibcdf
+- conda-forge
+- default
+dependencies:
+- sphinx
+- sphinx_rtd_theme
+- sphinxcontrib-bibtex
+- nbsphinx
+- recommonmark
+- sphinx-markdown-tables

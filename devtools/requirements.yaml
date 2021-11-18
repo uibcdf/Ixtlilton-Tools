@@ -1,0 +1,31 @@
+admin:
+  channels: &admin_channels
+    - uibcdf/label/dev
+    - uibcdf
+    - conda-forge
+    - default
+  dependencies: &admin_dependencies
+    - python
+
+docs:
+  channels: &docs_channels
+    - uibcdf/label/dev
+    - uibcdf
+    - conda-forge
+    - default
+  dependencies: &docs_dependencies
+    - sphinx
+    - sphinx_rtd_theme
+    - sphinxcontrib-bibtex
+    - nbsphinx
+    - recommonmark
+    - sphinx-markdown-tables
+
+development:
+  channels:
+    - *docs_channels
+  dependencies:
+    - *docs_dependencies
+    - jupyterlab
+    - pyyaml
+
