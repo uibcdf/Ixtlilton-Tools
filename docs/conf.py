@@ -8,7 +8,6 @@
 
 import os
 import sys
-import sphinx_rtd_theme
 
 # -- Path setup --------------------------------------------------------------
 
@@ -21,22 +20,20 @@ import sphinx_rtd_theme
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 
-sys.path.insert(0, os.path.abspath('.'))
-sys.path.insert(0, os.path.abspath('./../ixtlilton'))
-
-print(sys.path)
+import ixtlilton
 
 # -- Project information -----------------------------------------------------
 
 project = 'Ixtlilton'
-copyright = '2020, UIBCDF Lab at the Mexico City Childrens Hospital Federico Gomez and the authors.'
+copyright = '2021, UIBCDF Lab at the Mexico City Childrens Hospital Federico Gomez and the authors.'
 author = 'Liliana M. Moreno Vargas & Diego Prada Gracia'
 
 # The short X.Y version
-version = ''
+version = ixtlilton.__version__.split('+')[0]
 # The full version, including alpha/beta/rc tags
-release = '0.1'
+release = ixtlilton.__version__
 
+print(f'version {version}, release {release}')
 
 # -- General configuration ---------------------------------------------------
 
@@ -55,17 +52,24 @@ extensions = [
     'sphinx.ext.todo',
     'sphinx.ext.ifconfig',
     'sphinx.ext.viewcode',
-    'numpydoc',
+    'sphinx.ext.napoleon',
     'sphinx.ext.githubpages',
     'sphinxcontrib.bibtex',
     'nbsphinx',
     'recommonmark',
-    'sphinx_markdown_tables'
+    'sphinx_markdown_tables',
+    'sphinx.ext.extlinks'
 ]
 
 autosummary_generate = True
-autodoc_default_options = {'members':True, 'inherited-members':True}
-numpydoc_class_members_toctree = False
+napoleon_google_docstring = False
+napoleon_use_param = False
+napoleon_use_ivar = True
+
+# sphinxcontrib-bibtex
+bibtex_bibfiles = ['bibliography.bib'] # list of *.bib files
+bibtex_default_style = 'alpha'
+bibtex_encoding = 'utf-8-sig'
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -126,13 +130,13 @@ html_theme_options = {
     # Toc options
     'collapse_navigation': False,
     'sticky_navigation': True,
-    'navigation_depth': 4,
+    'navigation_depth': 2,
     'includehidden': True,
     'titles_only': False
 }
 
 # Add any paths that contain custom themes here, relative to this directory.
-html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+html_theme_path = []
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -159,6 +163,7 @@ html_css_files = [
 #
 # html_sidebars = {}
 
+html_show_sourcelink = False
 
 # -- Options for HTMLHelp output ---------------------------------------------
 
@@ -214,8 +219,6 @@ texinfo_documents = []
 # Example configuration for intersphinx: refer to the Python standard library.
 #intersphinx_mapping = {'https://docs.python.org/': None}
 
-# stackoverflow.com/questions/12206334
-numpydoc_show_class_members = False
 
 # -- Options for todo extension ----------------------------------------------
 
