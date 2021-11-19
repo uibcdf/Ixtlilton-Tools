@@ -20,15 +20,15 @@ except:
 
 
 setup(
-    name='ixtlilton',
+    name='ixtlilton_tools',
     author='UIBCDF Lab',
     author_email='uibcdf@gmail.com',
     version=versioneer.get_version(),
     cmdclass=versioneer.get_cmdclass(),
-    package_dir={'ixtlilton': 'ixtlilton'},
+    package_dir={'ixtlilton_tools': 'ixtlilton_tools'},
     packages=find_packages(),
     include_package_data=True,
-    package_data={'ixtlilton': ['data']},
+    package_data={'ixtlilton_tools': ['data']},
     scripts=[],
     setup_requires=[] + pytest_runner,
     platforms=['Linux'],

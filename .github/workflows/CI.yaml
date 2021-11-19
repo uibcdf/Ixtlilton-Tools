@@ -61,13 +61,13 @@ jobs:
 
       shell: bash -l {0}
       run: |
-        echo 'import ixtlilton ; print(ixtlilton.__version__)' | python
+        echo 'import ixtlilton_tools ; print(ixtlilton_tools.__version__)' | python
 
     - name: Run tests
 
       shell: bash -l {0}
       run: |
-        pytest -v --cov=molsysmt --cov-report=xml --color=yes ixtlilton/tests/
+        pytest -v --cov=ixtlilton_tools --cov-report=xml --color=yes ixtlilton_tools/tests/
 
     - name: CodeCov
       uses: codecov/codecov-action@v1

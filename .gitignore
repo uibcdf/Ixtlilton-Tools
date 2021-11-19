@@ -114,6 +114,4 @@ record.txt
 *.swp
 
 # In This Library
-devtools/playground/*
-!devtools/playground/README.md
 

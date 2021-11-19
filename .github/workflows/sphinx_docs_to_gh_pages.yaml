@@ -42,7 +42,7 @@ jobs:
       - name: Checking version
         shell: bash -l {0}
         run: |
-           echo 'import ixtlilton; print(ixtlilton.__version__)' | python
+           echo 'import ixtlilton_tools; print(ixtlilton_tools.__version__)' | python
 
       - name: Running the Sphinx to gh-pages Action
         uses: uibcdf/action-sphinx-docs-to-gh-pages@v1.0-beta.1
