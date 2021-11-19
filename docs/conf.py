@@ -20,7 +20,7 @@ import sys
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 
-import ixtlilton
+import ixtlilton_tools
 
 # -- Project information -----------------------------------------------------
 
@@ -29,9 +29,9 @@ copyright = '2021, UIBCDF Lab at the Mexico City Childrens Hospital Federico Gom
 author = 'Liliana M. Moreno Vargas & Diego Prada Gracia'
 
 # The short X.Y version
-version = ixtlilton.__version__.split('+')[0]
+version = ixtlilton_tools.__version__.split('+')[0]
 # The full version, including alpha/beta/rc tags
-release = ixtlilton.__version__
+release = ixtlilton_tools.__version__
 
 print(f'version {version}, release {release}')
 

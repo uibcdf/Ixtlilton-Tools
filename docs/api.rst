@@ -4,5 +4,5 @@ API Documentation
 .. autosummary::
    :toctree: autosummary
 
-   ixtlilton
+   ixtlilton_tools
 

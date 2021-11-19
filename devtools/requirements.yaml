@@ -12,6 +12,8 @@ production:
     - *setup_channels
   dependencies: &production_dependencies
     - python
+    - pandas
+    - numpy
 
 test:
   channels: &test_channels
