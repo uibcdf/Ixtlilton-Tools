@@ -11,52 +11,36 @@ Ixtlilton
    :caption: About
    :maxdepth: 1
 
-   contents/about/hardware.md
-   contents/about/software.md
+   contents/about/main_node.md
+   contents/about/secondary_nodes.md
+   contents/about/storage_node.md
+   contents/about/networks.md
    contents/about/file_system.md
+   contents/about/users_and_groups.md
+   contents/about/modules.md
+   contents/about/queuing_system.md
 
 .. toctree::
-   :name: user_documentation
-   :caption: Documentation for users
-   :maxdepth: 1
+   :name: user_guide
+   :caption: User Guide
+   :maxdepth: 2
 
-   contents/users/login.md
-   contents/users/user_file_system.md
-   contents/users/environment_variables.md
-   contents/users/environment_modules.md
-   contents/users/conda.md
-   contents/users/jupyter.md
-   contents/users/git.md
-   contents/users/slurm.md
-   contents/users/workflow_UIBCDF.md
+   contents/user/guide/index.rst
+   contents/user/tools/index.rst
 
 .. toctree::
-   :name: administration_documentation
-   :caption: Administration
-   :maxdepth: 1
+   :name: admin_guide
+   :caption: Admin Guide
+   :maxdepth: 2
 
-   contents/administrators/admin_and_monitoring.md
-   contents/administrators/hardware.md
-   contents/administrators/volumes_and_file_system.md
-   contents/administrators/users_and_groups.md
-   contents/administrators/environment_modules.md
-   contents/administrators/conda.md
-   contents/administrators/slurm.md
-   contents/administrators/ssh.md
-   contents/administrators/network.md
-
-.. toctree::
-   :name: tools
-   :caption: Tools
-   :maxdepth: 1
-
-   contents/tools/X.md
+   contents/admin/guide/index.rst
+   contents/admin/tools/index.rst
 
 .. toctree::
    :caption: API Documentation
-   :maxdepth: 1
+   :maxdepth: 2
 
-   api/index
+   api.rst
 
 Glossary, indices and tables
 ============================

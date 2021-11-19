@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Slurm &mdash; Ixtlilton 0+untagged.53.g0b3eb3f.dirty documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="UIBCDF project’s workflow" href="workflow_UIBCDF.html" />
+    <link rel="prev" title="Jupyter" href="jupyter.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html" class="icon icon-home"> Ixtlilton
+          </a>
+              <div class="version">
+                0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about/main_node.html">Main node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/secondary_nodes.html">Secondary nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/storage_node.html">Storage node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/networks.html">Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/file_system.html">File system</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../about/file_system.html#the-global-file-system">The global file system</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about/file_system.html#sharing-projects-data">Sharing projects data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about/file_system.html#finished-projects">Finished projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about/file_system.html#a-slave-node-file-system">A slave node file system.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about/file_system.html#the-user-file-system">The user file system</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/users_and_groups.html">Users and groups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/queuing_system.html">Queuing system</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="login.html">Login</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_file_system.html">File system</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment_modules.html">Environment modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment_variables.html">Environment variables and shell aliases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conda.html">Conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html">Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jupyter.html">Jupyter</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Slurm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workflow_UIBCDF.html">UIBCDF project’s workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html">Tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tools/x.html">XXX</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../admin/guide/index.html">Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/guide/admin_and_monitoring.html">Administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/guide/hardware.html">Hardware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/guide/network.html">Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/guide/volumes_and_file_system.html">Volumes and File System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/guide/users_and_groups.html">Users and Groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/guide/ssh.html">SSH</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/guide/environment_modules.html">Environment Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/guide/conda.html">Conda</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin/tools/index.html">Tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/tools/x.html">XXX</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">API Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../autosummary/ixtlilton.html">ixtlilton</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Ixtlilton</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">Guide</a> &raquo;</li>
+      <li>Slurm</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="slurm">
+<h1>Slurm<a class="headerlink" href="#slurm" title="Permalink to this headline"></a></h1>
+<section id="what-is-slurm">
+<h2>What is Slurm?<a class="headerlink" href="#what-is-slurm" title="Permalink to this headline"></a></h2>
+<p>Slurm is an open-source workload manager and job scheduler for unix HPC clusters. Everything in the
+cluster related with the running jobs, the queues and partitions, the scheduling and the resources available at
+each moment, is then supervised and managed by Slurm.</p>
+</section>
+<section id="computing-nodes">
+<h2>Computing nodes<a class="headerlink" href="#computing-nodes" title="Permalink to this headline"></a></h2>
+<p>Detailed information about the computing nodes can be printed out with the command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scontrol</span> <span class="n">show</span> <span class="n">nodes</span>
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sinfo</span> <span class="o">-</span><span class="n">N</span> <span class="o">-</span><span class="n">l</span>
+</pre></div>
+</div>
+<p>Having a look to the description of Ixtlilton’s hardware is useful to understand the resources
+managed by slurm. Here is a brief description of the nodes as slurm knows them:</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Name</th>
+<th>IP</th>
+<th>CPUs</th>
+<th>Threads</th>
+<th>Memory</th>
+<th>GPUs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ixtlilton</td>
+<td>192.168.0.100</td>
+<td>20</td>
+<td>20</td>
+<td>62000</td>
+<td>GTX1080 (2x)</td>
+</tr>
+<tr>
+<td>node01</td>
+<td>192.168.0.1</td>
+<td>20</td>
+<td>20</td>
+<td>62000</td>
+<td>GTX1080Ti (3x)</td>
+</tr>
+<tr>
+<td>node02</td>
+<td>192.168.0.2</td>
+<td>20</td>
+<td>20</td>
+<td>62000</td>
+<td>GTX1080 (2x), GTX1080Ti (1x)</td>
+</tr>
+<tr>
+<td>node03</td>
+<td>192.168.0.3</td>
+<td>20</td>
+<td>20</td>
+<td>50000</td>
+<td>GTX1080Ti (3x)</td>
+</tr>
+<tr>
+<td>node04</td>
+<td>192.168.0.4</td>
+<td>20</td>
+<td>20</td>
+<td>62000</td>
+<td>GTX1080Ti (3x)</td>
+</tr>
+</tbody>
+</table></section>
+<section id="partitions">
+<h2>Partitions<a class="headerlink" href="#partitions" title="Permalink to this headline"></a></h2>
+<p>Slurm works with sets of nodes or partitions of the cluster resources with special settings and
+rights. This partitions can be defined also as job queues. Before giving more details on this, lets
+see the partitions defined in Ixtlilton:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sinfo
+</pre></div>
+</div>
+<p>For UIBCDF lab members there are four partitions or job queues.</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Name</th>
+<th>Nodes</th>
+<th>Wall time</th>
+<th>Priority</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tests</td>
+<td>ixtlilton</td>
+<td>6 hours</td>
+<td>High</td>
+<td>Tests and short jobs</td>
+</tr>
+<tr>
+<td>normal</td>
+<td>nodes[01-04]</td>
+<td>7 days</td>
+<td>Normal</td>
+<td>Normal jobs</td>
+</tr>
+<tr>
+<td>prior</td>
+<td>nodes[01-04]</td>
+<td>Infinity</td>
+<td>Top</td>
+<td>High priority jobs</td>
+</tr>
+<tr>
+<td>gpus_prior</td>
+<td>ixtlilton and nodes[01-04]</td>
+<td>Infinity</td>
+<td>Top</td>
+<td>High priority gpu jobs</td>
+</tr>
+</tbody>
+</table><p>For UIBCDF guests there is only a partition.</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Name</th>
+<th>Nodes</th>
+<th>Wall time</th>
+<th>Priority</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>guests</td>
+<td>node02</td>
+<td>1 day</td>
+<td>Low</td>
+<td>Queue for external friends with projects out of the lab interest</td>
+</tr>
+</tbody>
+</table></section>
+<section id="the-job-queue">
+<h2>The job queue<a class="headerlink" href="#the-job-queue" title="Permalink to this headline"></a></h2>
+<p>To display all jobs in the queue:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>squeue
+</pre></div>
+</div>
+<p>If only your jobs have to be printed out:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>squeue -u $USER
+</pre></div>
+</div>
+<p>The lab guests will have access only to the jobqueue and info regarding the partition ‘guests’.</p>
+</section>
+<section id="jobs">
+<h2>Jobs<a class="headerlink" href="#jobs" title="Permalink to this headline"></a></h2>
+<p>To display all jobs with detailed info:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scontrol</span> <span class="n">show</span> <span class="n">jobs</span>
+</pre></div>
+</div>
+</section>
+<section id="submitting-a-job">
+<h2>Submitting a job<a class="headerlink" href="#submitting-a-job" title="Permalink to this headline"></a></h2>
+<p>To easily identify the submission bash scripts to slurm, the extension *.slurm will be used.
+Examples of these files will be stored in github in order to share submission instructions in ixtlilton or any other cluster used by the UIBCDF members.</p>
+<p>In addition to the templates, in the following sections some useful variables and instructions are described.</p>
+<p>Once the bash script is ready, the command to submit it is:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sbatch script_run.slurm
+</pre></div>
+</div>
+<section id="script-submission-instructions-slurm">
+<h3>Script submission instructions (*.slurm)<a class="headerlink" href="#script-submission-instructions-slurm" title="Permalink to this headline"></a></h3>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+    <a href="https://github.com/uibcdf/molsysmt">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
+    </a>
+
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="jupyter.html" class="btn btn-neutral float-left" title="Jupyter" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="workflow_UIBCDF.html" class="btn btn-neutral float-right" title="UIBCDF project’s workflow" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, UIBCDF Lab at the Mexico City Childrens Hospital Federico Gomez and the authors..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

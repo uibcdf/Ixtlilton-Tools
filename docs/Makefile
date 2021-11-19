@@ -25,6 +25,6 @@ html: builddir
 
 clean:
 	rm -rf $(BUILDDIR)
-	rm -rf api/_autosummary/*.rst
+	rm -rf autosummary
 
 

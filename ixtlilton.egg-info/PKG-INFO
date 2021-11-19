@@ -1,0 +1,65 @@
+Metadata-Version: 2.1
+Name: ixtlilton
+Version: 0+untagged.53.g0b3eb3f.dirty
+Summary: UNKNOWN
+Home-page: http://uibcdf.org/Ixtlilton
+Author: UIBCDF Lab
+Author-email: uibcdf@gmail.com
+License: MIT
+Download-URL: https://github.com/uibcdf/Ixtlilton
+Platform: Linux
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+**[About](#About)** |
+**[Instructions for users](#Instructions-for-users)** |
+**[Admin](#Documentation-for-administrators)** |
+**[Rules and Policies](#General-rules-and-policies)**
+
+# Ixtlilton
+
+## About
+
+- Hardware
+- [File system](docs/about/file_system.md)
+- Queues
+- Slurm
+- Connecting to Ixtlilton
+   - From on-site
+   - From off-site
+
+## Documentation for users
+
+- [File system](docs/user/user_file_system.md)
+
+- Environment variables
+
+- Environment modules
+    - [Environment Module System](docs/user/environment_modules.md)
+    - [Using Conda](docs/user/anaconda.md)
+
+- Jobs submission and management
+    - Jobs and Slurm
+    - Submission
+    - Interactive session
+    - Queues policies
+
+## Workflows
+
+- [Setting up a new project](docs/lab/new_project.md)
+
+## Documentation for administrators
+
+- [Environment Module System](docs/admin/environment_modules.md)
+- [Adding new users](docs/admin/new_user.md)
+- [Managing the conda envs](docs/admin/admin_conda.md)
+
+## General rules and policies
+
+- Different user types.
+- File system.
+- Queues.
+
+
+

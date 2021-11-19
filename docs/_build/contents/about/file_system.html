@@ -1,69 +1,39 @@
-
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>File system &mdash; Ixtlilton 0.1 documentation</title>
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>File system &mdash; Ixtlilton 0+untagged.53.g0b3eb3f.dirty documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
-  
-  
-  
-
-  
-  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/language_data.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
-    
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Login" href="../users/login.html" />
-    <link rel="prev" title="Software" href="software.html" /> 
+    <link rel="next" title="Users and groups" href="users_and_groups.html" />
+    <link rel="prev" title="Networks" href="networks.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../../index.html" class="icon icon-home"> Ixtlilton
-          
-
-          
           </a>
-
-          
-            
-            
-          
-
-          
+              <div class="version">
+                0
+              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -71,368 +41,93 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">About</span></p>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">About</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="hardware.html">Hardware</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="hardware.html#ixtlilton-master">Ixtlilton (master)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hardware.html#computing-nodes">Computing nodes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hardware.html#storage">Storage</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="software.html">Software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="main_node.html">Main node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="secondary_nodes.html">Secondary nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="storage_node.html">Storage node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="networks.html">Networks</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">File system</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#the-global-file-system">The global file system</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#root">ROOT</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#home">HOME</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#data">DATA</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#work">Work</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#projects">Projects</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#hot-data">HOT_DATA</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#scratch">Scratch</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id1">Projects</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#cold-storage-room">COLD_STORAGE_ROOM</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#archive">Archive</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#backups">Backups</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="#the-global-file-system">The global file system</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#sharing-projects-data">Sharing projects data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#finished-projects">Finished projects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#a-slave-node-file-system">A slave node file system.</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#local">Local</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#imported-by-nfs">Imported by NFS</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="#a-slave-node-file-system">A slave node file system.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#the-user-file-system">The user file system</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="users_and_groups.html">Users and groups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="queuing_system.html">Queuing system</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Documentation for users</span></p>
+<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../users/login.html">Login</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../users/login.html#login-from-the-uibcdf-local-network">Login from the UIBCDF local network</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../users/login.html#login-from-outside-the-uibcdf-local-network">Login from outside the UIBCDF local network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/guide/index.html">Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../user/guide/login.html">Login</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user/guide/user_file_system.html">File system</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user/guide/environment_modules.html">Environment modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user/guide/environment_variables.html">Environment variables and shell aliases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user/guide/conda.html">Conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user/guide/git.html">Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user/guide/jupyter.html">Jupyter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user/guide/slurm.html">Slurm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user/guide/workflow_UIBCDF.html">UIBCDF project’s workflow</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../users/user_file_system.html">File system</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../users/user_file_system.html#the-global-file-system">The global file system</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../users/user_file_system.html#the-user-file-system">The user file system</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../users/user_file_system.html#home">Home</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../users/user_file_system.html#your-bin-directory">Your bin directory</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../users/user_file_system.html#your-opt-directory">Your opt directory</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../users/user_file_system.html#work">Work</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../users/user_file_system.html#scratch">Scratch</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../users/environment_variables.html">Environment variables and shell aliases</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../users/environment_variables.html#environment-variables">Environment variables</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../users/environment_variables.html#user-file-system-variables">User file system variables</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../users/environment_variables.html#path-variable">Path variable</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../users/environment_variables.html#library-variables">Library variables</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../users/environment_variables.html#environment-modulefiles">Environment modulefiles</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../users/environment_variables.html#shell-aliases">Shell aliases</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../users/environment_modules.html">Environment modules</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../users/environment_modules.html#what-is-an-environment-module-system">What is an environment module system?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../users/environment_modules.html#lmod">Lmod</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../users/environment_modules.html#listing-the-available-modules">Listing the available modules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../users/environment_modules.html#looking-for-a-module">Looking for a module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../users/environment_modules.html#loading-modules">Loading modules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../users/environment_modules.html#showing-loaded-modules">Showing loaded modules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../users/environment_modules.html#unloading-modules">Unloading modules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../users/environment_modules.html#default-modules">Default modules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../users/environment_modules.html#printing-out-information-about-modules">Printing out information about modules</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../users/environment_modules.html#your-own-environment-modules">Your own environment modules</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../users/conda.html">Conda</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../users/conda.html#what-s-conda">What’s conda?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../users/conda.html#the-channels-and-the-condarc-file">The channels and the .condarc file</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../users/conda.html#the-environments">The environments</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../users/conda.html#activation">Activation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../users/conda.html#deactivation">Deactivation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../users/conda.html#list-of-installed-packages">List of installed packages</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../users/conda.html#installing-packages">Installing packages</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../users/conda.html#removing-packages">Removing packages</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../users/conda.html#updating-packages">Updating packages</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../users/conda.html#the-uibcdf-environments">The UIBCDF environments</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../users/conda.html#uibcdf-lab">UIBCDF_lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/tools/index.html">Tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../user/tools/x.html">XXX</a></li>
 </ul>
 </li>
 </ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../users/conda.html#your-own-conda-environments">Your own conda environments</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../users/jupyter.html">Jupyter</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../users/jupyter.html#jupyterhub">JupyterHub</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../users/jupyter.html#sources">Sources</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../users/jupyter.html#id1"></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../users/jupyter.html#jupyter-notebook-extensions">Jupyter Notebook Extensions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../users/jupyter.html#environments">Environments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../users/jupyter.html#mdlab2">MDLab2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../users/jupyter.html#jupyterlab">JupyterLab</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../users/git.html">Git</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../users/git.html#what-is-git">What is Git?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../users/git.html#your-user-parameters">Your user parameters</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../users/slurm.html">Slurm</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../users/slurm.html#what-is-slurm">What is Slurm?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../users/slurm.html#computing-nodes">Computing nodes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../users/slurm.html#partitions">Partitions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../users/slurm.html#the-job-queue">The job queue</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../users/slurm.html#jobs">Jobs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../users/slurm.html#submitting-a-job">Submitting a job</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../users/slurm.html#script-submission-instructions-slu">Script submission instructions (*.slu)</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../users/workflow_UIBCDF.html">UIBCDF project’s workflow</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../users/workflow_UIBCDF.html#setting-up-a-new-project">Setting up a new project</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../users/workflow_UIBCDF.html#a-single-script-to-do-it-for-you">A single script to do it for you.</a></li>
-</ul>
-</li>
-</ul>
-<p class="caption"><span class="caption-text">Administration</span></p>
+<p class="caption" role="heading"><span class="caption-text">Admin Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../administrators/admin_and_monitoring.html">Administration</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../administrators/admin_and_monitoring.html#bash-scripting">Bash scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin/guide/index.html">Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../admin/guide/admin_and_monitoring.html">Administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/guide/hardware.html">Hardware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/guide/network.html">Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/guide/volumes_and_file_system.html">Volumes and File System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/guide/users_and_groups.html">Users and Groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/guide/ssh.html">SSH</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/guide/environment_modules.html">Environment Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/guide/conda.html">Conda</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../administrators/hardware.html">Hardware</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../administrators/hardware.html#motherboard">MotherBoard</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../administrators/hardware.html#version-de-bios-minima-recomendada">Versión de Bios mínima recomendada</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../administrators/hardware.html#opciones-de-la-bios-para-max-performance">Opciones de la bios para max performance</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../administrators/volumes_and_file_system.html">Volumes and File System</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../administrators/volumes_and_file_system.html#volumes">Volumes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../administrators/volumes_and_file_system.html#master-node">Master Node</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../administrators/volumes_and_file_system.html#root-and-home-volume">Root and Home Volume</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../administrators/volumes_and_file_system.html#data-volume">DATA Volume</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../administrators/volumes_and_file_system.html#storage-node">Storage Node</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../administrators/volumes_and_file_system.html#cold-storage-room">Cold Storage Room</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../administrators/volumes_and_file_system.html#slave-gpus-nodes-nodo01-and-nodo02">Slave GPUs Nodes (Nodo01 and Nodo02)</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../administrators/volumes_and_file_system.html#localdata-volume">LocalDATA Volume</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../administrators/volumes_and_file_system.html#tempdata-volume">TempDATA Volume</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../administrators/volumes_and_file_system.html#nfs-imported-volumes">NFS imported Volumes</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../administrators/volumes_and_file_system.html#slave-cpus-nodes-nodo03-y-nodo04">Slave CPUs Nodes (Nodo03 y Nodo04)</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../administrators/volumes_and_file_system.html#id1">TempDATA Volume</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../administrators/volumes_and_file_system.html#id2">NFS imported Volumes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin/tools/index.html">Tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../admin/tools/x.html">XXX</a></li>
 </ul>
 </li>
 </ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../administrators/volumes_and_file_system.html#file-system">File System</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../administrators/volumes_and_file_system.html#admin-file-system">Admin File System</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../administrators/volumes_and_file_system.html#admin">Admin</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../administrators/volumes_and_file_system.html#hardware">Hardware</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../administrators/volumes_and_file_system.html#users-file-system">Users File System</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../administrators/volumes_and_file_system.html#user-home">User Home</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../administrators/volumes_and_file_system.html#scratch">Scratch</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../administrators/volumes_and_file_system.html#work">Work</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../administrators/volumes_and_file_system.html#shared-file-system">Shared File System</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../administrators/volumes_and_file_system.html#projects">Projects</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../administrators/volumes_and_file_system.html#id4">Archive</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../administrators/volumes_and_file_system.html#id5">Backups</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../administrators/users_and_groups.html">Users and Groups</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../administrators/users_and_groups.html#uibcdf-user">UIBCDF User</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../administrators/users_and_groups.html#new-user">New User</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../administrators/users_and_groups.html#internal">Internal</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../administrators/users_and_groups.html#with-lab-rights">With lab rights</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../administrators/users_and_groups.html#external">External</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../administrators/users_and_groups.html#groups">Groups</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../administrators/users_and_groups.html#adding-new-user">Adding new user</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../administrators/users_and_groups.html#user-file-system">User file system</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../administrators/users_and_groups.html#local-opt-structure-in-the-users-home">Local opt structure in the users home</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../administrators/users_and_groups.html#double-factor">Double Factor</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../administrators/users_and_groups.html#comunication-with-the-new-user">Comunication with the new user</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../administrators/environment_modules.html">Environment Modules</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../administrators/environment_modules.html#sources-br">Sources: <br /></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../administrators/environment_modules.html#in-ixtlilton-centos-7">In Ixtlilton (Centos 7)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../administrators/environment_modules.html#in-a-workstation-ubuntu">In a workstation (Ubuntu)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../administrators/environment_modules.html#example">Example:</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../administrators/environment_modules.html#marking-a-version-as-default">Marking a version as default</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../administrators/environment_modules.html#useful-commands">Useful commands:</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../administrators/environment_modules.html#instalacion-y-configuracion">Instalación y Configuración</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../administrators/environment_modules.html#modulos-de-cada-usuario">Módulos de cada usuario</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../administrators/environment_modules.html#id1">Useful commands:</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../administrators/environment_modules.html#mas-informacion">Más información</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../administrators/environment_modules.html#id2">Sources: <br /></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../administrators/conda.html">Conda</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../administrators/conda.html#installing-conda-for-multiple-users">Installing Conda for multiple users</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../administrators/conda.html#conda-administration">Conda administration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../administrators/conda.html#conda-info">Conda info</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../administrators/conda.html#update-conda">Update conda</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../administrators/conda.html#create-environment-for-all-users">Create environment for all users</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../administrators/conda.html#activate-environment">Activate environment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../administrators/conda.html#install-packages-in-environment">Install packages in environment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../administrators/conda.html#update-environment">Update environment</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../administrators/conda.html#uibcdf-lab-conda-environments">UIBCDF_lab conda environments</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../administrators/conda.html#uibcdf-lab">UIBCDF_lab</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../administrators/slurm.html">Slurm</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../administrators/slurm.html#installation">Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../administrators/slurm.html#administration">Administration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../administrators/slurm.html#daemons">Daemons</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../administrators/slurm.html#show-the-partitions">Show the partitions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../administrators/slurm.html#updating-the-configuration-and-restarting-the-daemons">Updating the configuration and restarting the daemons</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../administrators/slurm.html#how-to-add-a-new-node">How to add a new node</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../administrators/slurm.html#how-to-create-a-new-partition">How to create a new partition</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../administrators/slurm.html#limiting-users-access-to-partitions">Limiting users access to partitions</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../administrators/ssh.html">SSH</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../administrators/ssh.html#importing-opengl">Importing OpenGL</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../administrators/ssh.html#ubuntu">Ubuntu</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../administrators/ssh.html#option-1">Option 1</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../administrators/ssh.html#option-2">Option 2</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../administrators/ssh.html#login-via-ssh-without-password">Login via ssh without password</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../administrators/network.html">Networks</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../administrators/network.html#interactive-network">Interactive network</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../administrators/network.html#nfs-network">NFS network</a></li>
-</ul>
-</li>
-</ul>
-<p class="caption"><span class="caption-text">Tools</span></p>
+<p class="caption" role="heading"><span class="caption-text">API Documentation</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../tools/X.html">X</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">API Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../autosummary/ixtlilton.html">ixtlilton</a></li>
+</ul>
+</li>
 </ul>
 
-            
-          
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">Ixtlilton</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="../../index.html">Docs</a> &raquo;</li>
-        
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
       <li>File system</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-            
-            <a href="../../_sources/contents/about/file_system.md.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+
            <div itemprop="articleBody">
-            
+             
   
 <style>
 /* CSS overrides for sphinx_rtd_theme */
@@ -457,10 +152,10 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="file-system">
-<h1>File system<a class="headerlink" href="#file-system" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="the-global-file-system">
-<h2>The global file system<a class="headerlink" href="#the-global-file-system" title="Permalink to this headline">¶</a></h2>
+<section id="file-system">
+<h1>File system<a class="headerlink" href="#file-system" title="Permalink to this headline"></a></h1>
+<section id="the-global-file-system">
+<h2>The global file system<a class="headerlink" href="#the-global-file-system" title="Permalink to this headline"></a></h2>
 <p>The following sections describe the file system mounted in the master node of Ixtlilton.
 Below, in the section ‘’, the file system of every slave node is described. Users should also know
 about how a slave node is configured, but their interaction with them will be done only through the
@@ -501,32 +196,32 @@ jobs submitted to the SLURM workload manager.</p>
 <td>Raid 5 HDD</td>
 </tr>
 </tbody>
-</table><div class="section" id="root">
-<h3>ROOT<a class="headerlink" href="#root" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="home">
-<h3>HOME<a class="headerlink" href="#home" title="Permalink to this headline">¶</a></h3>
+</table><section id="root">
+<h3>ROOT<a class="headerlink" href="#root" title="Permalink to this headline"></a></h3>
+</section>
+<section id="home">
+<h3>HOME<a class="headerlink" href="#home" title="Permalink to this headline"></a></h3>
 <p>There is an 466 Gbs SSD drive with a unique volume hosting the directory <code class="docutils literal notranslate"><span class="pre">/home</span></code>.
 This place stores the home directory of every user. The writing/reading speed is fast, but the
 memory limited here. In a first moment there will be no space quotas applied to each home
 directory, but there will be be quotas if needed.</p>
 <p>Users know that their own work directory must be used to store their scripts, docs, module environments, conda environments, github repos, small software and temporary light files for analysis</p>
-</div>
-<div class="section" id="data">
-<h3>DATA<a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="data">
+<h3>DATA<a class="headerlink" href="#data" title="Permalink to this headline"></a></h3>
 <p>DATA is a virtual raid 5 volume built with HDDs drives. This kind of drives have a slow
 reading/writing speed, but this memory is cheap. Today this volume adds up to 8.2 Tbs, but will be
 increased as soon as there is no room left to play its role.</p>
 <p>Two directories are found in DATA: <code class="docutils literal notranslate"><span class="pre">/DATA/work</span></code> and <code class="docutils literal notranslate"><span class="pre">/DATA/projects</span></code></p>
-<div class="section" id="work">
-<h4>Work<a class="headerlink" href="#work" title="Permalink to this headline">¶</a></h4>
+<section id="work">
+<h4>Work<a class="headerlink" href="#work" title="Permalink to this headline"></a></h4>
 <p>The directory <code class="docutils literal notranslate"><span class="pre">/DATA/work</span></code> stores the work directory of every user. Users know that this folder is
 used to store heavy, not shared with other users, and not frequently read data or files during a
 long term period. Once the project is finished all these files and data will be moved to the
 COLD_STORAGE_ROOM for its indefinite storage.</p>
-</div>
-<div class="section" id="projects">
-<h4>Projects<a class="headerlink" href="#projects" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="projects">
+<h4>Projects<a class="headerlink" href="#projects" title="Permalink to this headline"></a></h4>
 <p>There is in DATA a directory, <code class="docutils literal notranslate"><span class="pre">/DATA/projects</span></code>, where heavy and not frequently read data should
 be stored. These files, or data, have to be organised in folders with names evoking each project.
 And every user participating in the project must have rights to use it. Files here have to be
@@ -535,17 +230,17 @@ accessible for every coworker to avoid duplicity of files.</p>
 analysing a common file should do it from here, not from their own copy. And, if fast access is
 needed to the data, there is specific shared directory to temporary keep an accessible copy to every coworker
 as well: <code class="docutils literal notranslate"><span class="pre">HOT_DATA/projects</span></code>.</p>
-</div>
-</div>
-<div class="section" id="hot-data">
-<h3>HOT_DATA<a class="headerlink" href="#hot-data" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="hot-data">
+<h3>HOT_DATA<a class="headerlink" href="#hot-data" title="Permalink to this headline"></a></h3>
 <p>HOT_DATA is a 465.8 Gb SSD drive. Reading and writting access is fast, but this kind of memory is
 expensive and it should not be used to store data <em>sine die</em>. By contrast, this volume gives us the
 chance to have a place where those actual files are placed to enjoy a high speed access. Two
 directories are found in HOT_DATA: <code class="docutils literal notranslate"><span class="pre">/HOT_DATA/scratch</span></code> and <code class="docutils literal notranslate"><span class="pre">/HOT_DATA/projects</span></code>. There are no
 quotas yet, but since room is limited, there will be space limit rules if necessary.</p>
-<div class="section" id="scratch">
-<h4>Scratch<a class="headerlink" href="#scratch" title="Permalink to this headline">¶</a></h4>
+<section id="scratch">
+<h4>Scratch<a class="headerlink" href="#scratch" title="Permalink to this headline"></a></h4>
 <p>The directory <code class="docutils literal notranslate"><span class="pre">/HOT_DATA/scratch</span></code> hosts the scratch directory of every single user. It is reported
 in the user guide sections that this directory has to be used as a sandbox to put temporary working
 files, heavy if it is needed, not accessible or shared with other users, to enjoy fast reading
@@ -553,19 +248,19 @@ access to them. In other supercomputers or cluster, there is a space limit in ea
 directory and in addition a life-time limit is also imposed. Files with a life longer than 30 days
 are automatically removed, for example. By now, no similar rules are defined, yet.</p>
 <p>Users know the function of their own scracth directory since it is reported in the section ‘’.</p>
-</div>
-<div class="section" id="id1">
-<h4>Projects<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="id1">
+<h4>Projects<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h4>
 <p>Those heavy files belonging to a project, such as recent md trajectories, which have to be
 accessible to more than a user, and need to be repeteadly read, have to be temporary placed in
 <code class="docutils literal notranslate"><span class="pre">/HOT_DATA/projects</span></code>. These files have to be organised in directories with a name related with each
 project, to ensure a quick identification by anyone.</p>
 <p>Again, there is now no need to fix a limite in space, but it will be done as soon as problems arise.
 Because of that, users must remove the files when high speed access is not longer needed.</p>
-</div>
-</div>
-<div class="section" id="cold-storage-room">
-<h3>COLD_STORAGE_ROOM<a class="headerlink" href="#cold-storage-room" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="cold-storage-room">
+<h3>COLD_STORAGE_ROOM<a class="headerlink" href="#cold-storage-room" title="Permalink to this headline"></a></h3>
 <p>There is an external NAS attached to Ixtlilton. The volume COLD_STORAGE_ROOM is nowadays settled
 there, in a virtual raid 5 of HDDs adding up to 11 Tb.</p>
 <p>The main function of this volume is to keep backups and old projects safe during an undefined period
@@ -573,21 +268,21 @@ of time. That’s the reason why the volume is off the master node. High speed a
 pririoty, but safety.</p>
 <p>In the near future, this has to be in a larger raid volume, in an exclusive node. Not in a NAS.</p>
 <p>Two directories are split the volume: <code class="docutils literal notranslate"><span class="pre">/COLD_STORAGE_ROOM/archive</span></code> and <code class="docutils literal notranslate"><span class="pre">/COLD_STORAGE_ROOM/backups</span></code>.</p>
-<div class="section" id="archive">
-<h4>Archive<a class="headerlink" href="#archive" title="Permalink to this headline">¶</a></h4>
+<section id="archive">
+<h4>Archive<a class="headerlink" href="#archive" title="Permalink to this headline"></a></h4>
 <p>The directory <code class="docutils literal notranslate"><span class="pre">/COLD_STORAGE_ROOM/archive</span></code>, as its own name suggests, stores old projects. These
 projects must be placed here well documented and compressed. They should be easily recovered in
 case spin-off projects are opened in the future.</p>
-</div>
-<div class="section" id="backups">
-<h4>Backups<a class="headerlink" href="#backups" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="backups">
+<h4>Backups<a class="headerlink" href="#backups" title="Permalink to this headline"></a></h4>
 <p>This directory keeps automatic backups of important files and data. The backups policy is not
 defined yet.</p>
-</div>
-</div>
-</div>
-<div class="section" id="sharing-projects-data">
-<h2>Sharing projects data<a class="headerlink" href="#sharing-projects-data" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+</section>
+<section id="sharing-projects-data">
+<h2>Sharing projects data<a class="headerlink" href="#sharing-projects-data" title="Permalink to this headline"></a></h2>
 <p>Two directories, in volumes DATA and HOT_DATA, are defined to share heavy files belonging to a
 project which should be accessible to any coworker: <code class="docutils literal notranslate"><span class="pre">/DATA/projects</span></code> and <code class="docutils literal notranslate"><span class="pre">/HOT_DATA/projects</span></code>.</p>
 <p>The main idea behind this two directories is avoiding multiple copies of the same file. Imagine,
@@ -599,77 +294,63 @@ need for every coworker to keep their own copy of the data. That would occupy 30
 <li><p><code class="docutils literal notranslate"><span class="pre">/HOT_DATA/projects</span></code> is in a high speed access volume with a small size, less than 500 Gb shared
 among projects and scratch directories of users.</p></li>
 </ul>
-</div>
-<div class="section" id="finished-projects">
-<h2>Finished projects<a class="headerlink" href="#finished-projects" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="finished-projects">
+<h2>Finished projects<a class="headerlink" href="#finished-projects" title="Permalink to this headline"></a></h2>
 <p>Once a project is finished a good documenting job has to be done. The whole project, with all data
 (compressed), has to be kept for the future. And every aspect of the project, every result, must be easily
 reproducible with all what is included in the package. As if it were a time capsule.</p>
 <p>Finished projects have to be stored in <code class="docutils literal notranslate"><span class="pre">/COLD_STORAGE_ROOM/archive</span></code>.</p>
-</div>
-<div class="section" id="a-slave-node-file-system">
-<h2>A slave node file system.<a class="headerlink" href="#a-slave-node-file-system" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="local">
-<h3>Local<a class="headerlink" href="#local" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="imported-by-nfs">
-<h3>Imported by NFS<a class="headerlink" href="#imported-by-nfs" title="Permalink to this headline">¶</a></h3>
-</div>
-</div>
-<div class="section" id="the-user-file-system">
-<h2>The user file system<a class="headerlink" href="#the-user-file-system" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="a-slave-node-file-system">
+<h2>A slave node file system.<a class="headerlink" href="#a-slave-node-file-system" title="Permalink to this headline"></a></h2>
+<section id="local">
+<h3>Local<a class="headerlink" href="#local" title="Permalink to this headline"></a></h3>
+</section>
+<section id="imported-by-nfs">
+<h3>Imported by NFS<a class="headerlink" href="#imported-by-nfs" title="Permalink to this headline"></a></h3>
+</section>
+</section>
+<section id="the-user-file-system">
+<h2>The user file system<a class="headerlink" href="#the-user-file-system" title="Permalink to this headline"></a></h2>
 <p>The description of the user file system can be found in the section <a class="reference external" href="../user/user_file_system">‘Instructions for users: File
 system’</a>.</p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../users/login.html" class="btn btn-neutral float-right" title="Login" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="software.html" class="btn btn-neutral float-left" title="Software" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+    <a href="https://github.com/uibcdf/molsysmt">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
+    </a>
+
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="networks.html" class="btn btn-neutral float-left" title="Networks" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="users_and_groups.html" class="btn btn-neutral float-right" title="Users and groups" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &copy; Copyright 2020, UIBCDF Lab at the Mexico City Childrens Hospital Federico Gomez and the authors.
-
-    </p>
+    <p>&#169; Copyright 2021, UIBCDF Lab at the Mexico City Childrens Hospital Federico Gomez and the authors..</p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
-
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>
