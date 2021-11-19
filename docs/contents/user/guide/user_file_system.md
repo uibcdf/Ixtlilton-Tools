@@ -1,10 +1,9 @@
 # File system
 
-## The global file system
+## The Ixtlilton's file system
 
-Before reading about your user file system, have a look to [the description of the global
-file](../about/file_system.md)
-system. Only knowing the volumes structure in Ixtlilton you will understand why your user file
+Before reading about your user file system, have a look to [the description of the Ixtlilton's
+file system](../../about/file_system.md). Only knowing the volumes structure in Ixtlilton you will understand the logic behind your user file
 system.
 
 ## The user file system

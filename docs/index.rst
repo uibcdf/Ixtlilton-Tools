@@ -17,7 +17,7 @@ Ixtlilton
    contents/about/networks.md
    contents/about/file_system.md
    contents/about/users_and_groups.md
-   contents/about/modules.md
+   contents/about/environment_modules.md
    contents/about/queuing_system.md
 
 .. toctree::

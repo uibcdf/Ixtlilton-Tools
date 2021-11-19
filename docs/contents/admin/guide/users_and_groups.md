@@ -10,6 +10,16 @@ This user id must apply for any system located not only in ixtlilton but in the 
 | diego   | 2001 | Diego                                                          |
 | homero  | 2002 | Homero                                                          |
 
+
+## Notes
+- Habla del fichero /opt/etc/user_bashrc
+- Hay que copiar el .bashrc tipo y poner bien los permisos
+- Poner un fichero .bash_aliases tipo y poner bien los permisos
+- Poner un fichero .condarc tipo
+- Crear el directorio .conda
+- en el dir home/user/opt faltaban los dir lib, lib32, lib64 e include. Además debe tener los
+  propietarios bien
+
 ## UIBCDF User
 
 The user belongs to the groups: wheel, projects and archive.

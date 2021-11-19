@@ -1,6 +1,6 @@
 # File system
 
-## The global file system
+## The Ixtlilton's file system
 
 The following sections describe the file system mounted in the master node of Ixtlilton.
 Below, in the section '', the file system of every slave node is described. Users should also know
