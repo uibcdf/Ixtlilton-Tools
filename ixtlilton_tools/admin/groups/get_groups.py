@@ -9,5 +9,7 @@ def get_groups():
             name, x, gid, members = line.rstrip('\n').split(':')
             df = df.append({'name': name, 'gid': gid, 'members': members}, ignore_index=True)
 
+    df.set_index('name')
+
     return df
 
