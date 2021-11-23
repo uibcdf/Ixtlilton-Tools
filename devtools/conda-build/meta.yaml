@@ -12,6 +12,8 @@ requirements:
   - numpy
   run:
   - python
+  - pandas
+  - numpy
 about:
   home: https://uibcdf.org
   license: MIT License

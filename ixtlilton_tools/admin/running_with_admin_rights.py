@@ -1,7 +1,8 @@
-from ixtlilton_tools.admin import running_as_root
 import os
 
 def running_with_admin_rights():
+
+    from ixtlilton_tools.admin import running_as_root
 
     # checking if user is root
     if running_as_root():

@@ -10,7 +10,7 @@ def get_users():
             df = df.append({'name': name, 'uid': uid, 'gid': gid,  'gecos': gecos,
                 'home': home,  'login shell': shell}, ignore_index=True)
 
-    df.set_index('name')
+    df = df.set_index('name')
 
     return df
 

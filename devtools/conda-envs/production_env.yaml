@@ -3,3 +3,5 @@ channels:
 - default
 dependencies:
 - python
+- pandas
+- numpy

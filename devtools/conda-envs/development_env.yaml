@@ -3,6 +3,8 @@ channels:
 - default
 dependencies:
 - python
+- pandas
+- numpy
 - pytest
 - pip
 - pytest-cov

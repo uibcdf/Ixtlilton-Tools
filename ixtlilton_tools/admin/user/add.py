@@ -1,10 +1,13 @@
 import pandas as pd
 import numpy as np
 from ixtlilton_tools._private_tools.exceptions import NoUIDsAvailable, NoAdminRights
-from ixtlilton_tools.admin import running_with_admin_rights
-from ixtlilton_tools.admin import generate_random_password
+import subprocess
 
-def add_user(name=None, phone=None, email=None, category=None):
+def add(fullname=None, phone=None, email=None, category=None):
+
+    from ixtlilton_tools.admin import running_with_admin_rights
+    from ixtlilton_tools.admin import generate_random_password
+    from ixtlilton_tools.admin.users import get_users
 
     if not running_with_admin_rights():
         raise NoAdminRights()
@@ -12,8 +15,6 @@ def add_user(name=None, phone=None, email=None, category=None):
     # category in: member, collaborator
 
     ## user id
-
-    from ixtlilton_tools.admin.users import get_users
 
     df = get_users()
     uids = df['uid'].to_numpy().astype('int')
