@@ -3,18 +3,19 @@ import pathlib
 import subprocess
 import pandas as pd
 import numpy as np
-from ixtlilton_tools._private_tools.exceptions import UserDoesNotExists, NoAdminRights
+from ixtlilton_tools._private_tools.exceptions import UserDoesNotExist, NoAdminRights
 
 def fix(username, fullname=None, phone=None, mail=None, category=None):
 
     from ixtlilton_tools.admin import running_with_admin_rights
-    from ixtlilton_tools.user import exists import user_exists
+    from ixtlilton_tools.admin.user import exists as user_exists
+    from ixtlilton_tools.admin.directory.user import scratch, work
 
     if not running_with_admin_rights():
         raise NoAdminRights()
 
     if not user_exists(username):
-        raise UserDoesNotExist()
+        raise UserDoesNotExist(user=username)
 
     # gecos fields 
 
@@ -29,18 +30,11 @@ def fix(username, fullname=None, phone=None, mail=None, category=None):
 
     # user directories
 
-    for parent_dir in ['/work/', '/scratch/']:
+    work.make(username)
+    work.fix_owner(username)
 
-        path = pathlib.Path(parent_dir+username)
-
-        if not path.exists:
-            os.mkdir(path)
-        elif not path.is_dir():
-            raise WorkDirectoryConflict('The work directory path is not a directory')
-
-        owner = path.owner()
-        group = path.group()
-        print(f"{path.name} is owned by {owner}:{group}")
+    scratch.make(username)
+    scratch.fix_owner(username)
 
     pass
 

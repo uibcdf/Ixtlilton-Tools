@@ -1,0 +1,34 @@
+import os
+import pandas as pd
+import numpy as np
+from ixtlilton_tools._private_tools.exceptions import UserDoesNotExist, NoAdminRights
+import subprocess
+import pathlib
+
+def remove(username):
+
+    from ixtlilton_tools.admin import running_with_admin_rights
+    from ixtlilton_tools.admin.user import exists as user_exists
+    from ixtlilton_tools.admin.directory.user import scratch, work, home
+
+    if not running_with_admin_rights():
+        raise NoAdminRights()
+
+    if not user_exists(username):
+        raise UserDoesNotExist(username=username)
+
+    ## removing user
+
+    subprocess.run(['userdel', username])
+
+    ## removing mailbox file
+
+    path=pathlib.Path('/var/spool/mail/'+username)
+    if path.exists():
+    	os.remove(path)
+
+    ## removing directories if empty
+
+    scratch.remove(username)
+    work.remove(username)
+    home.remove(username)
