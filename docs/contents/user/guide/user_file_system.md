@@ -12,13 +12,14 @@ As user, you have three directories with different usage.
 
 ### Home
 
-Your user has a main home directory:
+Your user has a main home directory: '/home/username'. Once you have accessed to Ixtlilton with
+your user account, type:
 
 ```bash
 echo $HOME
 ```
 
-You can always go to your home directory with any of the following two commands:
+The environment variable '$HOME' defines de path of your main directory. You can always go to your home with any of the following two commands:
 
 ```bash
 cd
@@ -37,25 +38,38 @@ software and temporary not heavy files for analysis.**
 
 Thus, your home has already some directories:
 
-### Your bin directory
+#### Your local directory
 
-There is a bin directory for your user:
+Your local directory '$HOME/local' is nothing but the symbolic link to the directory '$HOME/.local'
+created by default by the Linux OS for every user. This symbolic link is for you to notice the
+place where you must locate your scripts to be invokable from anywhere in your terminal, your
+libraries, etc. The directory '$HOME/.local' is a hidden directory. 
+
+Try to see what's in your local directory:
 
 ```bash
-ls $HOME/bin
+ls $HOME/local
 ```
 
-This directory reproduces the structure usually found in a unix system to place binnaries,
-libraries, header or other included files, etc. By default some of your environment variables
-already include these paths. Try for instance:
+##### Your bin directory
+
+
+
+There is a bin directory for your user. This is the place to put your local binaries or your
+scripts with executable rights. Any file with executable rights in this directory will be invokable by you at any time. You can check [the section of the documentation for users
+regarding your environment variables](environment_variables.md), or try:
 
 ```bash
 echo $PATH
 ```
 
-As you can see, the path '/home/$USER/opt/bin' is in the output. This means that any file with
-executable rights in this directory will be invokable by you at any time. You can check [the section of the documentation for users
-regarding your environment variables](environment_variables.md)
+As you can see, the path '/home/$USER/opt/bin' is in the output. This means that 
+
+
+
+This directory reproduces the structure usually found in a unix system to place binnaries,
+libraries, header or other included files, etc. By default some of your environment variables
+already include these paths. Try for instance:
 
 
 ### Your opt directory
