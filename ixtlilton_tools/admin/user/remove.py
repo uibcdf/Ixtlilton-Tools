@@ -25,10 +25,24 @@ def remove(username):
 
     path=pathlib.Path('/var/spool/mail/'+username)
     if path.exists():
-    	os.remove(path)
+        os.remove(path)
 
     ## removing directories if empty
 
     scratch.remove(username)
     work.remove(username)
+    home.local.opt.modulefiles.remove(username)
+    home.local.opt.apps.remove(username)
+    home.local.opt.src.remove(username)
+    home.local.opt.remove(username)
+    home.local.bin.remove(username)
+    home.local.etc.remove(username)
+    home.local.lib.remove(username)
+    home.local.lib32.remove(username)
+    home.local.lib64.remove(username)
+    home.local.include.remove(username)
+    home.local.src.remove(username)
+    home.local.share.remove(username)
+    home.local.man.remove(username)
+    home.local.remove(username)
     home.remove(username)

@@ -9,7 +9,7 @@ def fix(username, fullname=None, phone=None, mail=None, category=None):
 
     from ixtlilton_tools.admin import running_with_admin_rights
     from ixtlilton_tools.admin.user import exists as user_exists
-    from ixtlilton_tools.admin.directory.user import scratch, work
+    from ixtlilton_tools.admin.directory.user import scratch, work, home
 
     if not running_with_admin_rights():
         raise NoAdminRights()
@@ -35,6 +35,45 @@ def fix(username, fullname=None, phone=None, mail=None, category=None):
 
     scratch.make(username)
     scratch.fix_owner(username)
+
+    home.local.make(username)
+    home.local.fix_owner(username)
+
+    home.local.bin.make(username)
+    home.local.bin.fix_owner(username)
+
+    home.local.etc.make(username)
+    home.local.etc.fix_owner(username)
+
+    home.local.include.make(username)
+    home.local.include.fix_owner(username)
+
+    home.local.lib.make(username)
+    home.local.lib.fix_owner(username)
+
+    home.local.lib32.make(username)
+    home.local.lib32.fix_owner(username)
+
+    home.local.man.make(username)
+    home.local.man.fix_owner(username)
+
+    home.local.share.make(username)
+    home.local.share.fix_owner(username)
+
+    home.local.src.make(username)
+    home.local.src.fix_owner(username)
+
+    home.local.opt.make(username)
+    home.local.opt.fix_owner(username)
+
+    home.local.opt.modulefiles.make(username)
+    home.local.opt.modulefiles.fix_owner(username)
+
+    home.local.opt.apps.make(username)
+    home.local.opt.apps.fix_owner(username)
+
+    home.local.opt.src.make(username)
+    home.local.opt.src.fix_owner(username)
 
     pass
 
