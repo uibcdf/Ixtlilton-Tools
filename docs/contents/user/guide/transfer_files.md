@@ -3,7 +3,7 @@
 If you have to copy files from your machine to Ixtlilton, or from Ixtlilton to your machine, two
 procedures equally safe are suggested in this section. In order to show how these two options work, let's assume that 'x.x.x.x' is the ip (public or local) of the main node of Ixtlilton.
 
-## Common remote copy with SCP
+## Remote copy with SCP
 
 If you have to copy a small data volume, the Secure Copy Protocol (SCP) is your option. SCP allows files
 to be copied using SSH (SecureShell) for data transfer. Let's see how to transfer the local file named 'traj.h5' to
