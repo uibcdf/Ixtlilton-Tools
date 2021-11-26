@@ -1,6 +1,4 @@
-# Environment variables and shell aliases
-
-## Environment variables
+# Environment variables
 
 Some environment variables were modified at the moment of creating your user to modify its
 behaviour. Some other variables described here are unix default environment variables. Knowing them

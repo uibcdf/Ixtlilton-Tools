@@ -9,8 +9,9 @@ Guide
    login.md
    transfer_files.md
    user_file_system.md
-   environment_modules.md
+   dot_files_and_directories.md
    environment_variables.md
+   environment_modules.md
    conda.md
    git.md
    jupyter.md
