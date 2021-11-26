@@ -178,19 +178,44 @@ fi
 ## '.bash\_history'
 
 The '.bash\_history' is not a shell script. This dot file stores the recent list of commands your
-user executed in chronological order. Did you notice that using the 'up arrow' in your terminal, or
-making use of the reverse-search with 'ctr-r', you can recover a command that was receantly
+user executed in chronological order. Did you notice that using the 'up arrow' key in your terminal, or
+making use of the reverse-search with 'ctrl-r', you can recover a command that was receantly
 executed? This is because your history record is stored in '.bash\_history'.
 
 ## '.ssh'
 
+As it was introduced in the user guide section '[Login](login.md)', the SSH protocol is used to make
+secure shell remote connections. This protocol, executed with the command 'ssh', needs some
+user settings and credentials. And the directory '$HOME/.ssh' is the place to store them.
 
+Among the files you can find in your '$HOME/.ssh', there is one you should know if you are GitHub
+user: '$HOME/.ssh/id\_rsa.pub'. This file stores the RSA key of your user. And this key is an
+addition security filter to approve a remote connection between two machines. The machine receiving
+the remote access petition can be configured to deny any ssh login request if the RSA public key is
+not recognized as authorized -even if the user and passwords are ok-. Or, in case you want to, or
+you have to, authorized remote connections without password, the SSH protocol can be configured to
+work only with the RSA keys as validation method. This is the case of the remote data transfer with 'git' between your local repository clone and your remote GitHub repository.
 
 ## '.google\_authenticator'
 
+Ixtlilton has the Google Authenticator two-factor login mechanism enabled for remote conexions.
+Your two factor authentication credentials are stored in this file.
+
 ## '.emacs', '.emacs.d', '.vim', '.vimrc', and '.viminfo'
+
+Text editors can also be very customizable. Some of them let you define commands, routines,
+shortcuts, etc. In case you use emacs or vim you can find in your home directory hidden files and
+directories as the ones in the title of this subsection.
 
 ## '.gitconfig'
 
+Git also needs a place to store your user name and email, as well as some other user option as the
+preferred text editor or your default branch name. This user settings can be defined via command
+line (with the command 'git-config'), but if you know the '.gitconfig' syntax, you can also do it
+editing this dot file.
+
 ## '.conda' and 'condarc'
 
+Conda is the package and enviroments installed in Ixtlilton. The administrators performed a central
+installation but each user has its own setting options and the possibility to define a private list
+of environments. Again, this is defined in a couple of dot files and directories in you '$HOME'. As such, the file '$HOME/.condarc' stores your default list of conda channels and some configuration options of your user as the auto-activation of your base environment. Additionally the directory '$HOME/.conda' include some internal information used by conda related with your user, as your list of environments.
