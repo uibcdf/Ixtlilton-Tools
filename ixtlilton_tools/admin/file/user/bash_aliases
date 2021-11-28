@@ -1,0 +1,18 @@
+# To navigate
+
+alias cdh="cd $HOME"
+alias cds="cd $SCRATCH"
+alias cdw="cd $WORK"
+
+# To safely remove
+
+alias purge_backups='rm *~'
+alias purgar_gromacs='rm \#*'
+alias purgar_python='rm *.pyc'
+
+alias purge='rm *~ \#* *.pyc'
+
+# To work with SLURM
+
+alias squeuel='squeue --format="%.18i %24j %.8u %.12T %.12M %.12l %.6D %.12P %R"'
+

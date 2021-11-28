@@ -11,6 +11,7 @@ Guide
    user_file_system.md
    dot_files_and_directories.md
    environment_variables.md
+   shell_aliases.md
    environment_modules.md
    conda.md
    git.md

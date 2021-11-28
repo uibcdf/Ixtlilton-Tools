@@ -1,24 +1,86 @@
 # Environment variables
 
-Some environment variables were modified at the moment of creating your user to modify its
-behaviour. Some other variables described here are unix default environment variables. Knowing them
-makes the interaction with your Ixtlilton user easier.
+The environment variables are variables defined in your shell session by you or the OS with name
+and value. They are used by the OS and third applications to define their behaviour depending
+on the user choice or setup.
 
-As you probably already know, you can print out in the terminal all your user environment variables
+Let's first how to define a shell variable. Type in a terminal:
+
+```bash
+ACME_LICENSE_CODE='xdk434%EQ}'
+```
+
+And now lets print out the value of our first shell variable:
+
+```bash
+echo $ACME_LICENSE_CODE
+```
+
+Values can also be integers, float, double or boolean. Let's play a bit bash scripting with different variables:
+
+```bash
+TOPYEAR=2020
+NOW=`date +'%Y'`
+if [[ $NOW -lt TOPYEAR ]]; then WORKS=true; else WORKS=false; fi
+if ! $WORKS; then echo "The ACME License expired"; fi
+```
+
+Now, if you want that other than your user can access to the value of a variable, you need to turn
+the shell variable into an environment variable:
+
+```bash
+export ACME_LICENSE_CODE
+```
+
+or
+
+```bash
+export ACME_LICENSE_CODE='xdk434%EQ}'
+```
+
+Finnally, you can print out in the terminal all your user environment variables
 with:
 
 ```bash
 export
 ```
 
-### User file system variables
+## Your user
 
-There are some variables you should know to be used as shortcuts of directories. This can make your
-bash scripting lighter. Execute in your terminal the following commands to see these variables:
+There are three variables keeping information about the sessions user:
 
 ```bash
 echo $USER
 ```
+```bash
+echo $USERNAME
+```
+```bash
+echo $LOGNAME
+```
+
+## Where your user is and was
+
+There are a couple of variables useful to drive your user in a script. Try the following:
+
+```
+cd ~
+cd local
+echo $PWD
+echo $OLDPWD
+```
+
+Now you can guess how the following command knows what was the last place you visited:
+
+```
+cd -
+echo $PWD
+```
+
+## Navigating in your file system
+
+There are some variables you should know to be used as shortcuts of directories. This can make your
+bash scripting or your interaction with your terminal lighter.
 
 ```bash
 echo $HOME
@@ -40,21 +102,26 @@ echo $DATA
 echo $HOTDATA
 ```
 
-### Path variable
+## Path variable
 
-Your Path variable includes now your '$HOME/user/bin' directory. Try in your terminal:
+Your Path variable includes the list of directories where your user is going to look for binnaries
+and executable scripts:
 
 ```bash
 echo $PATH
 ```
 
-Binnaries and executable files placed in this directory will be invokable by you in your terminal
-at any place and moment.
+You can for instank invoke the command 'ls' at any moment and place because it is located in a
+directory included in your 'PATH' environment variable.
 
-### Library variables
+```
+which ls
+```
+
+## Library variables
 
 If you need to include libraries locally in your user to be called by compilers, e.g., make use of
-your directories `$HOME/user/lib`, `$HOME/user/lib32`, and `$HOME/user/lib64`. They are already in
+your directories `$HOME/local/lib`, `$HOME/local/lib32`, and `$HOME/local/lib64`. They are already in
 your environment variables usually referred with this purpose:
 
 ```bash
@@ -67,33 +134,23 @@ and
 echo $LD_LIBRARY_PATH
 ```
 
-### Environment modulefiles
+## Environment modulefiles
 
-The environment modules will manage the work with applications software locally installed in your
-user. As you saw in [the despcription of your user file system](user_file_system.md), there is
-place to where Lmod will look for your modulefiles: `$HOME/opt/modulefiles`. The way to communicate
-this to Lmod is including this path in your MODULEPATH environment variable:
+The environment modules lets you interact with the applications installed by the administrators or locally by you. As you can see in [the description of your user file system](user_file_system.md), there is place where Lmod will look for your modulefiles: `$HOME/local/opt/modulefiles`. The way to communicate
+this to Lmod is including this path in your 'MODULEPATH' environment variable:
 
 ```bash
 echo $MODULEPATH
 ```
 
-## Shell aliases
+Check the section [XXX](environment_modules.md) if you are not familiar it.
 
-There are some aliases already defined for your user:
-
-```bash
-# go to your home directory
-cdh
+```{note}
+There are many other environment modules defined for your session. You can easily find information about them on internet.
 ```
 
-```bash
-# go to your scratch directory
-cds
-```
-
-```bash
-# go to your work directory
-cdw
+```{tip}
+Have a look to the section of this user guide name 'Dot files and
+directories'. You might want to define some other environment variables.
 ```
 
