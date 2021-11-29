@@ -1,6 +1,6 @@
 # Dot files and directories
 
-In a unix OS, the dot files or directories are those whose name starts with '.'. This only fact makes them hidden. Try to type in your terminal de following:
+In a unix OS, the dot files or directories are those whose name starts with ".". This only fact makes them hidden. Try to type in your terminal de following:
 
 ```bash
 cd $HOME
@@ -57,7 +57,7 @@ echo $[$VAR+100]
 ```
 
 Now, you are probably wondering -if you are linux user with few experience-: is this then the place
-where the user variables HOME, WORK or SCRATCH? That's right, but to load the definition of these
+where the user variables `HOME`, `WORK` or `SCRATCH`? That's right, but to load the definition of these
 variables in every user, this is done in a common file with path 'opt/etc/user\_bashrc' where the
 following lines are placed:
 
@@ -71,23 +71,33 @@ export SCRATCH=/scratch/$USER
 export DATA=/projects/DATA
 export HOTDATA=/projects/HOTDATA
 
-alias cdh="cd $HOME"
-alias cds="cd $SCRATCH"
-alias cdw="cd $WORK"
-
 export HISTSIZE=10000
 export HISTFILESIZE=10000
 
-export PATH=$HOME/opt/bin:${PATH}
-export LIBRARY_PATH=$HOME/opt/lib:$HOME/opt/lib32:$HOME/opt/lib64:${LIBRARY_PATH}
-export LD_LIBRARY_PATH=$HOME/opt/lib:$HOME/opt/lib32:$HOME/opt/lib64:${LD_LIBRARY_PATH}
-export INCLUDE=$HOME/opt/include:${INCLUDE}
+export PATH=$HOME/.local/bin${PATH}
+export LIBRARY_PATH=$HOME/.local/lib:$HOME/.local/lib32:$HOME/.local/lib64:${LIBRARY_PATH}
+export LD_LIBRARY_PATH=$HOME/.local/lib:$HOME/.local/lib32:$HOME/.local/lib64:${LD_LIBRARY_PATH}
+export INCLUDE=$HOME/.local/include:${INCLUDE}
 
-# Own modulefiles
-module use $HOME/opt/modulefiles
+# Modulefiles
+module use $HOME/.local/opt/modulefiles
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/opt2/apps/conda/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/opt2/apps/conda/etc/profile.d/conda.sh" ]; then
+        . "/opt2/apps/conda/etc/profile.d/conda.sh"
+    else
+        export PATH="/opt2/apps/conda/bin:$PATH"
+    fi
+fi
+unset __conda_setup
 ```
 
-And this file is loaded by your '$HOME/.bashrc' file with the lines:
+And this file is loaded by your '\$HOME/.bashrc' file with the lines:
 
 ```bash
 # Source global user definitions
@@ -97,7 +107,8 @@ fi
 ```
 
 Many programs and scripts use this file to trigger the initial set up for the user. You can see how
-'conda' added some few lines between the lines:
+'conda' usually adds some few lines. In your workstation or laptop, if you work with conda, you
+will probably see a section like the following in your '~/.bashrc' file:
 
 ```bash
 # >>> conda initialize >>>
@@ -107,7 +118,10 @@ Many programs and scripts use this file to trigger the initial set up for the us
 unset __conda_setup
 ```
 
-You can define the behaviour of your terminal, prompt, commands history record, etc. But to conclude this section, let's pay attention to the piece of code in your '$HOME/.bashrc':
+The administrators put these lines in '/opt/etc/user\_bashrc' to have these orders centralized for
+all users in case the configuration of conda changes in Ixtlilton.
+
+What other things can you do with you '.bashrc'? You can define the behaviour of your terminal, prompt, commands history record, etc. But to conclude this section, let's pay attention to the piece of code in your '\$HOME/.bashrc':
 
 ```bash
 # My alias definitions
@@ -116,15 +130,7 @@ if [ -f ~/.bash_aliases ]; then
 fi
 ```
 
-This is not the first time the word 'alias' is shown in this section. Go above to find the lines:
-
-```bash
-alias cdh="cd $HOME"
-alias cds="cd $SCRATCH"
-alias cdw="cd $WORK"
-```
-
-Let's see what are these alias -in case you don't know it yet- in the following section.
+Your '.bashrc' file is executing, if exists, another shell script named '.bash\_aliases'. Let's see what this file is in the following section.
 
 ## '.bash\_aliases'
 
@@ -135,27 +141,16 @@ You can define aliases for commands in your terminal. Try:
 alias list="ls"
 ```
 
-Now you can type in your terminal "list" and the "ls" command will be executed. You have defined an
+Now you can type in your terminal "list" and the `ls` command will be executed. You have defined an
 alias. But this alias is not permanent. This alias will be forgotten as soon as you close your
 terminal. That's why the alias must be define every time you open a session or a terminal. And this
-can be done by means of the same '$HOME/.bashrc' or by any other file loaded by '$HOME/.bashrc'. In
-the case of the common aliases to all users:
+can be done by means of the same '\$HOME/.bashrc' or by any other file loaded by '\$HOME/.bashrc'.
 
-```bash
-alias cdh="cd $HOME"
-alias cds="cd $SCRATCH"
-alias cdw="cd $WORK"
-```
 
-their definition are included by the administrators in the file '/opt/etc/user\_bashrc'. Now, in case you
-want to define new aliases, you can do it adding them as new lines in your '$HOME/.bashrc'. Or, if
+Thus, in case you want to define your own aliases, you can do it by adding them as new lines in your '\$HOME/.bashrc'. Or, if
 you want to keep your '.bashrc' well organized, you can put these aliases definition in your
 '.bash\_aliases' file. To show you the way, the administrators included the first useful alias in
-your dot file:
-
-```bash
-alias squeuel='squeue --format="%.18i %24j %.8u %.12T %.12M %.12l %.6D %.12P %R"'
-```
+this former file as you can see in the section ["Shell aliases"](shell_aliases.md).
 
 ## '.bash\_profile'
 
@@ -163,7 +158,7 @@ This shell script does not exist by default in all Linux distributions for users
 script in the case of Ixtlilton users is a bit redundant. The role played by '.bash\_profile' is similar
 to the one played by '.bashrc', but in different moments:
 
-- '.bash_profile' is executed when the user opens a new session.
+- '.bash\_profile' is executed when the user opens a new session.
 - '.bashrc' is executed when the user executes bash
 
 But in the case of Ixtlilton there is no difference, since the user '.bash\_profile' is loading the '.bashrc' file of the same user:
@@ -186,10 +181,10 @@ executed? This is because your history record is stored in '.bash\_history'.
 
 As it was introduced in the user guide section '[Login](login.md)', the SSH protocol is used to make
 secure shell remote connections. This protocol, executed with the command 'ssh', needs some
-user settings and credentials. And the directory '$HOME/.ssh' is the place to store them.
+user settings and credentials. And the directory '\$HOME/.ssh' is the place to store them.
 
-Among the files you can find in your '$HOME/.ssh', there is one you should know if you are GitHub
-user: '$HOME/.ssh/id\_rsa.pub'. This file stores the RSA key of your user. And this key is an
+Among the files you can find in your '\$HOME/.ssh', there is one you should know if you are GitHub
+user: '\$HOME/.ssh/id\_rsa.pub'. This file stores the RSA key of your user. And this key is an
 addition security filter to approve a remote connection between two machines. The machine receiving
 the remote access petition can be configured to deny any ssh login request if the RSA public key is
 not recognized as authorized -even if the user and passwords are ok-. Or, in case you want to, or
@@ -218,4 +213,5 @@ editing this dot file.
 
 Conda is the package and enviroments installed in Ixtlilton. The administrators performed a central
 installation but each user has its own setting options and the possibility to define a private list
-of environments. Again, this is defined in a couple of dot files and directories in you '$HOME'. As such, the file '$HOME/.condarc' stores your default list of conda channels and some configuration options of your user as the auto-activation of your base environment. Additionally the directory '$HOME/.conda' include some internal information used by conda related with your user, as your list of environments.
+of environments. Again, this is defined in a couple of dot files and directories in your '\$HOME'. As such, the file '\$HOME/.condarc' stores your default list of conda channels and some configuration options of your user as the auto-activation of your base environment. Additionally the directory '\$HOME/.conda' include some internal information used by conda related with your user, as your list of environments.
+

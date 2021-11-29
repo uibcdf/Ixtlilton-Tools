@@ -7,9 +7,8 @@ alias cdw="cd $WORK"
 # To safely remove
 
 alias purge_backups='rm *~'
-alias purgar_gromacs='rm \#*'
-alias purgar_python='rm *.pyc'
-
+alias purge_gromacs='rm \#*'
+alias purge_python='rm *.pyc'
 alias purge='rm *~ \#* *.pyc'
 
 # To work with SLURM

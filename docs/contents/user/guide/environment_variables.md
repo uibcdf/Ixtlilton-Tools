@@ -111,8 +111,8 @@ and executable scripts:
 echo $PATH
 ```
 
-You can for instank invoke the command 'ls' at any moment and place because it is located in a
-directory included in your 'PATH' environment variable.
+You can for instank invoke the command `ls` at any moment and place because it is located in a
+directory included in your `PATH` environment variable.
 
 ```
 which ls
@@ -121,7 +121,7 @@ which ls
 ## Library variables
 
 If you need to include libraries locally in your user to be called by compilers, e.g., make use of
-your directories `$HOME/local/lib`, `$HOME/local/lib32`, and `$HOME/local/lib64`. They are already in
+your directories '\$HOME/local/lib', '\$HOME/local/lib32', and '\$HOME/local/lib64'. They are already in
 your environment variables usually referred with this purpose:
 
 ```bash
@@ -136,14 +136,14 @@ echo $LD_LIBRARY_PATH
 
 ## Environment modulefiles
 
-The environment modules lets you interact with the applications installed by the administrators or locally by you. As you can see in [the description of your user file system](user_file_system.md), there is place where Lmod will look for your modulefiles: `$HOME/local/opt/modulefiles`. The way to communicate
-this to Lmod is including this path in your 'MODULEPATH' environment variable:
+The environment modules lets you interact with the applications installed by the administrators or locally by you. As you can see in [the description of your user file system](user_file_system.md), there is place where Lmod will look for your modulefiles: '\$HOME/local/opt/modulefiles'. The way to communicate
+this to Lmod is including this path in your `MODULEPATH` environment variable:
 
 ```bash
 echo $MODULEPATH
 ```
 
-Check the section [XXX](environment_modules.md) if you are not familiar it.
+Check the section ["Environment modules"](environment_modules.md) if you are not familiar it.
 
 ```{note}
 There are many other environment modules defined for your session. You can easily find information about them on internet.
