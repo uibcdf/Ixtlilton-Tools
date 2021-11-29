@@ -27,14 +27,14 @@ test:
 
 docs:
   channels: &docs_channels
-    - conda-forge
-    - default
+    - *production_channels
   dependencies: &docs_dependencies
+    - *production_dependencies
     - sphinx
     - sphinx_rtd_theme
     - sphinxcontrib-bibtex
-    - myst_nb
-    - myst_parser
+    - myst-nb
+    - myst-parser
     - jupyterlab
 
 development:

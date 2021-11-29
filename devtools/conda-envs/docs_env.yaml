@@ -2,10 +2,12 @@ channels:
 - conda-forge
 - default
 dependencies:
+- python
+- pandas
+- numpy
 - sphinx
 - sphinx_rtd_theme
 - sphinxcontrib-bibtex
-- nbsphinx
-- recommonmark
-- sphinx-markdown-tables
+- myst-nb
+- myst-parser
 - jupyterlab
