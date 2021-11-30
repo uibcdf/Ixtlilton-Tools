@@ -33,7 +33,6 @@ def remove(username):
     work.remove(username)
     home.local.opt.modulefiles.remove(username)
     home.local.opt.apps.remove(username)
-    home.local.opt.src.remove(username)
     home.local.opt.remove(username)
     home.local.bin.remove(username)
     home.local.etc.remove(username)

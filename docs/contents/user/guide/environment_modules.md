@@ -193,21 +193,14 @@ If you want to include other directories with modulefiles include the following 
 export MODULEPATH=$MODULEPATH:/home/username/path/to/your/modulefiles
 ```
 
-It is also a strong suggestion that **the user should not keep the source files in the '\$HOME' directory**. They are usually
-heavy to just store them there not to be used in a long time. Use your '$WORK' directory for this
+It is also a strong suggestion that **the user should not keep the source files in the HOME directory**. They are usually
+heavy to just store them there not to be used in a long time. Use your WORK directory for this
 purpose.
 
 ```{admonition} More Information
 - [LMOD documentation](http://lmod.readthedocs.org)   
 - [LMOD GitHub repository](https://github.com/TACC/Lmod)   
-- [the Environment Modules open source project](http://modules.sourceforge.net/)     
-https://en.wikipedia.org/wiki/Environment_Modules_(software)    
-http://%01%01https://en.wikipedia.org/wiki/Environment_Modules_%28software%29    
-http://modules.sourceforge.net/    
-http://www.admin-magazine.com/HPC/Articles/Environment-Modules     
-http://sourceforge.net/p/modules/wiki/FAQ/    
-https://www.nersc.gov/users/software/nersc-user-environment/modules/    
-http://modules.sourceforge.net/man/module.html    
-http://modules.sourceforge.net/man/modulefile.html    
+- [The Environment Modules open source project](http://modules.sourceforge.net/)     
+- [Article: Environment Modules – A Great Tool for Clusters](http://www.admin-magazine.com/HPC/Articles/Environment-Modules)     
 ```
 

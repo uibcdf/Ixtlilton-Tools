@@ -2,19 +2,19 @@
 
 ## What's conda?
 
-Conda is a language-agnostic open-source packages and environments manager. In a brief
-introduction, two things need to know about conda:
+Conda is a language-agnostic open-source packages and environments manager. In case you are not
+familiar with conda, you need to know at least two things to follow this section:
 
-- With conda you can install software in your computer with out altering the operating system. This 
+- With conda you can install software in your computer without altering the OS. This 
   software come from conda repositories, called 'channels', pre-compiled as 'packages' to be used
   locally in your machine.
 - Conda works with 'virtual working environments'. Each environment can have a list of packages
-  installed independently of other environments or the operating system.
+  installed independently of other environments or the OS.
 
 ## The channels and the .condarc file
 
-By default conda downloads packages from a "standard official" channel. But developers, labs and
-users can deploy software via personnal free channels. For example, the UIBCDF has its own
+By default conda downloads packages from a standard official "default" channel. But developers, labs and
+users can deploy software via their own channels. For example, the UIBCDF has its own
 channel were the last stable versions of the libraries developed by the lab are available to
 be installed with conda. If you want to include a channel in your default list of channels used as
 repositories include its name as new item in your `~/.condarc` file. Be aware that channels are
@@ -30,6 +30,16 @@ channels:
 
 In the above example, if the same package is found the all channels, this wil be downloaded from
 the first one in the list (AAA).
+
+By default, your user has a list of channels configured by Ixtlilton administrators:
+
+```bash
+# .condard file
+channels:
+   - uibcdf
+   - conda-forge
+   - default
+```
 
 ## The environments
 
@@ -101,10 +111,57 @@ conda list
 ```
 
 This list can also be printed out with out entering in the environment. Lets lists the packages of
-'UIBCDF_lab' from anywhere:
+'UIBCDF\_lab' from anywhere:
 
 ```bash
 conda list -n UIBCDF_lab
+```
+
+### The UIBCDF environments
+
+The UIBCDF lab has defined some shared environments accessible to any user. Those environments are
+manteined by the administrators. As such, the standard users can not install or remove
+packages there. They are placed in the directory `/opt/apt2/conda` and are the following.
+
+#### UIBCDF\_lab
+
+The environment 'UIBCDF\_lab' keeps in a single place all the common packages used in the lab. They
+can listed as:
+
+```bash
+conda list -n UIBCDF_lab
+```
+
+The UIBCDF libraries present in this environment are in its last stable version. If you want to use them in its developing
+version, having your own environment named 'UIBCDF\_lab\_dev', for example, it is suggested to you.
+Find the instructions to do that in the following subsection.
+
+## Your own conda environments
+
+The environments set up in `/opt2/apps/conda` are managed by the cluster administrators. However, all
+users have rights to read and execute them. You can create and manage your own conda environment.
+
+### Create a new environment
+
+To create a new environment managed by your user, type:
+
+```bash
+# if the env is with python 3.7
+conda create -n name_env python=3.7
+```
+
+where 'name\_env' should be replaced by the name of your election.
+
+This environment will be created in your own conda config directory:
+
+```bash
+~/.conda
+```
+
+And no other user can use it or manage it. Your new environment appears now for you in the list:
+
+```bash
+conda info --envs
 ```
 
 ### Installing packages
@@ -150,46 +207,14 @@ If specific package needs to be updated:
 conda update package1
 ```
 
+### Removing a conda environment
 
-### The UIBCDF environments
-
-The UIBCDF lab has defined some shared environments accessible to any user. Those environments are
-manteined by the cluster administrators. As such, the standard users can not install or remove
-packages there. They are placed in the directory `/opt/apt2/conda` and are the following.
-
-#### UIBCDF_lab
-
-The environment 'UIBCDF_lab' keeps in a single place all the common packages used in the lab. They
-can listed as:
+To remove a conda environment make sure it is deactivated, and then:
 
 ```bash
-conda list -n UIBCDF_lab
+conda env remove -n env_name
 ```
 
-The UIBCDF libraries present in this environment are in its last stable version. If you want to use them in its developing
-version, having your own environment named 'UIBCDF_lab_dev', for example, it is suggested to you.
-Find the instructions to do that in the following subsection.
+where 'name\_env' should be replaced by the name of the environment you want to remove.
 
-## Your own conda environments
-
-The environments set up in `/opt2/apps/conda` are managed by the cluster administrators. However, all
-users have rights to read and execute them. If you want to create your own conda environment,
-placed in your home directory and managed by you, you can proceed as follows:
-
-```bash
-# if the env is with python 3.7
-conda create -n name_env python=3.7
-```
-
-This environment will be created in your own conda config directory:
-
-```bash
-~/.conda
-```
-
-And no other user can use it or manage it. Your new environment appears now for you in the list:
-
-```bash
-conda info --envs
-```
 

@@ -72,8 +72,5 @@ def fix(username, fullname=None, phone=None, mail=None, category=None):
     home.local.opt.apps.make(username)
     home.local.opt.apps.fix_owner(username)
 
-    home.local.opt.src.make(username)
-    home.local.opt.src.fix_owner(username)
-
     pass
 

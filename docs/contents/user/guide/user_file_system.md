@@ -78,8 +78,7 @@ Use this directory at your own convenience since its content only affects your u
 
 In a unix file system, the opt directory is where third party application software packages are placed (self-contained software which function has nothing to see with the OS and/or self-contained software developed by a third party). Is this directory really necessary for you? Maybe not... You can install software locally in your home directory the way you prefer. But, if you want to make use
 of the [Lmod environment modules manager installed in Ixtlilton](environment_modules.md) we suggest you to place the compiled
-version of the software in a directory inside '\$HOME/opt/apps', the source code in '\$HOME/opt/src',
-and the corresponding modulefiles in '\$HOME/opt/modulefiles'. You can find further details about
+version of the software in a directory inside '\$HOME/opt/apps', and the corresponding modulefiles in '\$HOME/opt/modulefiles'. You can find further details about
 this implementation in the subsection ["Your own environment modules"](environment_modules.md#your-own-environment-modules).
 
 Check the value of your environment variables `MODULEPATH`:
