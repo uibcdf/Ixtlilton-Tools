@@ -29,10 +29,10 @@ managed by slurm. Here is a brief description of the nodes as slurm knows them:
 
 | Name | IP  | CPUs | Threads | Memory | GPUs |
 | ---  | --- | ---- | ------  | ------ | ---- |
-| ixtlilton | 192.168.0.100 | 20 | 20 | 62000 | GTX1080 (2x)
-| node01    | 192.168.0.1   | 20 | 20 | 62000 | GTX1080Ti (3x)
-| node02    | 192.168.0.2   | 20 | 20 | 62000 | GTX1080 (2x), GTX1080Ti (1x)
-| node03    | 192.168.0.3   | 20 | 20 | 50000 | GTX1080Ti (3x)
+| ixtlilton | 192.168.0.100 | 20 | 20 | 62000 | GTX1080Ti (3x)
+| node01    | 192.168.0.1   | 20 | 20 | 62000 | RTX2080Ti (3x)
+| node02    | 192.168.0.2   | 20 | 20 | 62000 | RTX2080Ti (2x), GTX1080Ti (1x)
+| node03    | 192.168.0.3   | 20 | 20 | 62000 | RTX2080Ti (2x), GTX1080Ti (1x)
 | node04    | 192.168.0.4   | 20 | 20 | 62000 | GTX1080Ti (3x)
 
 
@@ -48,19 +48,15 @@ sinfo
 
 For UIBCDF lab members there are four partitions or job queues.
 
-| Name | Nodes | Wall time | Priority |Description |
-| ---- | ----- | --------- | ----------- | ----- |
-| tests | ixtlilton | 6 hours | High | Tests and short jobs |
-| normal | nodes[01-04] | 7 days | Normal | Normal jobs |
-| prior | nodes[01-04] | Infinity | Top | High priority jobs |
-| gpus_prior  | ixtlilton and nodes[01-04]| Infinity | Top | High priority gpu jobs|
+| Name | Nodes | Wall time | Priority |Description | Allow Groups |
+| ---- | ----- | --------- | ----------- | ----- | ------ |
+| tests | ixtlilton | 3 hours | High | Tests and short jobs | uibcdf |
+| normal | nodes[01-04] | 24 hours | Normal | Normal jobs | uibcdf |
+| guests | nodes[01-04] | 24 hours | Low | Collaboration jobs | guests |
+| prior  | ixtlilton and nodes[01-04]| Infinity | Top | High priority jobs| uibcdf\_prior |
 
 
 For UIBCDF guests there is only a partition.
-
-| Name | Nodes | Wall time | Priority | Description |
-| ---- | ----- | --------- | ----------- | -------- |
-| guests | node02 | 1 day  | Low | Queue for external friends with projects out of the lab interest |
 
 ## The job queue
 
