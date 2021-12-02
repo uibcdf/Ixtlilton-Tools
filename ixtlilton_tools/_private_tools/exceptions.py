@@ -42,4 +42,13 @@ class UserDoesNotExist(ValueError):
                 message = f'The user {username} does not exists.'
         super().__init__(message)
 
+class GroupDoesNotExist(ValueError):
+    def __init__(self, groupname=None, message=None):
+        if message is None:
+            if groupname is None:
+                message = 'The group does not exists.'
+            else:
+                message = f'The group {groupname} does not exists.'
+        super().__init__(message)
+
 
