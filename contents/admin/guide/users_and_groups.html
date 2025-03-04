@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Users and Groups &mdash; Ixtlilton 0+untagged.76.g63f39e0.dirty documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="SSH" href="ssh.html" />
+    <link rel="prev" title="Volumes and File System" href="volumes_and_file_system.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            Ixtlilton
+          </a>
+              <div class="version">
+                0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about/main_node.html">Main node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/secondary_nodes.html">Secondary nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/storage_node.html">Storage node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/networks.html">Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/file_system.html">File system</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../about/file_system.html#the-ixtlilton-s-file-system">The Ixtlilton’s file system</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about/file_system.html#sharing-projects-data">Sharing projects data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about/file_system.html#finished-projects">Finished projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about/file_system.html#a-slave-node-file-system">A slave node file system.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about/file_system.html#the-user-file-system">The user file system</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/users_and_groups.html">Users and groups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/environment_modules.html">Environment modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../about/environment_modules.html#what-is-an-environment-module-system">What is an environment module system?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about/environment_modules.html#lmod">Lmod</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about/environment_modules.html#your-own-environment-modules">Your own environment modules</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/queuing_system.html">Queuing system</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../user/guide/index.html">Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../user/guide/login.html">Login</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/guide/transfer_files.html">Transfer files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/guide/user_file_system.html">File system</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/guide/dot_files_and_directories.html">Dot files and directories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/guide/environment_variables.html">Environment variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/guide/shell_aliases.html">Shell aliases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/guide/environment_modules.html">Environment modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/guide/conda.html">Conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/guide/git.html">Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/guide/jupyter.html">Jupyter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/guide/slurm.html">SLURM jobs submission</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/guide/workflow_UIBCDF.html">UIBCDF project’s workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/tools/index.html">Tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../user/tools/x.html">XXX</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Admin Guide</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="admin_and_monitoring.html">Administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware.html">Hardware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="network.html">Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="volumes_and_file_system.html">Volumes and File System</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Users and Groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ssh.html">SSH</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment_modules.html">Environment Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conda.html">Conda</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html">Tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tools/x.html">XXX</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">API Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../autosummary/ixtlilton_tools.html">ixtlilton_tools</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Ixtlilton</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Guide</a></li>
+      <li class="breadcrumb-item active">Users and Groups</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+           <div itemprop="articleBody">
+             
+  <section id="users-and-groups">
+<h1>Users and Groups<a class="headerlink" href="#users-and-groups" title="Permalink to this heading"></a></h1>
+<p>User Ids must run from 2000 to 2999.
+This user id must apply for any system located not only in ixtlilton but in the UIBCDF.</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Id</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>UIBCDF</p></td>
+<td><p>1000</p></td>
+<td><p>Generic lab username to run admind tasks, tests and benchmarks</p></td>
+</tr>
+<tr class="row-odd"><td><p>liliana</p></td>
+<td><p>2000</p></td>
+<td><p>Liliana</p></td>
+</tr>
+<tr class="row-even"><td><p>diego</p></td>
+<td><p>2001</p></td>
+<td><p>Diego</p></td>
+</tr>
+<tr class="row-odd"><td><p>homero</p></td>
+<td><p>2002</p></td>
+<td><p>Homero</p></td>
+</tr>
+</tbody>
+</table>
+<section id="notes">
+<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Habla del fichero /opt/etc/user_bashrc</p></li>
+<li><p>Hay que copiar el .bashrc tipo y poner bien los permisos</p></li>
+<li><p>Poner un fichero .bash_aliases tipo y poner bien los permisos</p></li>
+<li><p>Poner un fichero .condarc tipo</p></li>
+<li><p>Crear el directorio .conda</p></li>
+<li><p>en el dir home/user/opt faltaban los dir lib, lib32, lib64 e include. Además debe tener los
+propietarios bien</p></li>
+</ul>
+</section>
+<section id="uibcdf-user">
+<h2>UIBCDF User<a class="headerlink" href="#uibcdf-user" title="Permalink to this heading"></a></h2>
+<p>The user belongs to the groups: wheel, projects and archive.</p>
+</section>
+<section id="new-user">
+<h2>New User<a class="headerlink" href="#new-user" title="Permalink to this heading"></a></h2>
+<section id="internal">
+<h3>Internal<a class="headerlink" href="#internal" title="Permalink to this heading"></a></h3>
+<p>A new user from the UIBCDF has to update the groups he/she belongs to: projects</p>
+<p>‘’’
+usermod -aG projects username
+‘’’</p>
+</section>
+<section id="with-lab-rights">
+<h3>With lab rights<a class="headerlink" href="#with-lab-rights" title="Permalink to this heading"></a></h3>
+<p>A new user from the UIBCDF with sudo rights should belong to the groups: wheel, projects and archive.</p>
+<p>‘’’
+usermod -aG projects username
+usermod -aG archive username
+‘’’</p>
+</section>
+<section id="external">
+<h3>External<a class="headerlink" href="#external" title="Permalink to this heading"></a></h3>
+<p>A new external user does not belong to the group “projects” but to specific projects group defined ad hoc.</p>
+</section>
+</section>
+<section id="groups">
+<h2>Groups<a class="headerlink" href="#groups" title="Permalink to this heading"></a></h2>
+<p>Group Ids must run from 3000 to 3999.</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Id</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>projects</p></td>
+<td><p>3000</p></td>
+<td><p>Any project located in /Data/projects without specific groupid</p></td>
+</tr>
+<tr class="row-odd"><td><p>projectA</p></td>
+<td><p>3000 + i (i=1,..499)</p></td>
+<td><p>project A in /Data/projects with specific rights (e.g.: belonging to external user without access to any project)</p></td>
+</tr>
+<tr class="row-even"><td><p>archive</p></td>
+<td><p>3500</p></td>
+<td><p>Any project already stored in /ColdStorageRoom/archive</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="adding-new-user">
+<h2>Adding new user<a class="headerlink" href="#adding-new-user" title="Permalink to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">NEW_USER_NAME</span><span class="o">=</span><span class="s1">&#39;xxxx&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="user-file-system">
+<h2>User file system<a class="headerlink" href="#user-file-system" title="Permalink to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>mkdir /work/$NEW_USER_NAME
+mkdir /scratch/$NEW_USER_NAME
+chown -R $NEW_USER_NAME:$NEW_USER_NAME /work/$NEW_USER_NAME
+chown -R $NEW_USER_NAME:$NEW_USER_NAME /scratch/$NEW_USER_NAME
+</pre></div>
+</div>
+</section>
+<section id="local-opt-structure-in-the-users-home">
+<h2>Local opt structure in the users home<a class="headerlink" href="#local-opt-structure-in-the-users-home" title="Permalink to this heading"></a></h2>
+<p>To help the user keep things well organised a local ‘opt’ dir is created with ‘apps’, ‘bin’, ‘etc’,
+‘modulefiles’ and ‘src’ inside.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>mkdir /home/$NEW_USER_NAME/opt
+mkdir /home/$NEW_USER_NAME/opt/apps
+mkdir /home/$NEW_USER_NAME/opt/bin
+mkdir /home/$NEW_USER_NAME/opt/etc
+mkdir /home/$NEW_USER_NAME/opt/modulefiles
+mkdir /home/$NEW_USER_NAME/opt/src
+chown -R $NEW_USER_NAME:$NEW_USER_NAME /work/$NEW_USER_NAME
+</pre></div>
+</div>
+<section id="double-factor">
+<h3>Double Factor<a class="headerlink" href="#double-factor" title="Permalink to this heading"></a></h3>
+<p>Double Factor is enabled for ssh conexion coming from outside.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>su<span class="w"> </span>username
+google-authenticator
+y
+</pre></div>
+</div>
+<p>Go to the url with the QR andwith fshutter take selection shot of QR.
+Save the QR as QR_username&#64;ixtlilton</p>
+<p>Take a selection shot of the codes. Save it as Codes_username&#64;ixtlilton</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>y
+y
+y
+y
+</pre></div>
+</div>
+<p>Include both files attached to the email template with the data and instructions for the new user.</p>
+</section>
+</section>
+<section id="comunication-with-the-new-user">
+<h2>Comunication with the new user<a class="headerlink" href="#comunication-with-the-new-user" title="Permalink to this heading"></a></h2>
+<p>An email using the <span class="xref myst">following template</span> is send to the new user. This email includes private
+information for the user and general user’s instructions. Copy the template into the email body and
+edit the text with the new username password and attach the user’s QR and codes snapshots.</p>
+</section>
+<section id="password-ip-and-port">
+<h2>Password, ip and port<a class="headerlink" href="#password-ip-and-port" title="Permalink to this heading"></a></h2>
+<p>The user password with ip and port will be sent via <a class="reference external" href="https://thismessagewillselfdestruct.com/">TMWSD</a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+    <a href="https://github.com/uibcdf/Ixtlilton">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
+    </a>
+
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="volumes_and_file_system.html" class="btn btn-neutral float-left" title="Volumes and File System" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ssh.html" class="btn btn-neutral float-right" title="SSH" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, UIBCDF Lab at the Mexico City Childrens Hospital Federico Gomez and the authors..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

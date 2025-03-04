@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SLURM jobs submission &mdash; Ixtlilton 0+untagged.76.g63f39e0.dirty documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="UIBCDF project’s workflow" href="workflow_UIBCDF.html" />
+    <link rel="prev" title="Jupyter" href="jupyter.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            Ixtlilton
+          </a>
+              <div class="version">
+                0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about/main_node.html">Main node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/secondary_nodes.html">Secondary nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/storage_node.html">Storage node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/networks.html">Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/file_system.html">File system</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../about/file_system.html#the-ixtlilton-s-file-system">The Ixtlilton’s file system</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about/file_system.html#sharing-projects-data">Sharing projects data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about/file_system.html#finished-projects">Finished projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about/file_system.html#a-slave-node-file-system">A slave node file system.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about/file_system.html#the-user-file-system">The user file system</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/users_and_groups.html">Users and groups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/environment_modules.html">Environment modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../about/environment_modules.html#what-is-an-environment-module-system">What is an environment module system?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about/environment_modules.html#lmod">Lmod</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about/environment_modules.html#your-own-environment-modules">Your own environment modules</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/queuing_system.html">Queuing system</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="login.html">Login</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transfer_files.html">Transfer files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_file_system.html">File system</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dot_files_and_directories.html">Dot files and directories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment_variables.html">Environment variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shell_aliases.html">Shell aliases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment_modules.html">Environment modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conda.html">Conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html">Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jupyter.html">Jupyter</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">SLURM jobs submission</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workflow_UIBCDF.html">UIBCDF project’s workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html">Tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tools/x.html">XXX</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../admin/guide/index.html">Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/guide/admin_and_monitoring.html">Administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/guide/hardware.html">Hardware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/guide/network.html">Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/guide/volumes_and_file_system.html">Volumes and File System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/guide/users_and_groups.html">Users and Groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/guide/ssh.html">SSH</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/guide/environment_modules.html">Environment Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/guide/conda.html">Conda</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin/tools/index.html">Tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/tools/x.html">XXX</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">API Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../autosummary/ixtlilton_tools.html">ixtlilton_tools</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Ixtlilton</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Guide</a></li>
+      <li class="breadcrumb-item active">SLURM jobs submission</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+           <div itemprop="articleBody">
+             
+  <section id="slurm-jobs-submission">
+<h1>SLURM jobs submission<a class="headerlink" href="#slurm-jobs-submission" title="Permalink to this heading"></a></h1>
+<section id="queuing-system">
+<h2>Queuing system<a class="headerlink" href="#queuing-system" title="Permalink to this heading"></a></h2>
+</section>
+<section id="job-files">
+<h2>Job files<a class="headerlink" href="#job-files" title="Permalink to this heading"></a></h2>
+</section>
+<section id="what-is-slurm">
+<h2>What is Slurm?<a class="headerlink" href="#what-is-slurm" title="Permalink to this heading"></a></h2>
+<p>Slurm is an open-source workload manager and job scheduler for unix HPC (High Performace Computing) clusters. Everything in the
+cluster related with the running jobs, the queues and partitions, the scheduling and the resources available at
+each moment, is then supervised and managed by Slurm.</p>
+</section>
+<section id="computing-nodes">
+<h2>Computing nodes<a class="headerlink" href="#computing-nodes" title="Permalink to this heading"></a></h2>
+<p>Let’s first see how the universe managed by Slurm is configured. Detailed information about the computing nodes can be printed out with the command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scontrol</span> <span class="n">show</span> <span class="n">nodes</span>
+</pre></div>
+</div>
+<p>This former command prints out detailed information about the nodes and its configuration in SLURM.
+Let’s check for instance ‘node04’:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">NodeName</span><span class="o">=</span><span class="n">node04</span> <span class="n">Arch</span><span class="o">=</span><span class="n">x86_64</span> <span class="n">CoresPerSocket</span><span class="o">=</span><span class="mi">10</span>
+   <span class="n">CPUAlloc</span><span class="o">=</span><span class="mi">0</span> <span class="n">CPUErr</span><span class="o">=</span><span class="mi">0</span> <span class="n">CPUTot</span><span class="o">=</span><span class="mi">20</span> <span class="n">CPULoad</span><span class="o">=</span><span class="mf">0.01</span>
+   <span class="n">AvailableFeatures</span><span class="o">=</span><span class="p">(</span><span class="n">null</span><span class="p">)</span>
+   <span class="n">ActiveFeatures</span><span class="o">=</span><span class="p">(</span><span class="n">null</span><span class="p">)</span>
+   <span class="n">Gres</span><span class="o">=</span><span class="n">gpu</span><span class="p">:</span><span class="n">GTX1080Ti</span><span class="p">:</span><span class="mi">3</span>
+   <span class="n">NodeAddr</span><span class="o">=</span><span class="mf">192.168.0.4</span> <span class="n">NodeHostName</span><span class="o">=</span><span class="n">node04</span> <span class="n">Version</span><span class="o">=</span><span class="mf">17.11</span>
+   <span class="n">OS</span><span class="o">=</span><span class="n">Linux</span> <span class="mf">3.10.0</span><span class="o">-</span><span class="mf">693.11.6</span><span class="o">.</span><span class="n">el7</span><span class="o">.</span><span class="n">x86_64</span> <span class="c1">#1 SMP Thu Jan 4 01:06:37 UTC 2018 </span>
+   <span class="n">RealMemory</span><span class="o">=</span><span class="mi">62000</span> <span class="n">AllocMem</span><span class="o">=</span><span class="mi">0</span> <span class="n">FreeMem</span><span class="o">=</span><span class="mi">63133</span> <span class="n">Sockets</span><span class="o">=</span><span class="mi">2</span> <span class="n">Boards</span><span class="o">=</span><span class="mi">1</span>
+   <span class="n">State</span><span class="o">=</span><span class="n">IDLE</span> <span class="n">ThreadsPerCore</span><span class="o">=</span><span class="mi">1</span> <span class="n">TmpDisk</span><span class="o">=</span><span class="mi">0</span> <span class="n">Weight</span><span class="o">=</span><span class="mi">1</span> <span class="n">Owner</span><span class="o">=</span><span class="n">N</span><span class="o">/</span><span class="n">A</span> <span class="n">MCS_label</span><span class="o">=</span><span class="n">N</span><span class="o">/</span><span class="n">A</span>
+   <span class="n">Partitions</span><span class="o">=</span><span class="n">normal</span><span class="p">,</span><span class="n">prior</span> 
+   <span class="n">BootTime</span><span class="o">=</span><span class="mi">2021</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">18</span><span class="n">T12</span><span class="p">:</span><span class="mi">11</span><span class="p">:</span><span class="mi">04</span> <span class="n">SlurmdStartTime</span><span class="o">=</span><span class="mi">2021</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">30</span><span class="n">T23</span><span class="p">:</span><span class="mi">48</span><span class="p">:</span><span class="mi">19</span>
+   <span class="n">CfgTRES</span><span class="o">=</span><span class="n">cpu</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span><span class="n">mem</span><span class="o">=</span><span class="mi">62000</span><span class="n">M</span><span class="p">,</span><span class="n">billing</span><span class="o">=</span><span class="mi">20</span>
+   <span class="n">AllocTRES</span><span class="o">=</span>
+   <span class="n">CapWatts</span><span class="o">=</span><span class="n">n</span><span class="o">/</span><span class="n">a</span>
+   <span class="n">CurrentWatts</span><span class="o">=</span><span class="mi">0</span> <span class="n">LowestJoules</span><span class="o">=</span><span class="mi">0</span> <span class="n">ConsumedJoules</span><span class="o">=</span><span class="mi">0</span>
+   <span class="n">ExtSensorsJoules</span><span class="o">=</span><span class="n">n</span><span class="o">/</span><span class="n">s</span> <span class="n">ExtSensorsWatts</span><span class="o">=</span><span class="mi">0</span> <span class="n">ExtSensorsTemp</span><span class="o">=</span><span class="n">n</span><span class="o">/</span><span class="n">s</span>
+</pre></div>
+</div>
+<p>As we can see, there is information about the hardware found in ‘node04’ as the number of GPUs, the
+RAM memory, or the number of cpu cores. But also the name of the Slurm partitions this node belongs
+to (normal and prior, in this case).</p>
+<p>If you want to print out a more schematic info, try:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sinfo</span> <span class="o">-</span><span class="n">N</span> <span class="o">-</span><span class="n">l</span>
+</pre></div>
+</div>
+<p>The output is a list not only about nodes. A line per node and partition is shown. But not all
+partitions, only the partitions each user have access. For instance, a regular member of the UIBCDF
+will see something like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Wed</span> <span class="n">Dec</span>  <span class="mi">1</span> <span class="mi">18</span><span class="p">:</span><span class="mi">22</span><span class="p">:</span><span class="mi">37</span> <span class="mi">2021</span>
+<span class="n">NODELIST</span>   <span class="n">NODES</span> <span class="n">PARTITION</span>       <span class="n">STATE</span> <span class="n">CPUS</span>    <span class="n">S</span><span class="p">:</span><span class="n">C</span><span class="p">:</span><span class="n">T</span> <span class="n">MEMORY</span> <span class="n">TMP_DISK</span> <span class="n">WEIGHT</span> <span class="n">AVAIL_FE</span> <span class="n">REASON</span>              
+<span class="n">ixtlilton</span>      <span class="mi">1</span>    <span class="n">tests</span><span class="o">*</span>        <span class="n">idle</span>   <span class="mi">20</span>   <span class="mi">2</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span><span class="mi">1</span>  <span class="mi">62000</span>        <span class="mi">0</span>      <span class="mi">1</span>   <span class="p">(</span><span class="n">null</span><span class="p">)</span> <span class="n">none</span>                
+<span class="n">node01</span>         <span class="mi">1</span>    <span class="n">normal</span>        <span class="n">idle</span>   <span class="mi">20</span>   <span class="mi">2</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span><span class="mi">1</span>  <span class="mi">62000</span>        <span class="mi">0</span>      <span class="mi">1</span>   <span class="p">(</span><span class="n">null</span><span class="p">)</span> <span class="n">none</span>                
+<span class="n">node02</span>         <span class="mi">1</span>    <span class="n">normal</span>        <span class="n">idle</span>   <span class="mi">20</span>   <span class="mi">2</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span><span class="mi">1</span>  <span class="mi">62000</span>        <span class="mi">0</span>      <span class="mi">1</span>   <span class="p">(</span><span class="n">null</span><span class="p">)</span> <span class="n">none</span>                
+<span class="n">node03</span>         <span class="mi">1</span>    <span class="n">normal</span>        <span class="n">idle</span>   <span class="mi">20</span>   <span class="mi">2</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span><span class="mi">1</span>  <span class="mi">50000</span>        <span class="mi">0</span>      <span class="mi">1</span>   <span class="p">(</span><span class="n">null</span><span class="p">)</span> <span class="n">none</span>                
+<span class="n">node04</span>         <span class="mi">1</span>    <span class="n">normal</span>        <span class="n">idle</span>   <span class="mi">20</span>   <span class="mi">2</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span><span class="mi">1</span>  <span class="mi">62000</span>        <span class="mi">0</span>      <span class="mi">1</span>   <span class="p">(</span><span class="n">null</span><span class="p">)</span> <span class="n">none</span>                
+</pre></div>
+</div>
+<p>A guest user will see something like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Wed</span> <span class="n">Dec</span>  <span class="mi">1</span> <span class="mi">18</span><span class="p">:</span><span class="mi">27</span><span class="p">:</span><span class="mi">51</span> <span class="mi">2021</span>
+<span class="n">NODELIST</span>   <span class="n">NODES</span> <span class="n">PARTITION</span>       <span class="n">STATE</span> <span class="n">CPUS</span>    <span class="n">S</span><span class="p">:</span><span class="n">C</span><span class="p">:</span><span class="n">T</span> <span class="n">MEMORY</span> <span class="n">TMP_DISK</span> <span class="n">WEIGHT</span> <span class="n">AVAIL_FE</span> <span class="n">REASON</span>              
+<span class="n">node01</span>         <span class="mi">1</span>    <span class="n">guests</span>        <span class="n">idle</span>   <span class="mi">20</span>   <span class="mi">2</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span><span class="mi">1</span>  <span class="mi">62000</span>        <span class="mi">0</span>      <span class="mi">1</span>   <span class="p">(</span><span class="n">null</span><span class="p">)</span> <span class="n">none</span>                
+<span class="n">node02</span>         <span class="mi">1</span>    <span class="n">guests</span>        <span class="n">idle</span>   <span class="mi">20</span>   <span class="mi">2</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span><span class="mi">1</span>  <span class="mi">62000</span>        <span class="mi">0</span>      <span class="mi">1</span>   <span class="p">(</span><span class="n">null</span><span class="p">)</span> <span class="n">none</span>                
+<span class="n">node03</span>         <span class="mi">1</span>    <span class="n">guests</span>        <span class="n">idle</span>   <span class="mi">20</span>   <span class="mi">2</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span><span class="mi">1</span>  <span class="mi">50000</span>        <span class="mi">0</span>      <span class="mi">1</span>   <span class="p">(</span><span class="n">null</span><span class="p">)</span> <span class="n">none</span>                
+<span class="n">node04</span>         <span class="mi">1</span>    <span class="n">guests</span>        <span class="n">idle</span>   <span class="mi">20</span>   <span class="mi">2</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span><span class="mi">1</span>  <span class="mi">62000</span>        <span class="mi">0</span>      <span class="mi">1</span>   <span class="p">(</span><span class="n">null</span><span class="p">)</span> <span class="n">none</span>                
+</pre></div>
+</div>
+<p>Having a look to the description of Ixtlilton’s hardware is useful to understand the resources
+managed by Slurm. Have a look to the sections <span class="xref myst">Main node</span> and <span class="xref myst">Secondary nodes</span> from this online documentation.</p>
+</section>
+<section id="partitions">
+<h2>Partitions<a class="headerlink" href="#partitions" title="Permalink to this heading"></a></h2>
+<p>Slurm works with sets of nodes or partitions. Each partition can be confiture with special settings and
+rights for different users. And each partition has its own jobs queue. Before giving more details on this, lets
+see the partitions defined in Ixtlilton:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>scontrol<span class="w"> </span>show<span class="w"> </span>partitions
+</pre></div>
+</div>
+<p>The output looks like something similar depending on the user profile:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PartitionName</span><span class="o">=</span><span class="n">tests</span>
+   <span class="n">AllowGroups</span><span class="o">=</span><span class="n">uibcdf</span> <span class="n">AllowAccounts</span><span class="o">=</span><span class="n">ALL</span> <span class="n">AllowQos</span><span class="o">=</span><span class="n">ALL</span>
+   <span class="n">AllocNodes</span><span class="o">=</span><span class="n">ALL</span> <span class="n">Default</span><span class="o">=</span><span class="n">YES</span> <span class="n">QoS</span><span class="o">=</span><span class="n">N</span><span class="o">/</span><span class="n">A</span>
+   <span class="n">DefaultTime</span><span class="o">=</span><span class="n">NONE</span> <span class="n">DisableRootJobs</span><span class="o">=</span><span class="n">NO</span> <span class="n">ExclusiveUser</span><span class="o">=</span><span class="n">NO</span> <span class="n">GraceTime</span><span class="o">=</span><span class="mi">0</span> <span class="n">Hidden</span><span class="o">=</span><span class="n">NO</span>
+   <span class="n">MaxNodes</span><span class="o">=</span><span class="n">UNLIMITED</span> <span class="n">MaxTime</span><span class="o">=</span><span class="mi">03</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span> <span class="n">MinNodes</span><span class="o">=</span><span class="mi">1</span> <span class="n">LLN</span><span class="o">=</span><span class="n">NO</span> <span class="n">MaxCPUsPerNode</span><span class="o">=</span><span class="n">UNLIMITED</span>
+   <span class="n">Nodes</span><span class="o">=</span><span class="n">ixtlilton</span>
+   <span class="n">PriorityJobFactor</span><span class="o">=</span><span class="mi">10000</span> <span class="n">PriorityTier</span><span class="o">=</span><span class="mi">1</span> <span class="n">RootOnly</span><span class="o">=</span><span class="n">NO</span> <span class="n">ReqResv</span><span class="o">=</span><span class="n">NO</span> <span class="n">OverSubscribe</span><span class="o">=</span><span class="n">NO</span>
+   <span class="n">OverTimeLimit</span><span class="o">=</span><span class="n">NONE</span> <span class="n">PreemptMode</span><span class="o">=</span><span class="n">OFF</span>
+   <span class="n">State</span><span class="o">=</span><span class="n">UP</span> <span class="n">TotalCPUs</span><span class="o">=</span><span class="mi">20</span> <span class="n">TotalNodes</span><span class="o">=</span><span class="mi">1</span> <span class="n">SelectTypeParameters</span><span class="o">=</span><span class="n">NONE</span>
+   <span class="n">DefMemPerNode</span><span class="o">=</span><span class="n">UNLIMITED</span> <span class="n">MaxMemPerNode</span><span class="o">=</span><span class="n">UNLIMITED</span>
+
+<span class="n">PartitionName</span><span class="o">=</span><span class="n">normal</span>
+   <span class="n">AllowGroups</span><span class="o">=</span><span class="n">uibcdf</span> <span class="n">AllowAccounts</span><span class="o">=</span><span class="n">ALL</span> <span class="n">AllowQos</span><span class="o">=</span><span class="n">ALL</span>
+   <span class="n">AllocNodes</span><span class="o">=</span><span class="n">ALL</span> <span class="n">Default</span><span class="o">=</span><span class="n">NO</span> <span class="n">QoS</span><span class="o">=</span><span class="n">N</span><span class="o">/</span><span class="n">A</span>
+   <span class="n">DefaultTime</span><span class="o">=</span><span class="n">NONE</span> <span class="n">DisableRootJobs</span><span class="o">=</span><span class="n">NO</span> <span class="n">ExclusiveUser</span><span class="o">=</span><span class="n">NO</span> <span class="n">GraceTime</span><span class="o">=</span><span class="mi">0</span> <span class="n">Hidden</span><span class="o">=</span><span class="n">NO</span>
+   <span class="n">MaxNodes</span><span class="o">=</span><span class="n">UNLIMITED</span> <span class="n">MaxTime</span><span class="o">=</span><span class="mi">1</span><span class="o">-</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span> <span class="n">MinNodes</span><span class="o">=</span><span class="mi">1</span> <span class="n">LLN</span><span class="o">=</span><span class="n">NO</span> <span class="n">MaxCPUsPerNode</span><span class="o">=</span><span class="n">UNLIMITED</span>
+   <span class="n">Nodes</span><span class="o">=</span><span class="n">node01</span><span class="p">,</span><span class="n">node02</span><span class="p">,</span><span class="n">node03</span><span class="p">,</span><span class="n">node04</span>
+   <span class="n">PriorityJobFactor</span><span class="o">=</span><span class="mi">5000</span> <span class="n">PriorityTier</span><span class="o">=</span><span class="mi">1</span> <span class="n">RootOnly</span><span class="o">=</span><span class="n">NO</span> <span class="n">ReqResv</span><span class="o">=</span><span class="n">NO</span> <span class="n">OverSubscribe</span><span class="o">=</span><span class="n">NO</span>
+   <span class="n">OverTimeLimit</span><span class="o">=</span><span class="n">NONE</span> <span class="n">PreemptMode</span><span class="o">=</span><span class="n">OFF</span>
+   <span class="n">State</span><span class="o">=</span><span class="n">UP</span> <span class="n">TotalCPUs</span><span class="o">=</span><span class="mi">80</span> <span class="n">TotalNodes</span><span class="o">=</span><span class="mi">4</span> <span class="n">SelectTypeParameters</span><span class="o">=</span><span class="n">NONE</span>
+   <span class="n">DefMemPerNode</span><span class="o">=</span><span class="n">UNLIMITED</span> <span class="n">MaxMemPerNode</span><span class="o">=</span><span class="n">UNLIMITED</span>
+
+<span class="n">PartitionName</span><span class="o">=</span><span class="n">prior</span>
+   <span class="n">AllowGroups</span><span class="o">=</span><span class="n">uibcdf_prior</span> <span class="n">AllowAccounts</span><span class="o">=</span><span class="n">ALL</span> <span class="n">AllowQos</span><span class="o">=</span><span class="n">ALL</span>
+   <span class="n">AllocNodes</span><span class="o">=</span><span class="n">ALL</span> <span class="n">Default</span><span class="o">=</span><span class="n">NO</span> <span class="n">QoS</span><span class="o">=</span><span class="n">N</span><span class="o">/</span><span class="n">A</span>
+   <span class="n">DefaultTime</span><span class="o">=</span><span class="n">NONE</span> <span class="n">DisableRootJobs</span><span class="o">=</span><span class="n">NO</span> <span class="n">ExclusiveUser</span><span class="o">=</span><span class="n">NO</span> <span class="n">GraceTime</span><span class="o">=</span><span class="mi">0</span> <span class="n">Hidden</span><span class="o">=</span><span class="n">NO</span>
+   <span class="n">MaxNodes</span><span class="o">=</span><span class="n">UNLIMITED</span> <span class="n">MaxTime</span><span class="o">=</span><span class="n">UNLIMITED</span> <span class="n">MinNodes</span><span class="o">=</span><span class="mi">1</span> <span class="n">LLN</span><span class="o">=</span><span class="n">NO</span> <span class="n">MaxCPUsPerNode</span><span class="o">=</span><span class="n">UNLIMITED</span>
+   <span class="n">Nodes</span><span class="o">=</span><span class="n">ixtlilton</span><span class="p">,</span><span class="n">node01</span><span class="p">,</span><span class="n">node02</span><span class="p">,</span><span class="n">node03</span><span class="p">,</span><span class="n">node04</span>
+   <span class="n">PriorityJobFactor</span><span class="o">=</span><span class="mi">65000</span> <span class="n">PriorityTier</span><span class="o">=</span><span class="mi">65000</span> <span class="n">RootOnly</span><span class="o">=</span><span class="n">NO</span> <span class="n">ReqResv</span><span class="o">=</span><span class="n">NO</span> <span class="n">OverSubscribe</span><span class="o">=</span><span class="n">NO</span>
+   <span class="n">OverTimeLimit</span><span class="o">=</span><span class="n">NONE</span> <span class="n">PreemptMode</span><span class="o">=</span><span class="n">OFF</span>
+   <span class="n">State</span><span class="o">=</span><span class="n">UP</span> <span class="n">TotalCPUs</span><span class="o">=</span><span class="mi">100</span> <span class="n">TotalNodes</span><span class="o">=</span><span class="mi">5</span> <span class="n">SelectTypeParameters</span><span class="o">=</span><span class="n">NONE</span>
+   <span class="n">DefMemPerNode</span><span class="o">=</span><span class="n">UNLIMITED</span> <span class="n">MaxMemPerNode</span><span class="o">=</span><span class="n">UNLIMITED</span>
+</pre></div>
+</div>
+<p>If you want a more summarized list:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sinfo
+</pre></div>
+</div>
+<p>Which shows something like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PARTITION</span> <span class="n">AVAIL</span>  <span class="n">TIMELIMIT</span>  <span class="n">NODES</span>  <span class="n">STATE</span> <span class="n">NODELIST</span>
+<span class="n">tests</span><span class="o">*</span>       <span class="n">up</span>    <span class="mi">3</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>      <span class="mi">1</span>   <span class="n">idle</span> <span class="n">ixtlilton</span>
+<span class="n">normal</span>       <span class="n">up</span> <span class="mi">1</span><span class="o">-</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>      <span class="mi">4</span>   <span class="n">idle</span> <span class="n">node</span><span class="p">[</span><span class="mi">01</span><span class="o">-</span><span class="mi">04</span><span class="p">]</span>
+<span class="n">prior</span>        <span class="n">up</span>   <span class="n">infinite</span>      <span class="mi">5</span>   <span class="n">idle</span> <span class="n">ixtlilton</span><span class="p">,</span><span class="n">node</span><span class="p">[</span><span class="mi">01</span><span class="o">-</span><span class="mi">04</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Then, each partition has its own settings. For example, each partition has a walltime limit. As such, the partition named ‘normal’ will run jobs
+with a maximum duration of 24 real hours. Once the walltime has been reached, Slurm will kill the process if this is still running.</p>
+<p>Let’s show here a table describing the main features of each partition:</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Nodes</p></th>
+<th class="head"><p>Wall time</p></th>
+<th class="head"><p>Priority</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Allow Groups</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>tests</p></td>
+<td><p>ixtlilton</p></td>
+<td><p>3 hours</p></td>
+<td><p>High</p></td>
+<td><p>Tests and short jobs</p></td>
+<td><p>uibcdf</p></td>
+</tr>
+<tr class="row-odd"><td><p>normal</p></td>
+<td><p>nodes[01-04]</p></td>
+<td><p>24 hours</p></td>
+<td><p>Normal</p></td>
+<td><p>Normal jobs</p></td>
+<td><p>uibcdf</p></td>
+</tr>
+<tr class="row-even"><td><p>guests</p></td>
+<td><p>nodes[01-04]</p></td>
+<td><p>24 hours</p></td>
+<td><p>Low</p></td>
+<td><p>Collaboration jobs</p></td>
+<td><p>guests</p></td>
+</tr>
+<tr class="row-odd"><td><p>prior</p></td>
+<td><p>ixtlilton and nodes[01-04]</p></td>
+<td><p>Infinity</p></td>
+<td><p>Top</p></td>
+<td><p>High priority jobs</p></td>
+<td><p>uibcdf_prior</p></td>
+</tr>
+</tbody>
+</table>
+<section id="tests-partition">
+<h3>‘tests’ partition<a class="headerlink" href="#tests-partition" title="Permalink to this heading"></a></h3>
+<p>This partition, composed by a single node (ixtlilton), is dedicated to run short jobs and tests. Only runs with a 3 hours walltime will be accepted. And jobs
+will have a high priority in the queues in this resources would be shared among different
+partitions.</p>
+<p>All UIBCDF members have access to this partition.</p>
+</section>
+<section id="normal-partition">
+<h3>‘normal’ partition<a class="headerlink" href="#normal-partition" title="Permalink to this heading"></a></h3>
+<p>This partition, composed by all secondary nodes, is dedicated to run regular jobs. This does not
+mean that regular jobs are going to be run without limits. In order to give chance to everybody in
+the queue, jobs here have a 24 hours walltime. So, if you need to run a 10 days simulation, save a
+checkpoint every 23 hours and 50 minutes, stop your simulation and restart it as a new job
+submission to the queue till your simulation is finished. In case the queue is empty, your
+simulation will run as if it where only an interrupted job.</p>
+<p>All UIBCDF members have access to this partition, and jobs in this queue have a normal priority.</p>
+</section>
+<section id="guests-partition">
+<h3>‘guests’ partition<a class="headerlink" href="#guests-partition" title="Permalink to this heading"></a></h3>
+<p>This is the partition to be used by the external collaborators. All secondary nodes are available
+in this partition and the same time limitation from the ‘normal’ partition applies here: a 24 hours
+walltime. Jobs submitted to this partition have low priority.</p>
+<p>Only guests members will have access to this partition.</p>
+</section>
+<section id="prior-partition">
+<h3>‘prior’ partition<a class="headerlink" href="#prior-partition" title="Permalink to this heading"></a></h3>
+<p>This partition is “the top priority” partition. All nodes and resources are included in this queue.
+And jobs submitted to ‘prior’ will have high priority in the queue and no time limit. By default
+no UIBCDF member can use this partition but the principal researchers. If you need, under special
+circunstances, access to the ‘prior’ partition, the right to use it will be given temporarily by
+the administrators with the approval of all principal researchers.</p>
+</section>
+</section>
+<section id="the-job-queues">
+<h2>The job queues<a class="headerlink" href="#the-job-queues" title="Permalink to this heading"></a></h2>
+<p>To display all jobs in all queues type in the terminal:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>squeue
+</pre></div>
+</div>
+<p>If you only want to display the jobs submitted, for instance, to the ‘normal’ partition:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>squeue<span class="w"> </span>-p<span class="w"> </span>normal
+</pre></div>
+</div>
+<p>Use the flag ‘-u’ jobs submitted by a specific user have to be printed out:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">squeue</span> <span class="o">-</span><span class="n">u</span> <span class="n">username</span>
+</pre></div>
+</div>
+<p>If a more detailed info is needed from all jobs, do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scontrol</span> <span class="n">show</span> <span class="n">jobs</span>
+</pre></div>
+</div>
+<section id="the-job-status-in-the-queue">
+<h3>The job status in the queue<a class="headerlink" href="#the-job-status-in-the-queue" title="Permalink to this heading"></a></h3>
+<p>Every job submitted to Slurm have a status (ST) reporting its state.</p>
+<section id="pending-pd">
+<h4>Pending (PD)<a class="headerlink" href="#pending-pd" title="Permalink to this heading"></a></h4>
+<p>A job can be in PD (pending) if it still waiting to be started. Usually, this state lasts as long
+as there is room available in the partition to be executed, and there no other jobs before in the queue.</p>
+</section>
+<section id="running-r">
+<h4>Running (R)<a class="headerlink" href="#running-r" title="Permalink to this heading"></a></h4>
+<p>A job is in R if it is already running. This state will last until the end of the submitted process
+or until the partition’s walltime. Whatever happens first.</p>
+</section>
+<section id="completed-cg">
+<h4>Completed (CG)<a class="headerlink" href="#completed-cg" title="Permalink to this heading"></a></h4>
+<p>A job is in CG if it is already completing.</p>
+</section>
+</section>
+</section>
+<section id="submitting-a-job">
+<h2>Submitting a job<a class="headerlink" href="#submitting-a-job" title="Permalink to this heading"></a></h2>
+<p>A regular submission is done by means of a file, a submission bash script to slurm. This script
+contains all settings and commands necessary for Slurm to execute the job. And to easily
+identify these files, the extension *.slurm will be used to name them.</p>
+<p>Before giving details about the submission instructions, let’s submitt our first job. This first
+experience will give you more insight than any introduction paragraph.</p>
+<section id="your-first-job-submitted-to-ixtlilton">
+<h3>Your first job submitted to Ixtlilton<a class="headerlink" href="#your-first-job-submitted-to-ixtlilton" title="Permalink to this heading"></a></h3>
+<p>Let’s suppose that we have a task to be executed in Ixtlilton. To make this first experience
+simple, this task will not entail complicated algorithms… our task is taking a 30 seconds nap.
+Write a bash script named ‘napping’ with the following lines:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Going to sleep in&quot;</span><span class="w"> </span><span class="nv">$HOSTNAME</span>
+sleep<span class="w"> </span>30s
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Done&quot;</span>
+</pre></div>
+</div>
+<p>Make the script executable:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>chmod<span class="w"> </span>+x<span class="w"> </span>napping
+</pre></div>
+</div>
+<p>And run it locally:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./napping
+</pre></div>
+</div>
+<p>The terminal will go to sleep during 30 seconds. The environment variable HOSTNAME will tell us
+that the process is runing in the node ixtlilton -obvious, we run it there-.</p>
+<p>Now let’s submit this task to Slurm. Let’s run this job in the first resources available in the
+‘normal’ partition found by Slurm for us. Write the following Slurm submission bash script in a new
+file named ‘nap_submission.slurm’:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#SBATCH -p normal     # partition (queue)</span>
+<span class="c1">#SBATCH -N 1          # number of nodes</span>
+<span class="c1">#SBATCH -n 1          # number of cores</span>
+<span class="c1">#SBATCH -t 0-1:00     # time (D-HH:MM)</span>
+<span class="c1">#SBATCH -o slurm.out  # STDOUT</span>
+<span class="c1">#SBATCH -e slurm.err  # STDERR</span>
+./napping
+</pre></div>
+</div>
+<p>This is probably the first time you see the Slurm instructions in a submission bash script. Some
+details will be given in the next subsection about them. At this point it is enough guessing that
+our ‘nap_submission.slurm’ script is asking to Slurm for a single CPU core in a single node of the
+‘normal’ partition to run our script ‘napping’ with a 1 hour walltime. The standard output will be
+written in a file named ‘slurm.out’ and the standard error will be dumped in a file named
+‘slurm.err’. And finally, it is time to submit it:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sbatch<span class="w"> </span>nap_submission.slurm
+</pre></div>
+</div>
+<p>Now, quickly, run this command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>squeue -p normal -u $USER
+</pre></div>
+</div>
+<p>If the job is already running, you will get something like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>             <span class="n">JOBID</span> <span class="n">PARTITION</span>     <span class="n">NAME</span>     <span class="n">USER</span> <span class="n">ST</span>       <span class="n">TIME</span>  <span class="n">NODES</span> <span class="n">NODELIST</span><span class="p">(</span><span class="n">REASON</span><span class="p">)</span>
+              <span class="mi">2919</span>    <span class="n">normal</span> <span class="n">nap_subm</span>    <span class="n">diego</span>  <span class="n">R</span>       <span class="mi">0</span><span class="p">:</span><span class="mi">16</span>      <span class="mi">1</span> <span class="n">node01</span>
+</pre></div>
+</div>
+<p>This former command shows us that our job as the job id 2919 and it has been running in node01 for
+16 seconds already.</p>
+<p>If you want more details about the resources required, the status, etc. Or if the submission had
+errors and the job is stuck in queue, the following command can be useful:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scontrol</span> <span class="n">show</span> <span class="n">jobs</span>
+</pre></div>
+</div>
+<p>You will find all jobs there. Find yours:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">JobId</span><span class="o">=</span><span class="mi">2918</span> <span class="n">JobName</span><span class="o">=</span><span class="n">nap_submission</span><span class="o">.</span><span class="n">slurm</span>
+   <span class="n">UserId</span><span class="o">=</span><span class="n">diego</span><span class="p">(</span><span class="mi">2001</span><span class="p">)</span> <span class="n">GroupId</span><span class="o">=</span><span class="n">diego</span><span class="p">(</span><span class="mi">2001</span><span class="p">)</span> <span class="n">MCS_label</span><span class="o">=</span><span class="n">N</span><span class="o">/</span><span class="n">A</span>
+   <span class="n">Priority</span><span class="o">=</span><span class="mi">4294901759</span> <span class="n">Nice</span><span class="o">=</span><span class="mi">0</span> <span class="n">Account</span><span class="o">=</span><span class="p">(</span><span class="n">null</span><span class="p">)</span> <span class="n">QOS</span><span class="o">=</span><span class="p">(</span><span class="n">null</span><span class="p">)</span>
+   <span class="n">JobState</span><span class="o">=</span><span class="n">RUNNING</span> <span class="n">Reason</span><span class="o">=</span><span class="kc">None</span> <span class="n">Dependency</span><span class="o">=</span><span class="p">(</span><span class="n">null</span><span class="p">)</span>
+   <span class="n">Requeue</span><span class="o">=</span><span class="mi">1</span> <span class="n">Restarts</span><span class="o">=</span><span class="mi">0</span> <span class="n">BatchFlag</span><span class="o">=</span><span class="mi">1</span> <span class="n">Reboot</span><span class="o">=</span><span class="mi">0</span> <span class="n">ExitCode</span><span class="o">=</span><span class="mi">0</span><span class="p">:</span><span class="mi">0</span>
+   <span class="n">RunTime</span><span class="o">=</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">11</span> <span class="n">TimeLimit</span><span class="o">=</span><span class="mi">01</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span> <span class="n">TimeMin</span><span class="o">=</span><span class="n">N</span><span class="o">/</span><span class="n">A</span>
+   <span class="n">SubmitTime</span><span class="o">=</span><span class="mi">2021</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">01</span><span class="n">T21</span><span class="p">:</span><span class="mi">06</span><span class="p">:</span><span class="mi">22</span> <span class="n">EligibleTime</span><span class="o">=</span><span class="mi">2021</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">01</span><span class="n">T21</span><span class="p">:</span><span class="mi">06</span><span class="p">:</span><span class="mi">22</span>
+   <span class="n">StartTime</span><span class="o">=</span><span class="mi">2021</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">01</span><span class="n">T21</span><span class="p">:</span><span class="mi">06</span><span class="p">:</span><span class="mi">23</span> <span class="n">EndTime</span><span class="o">=</span><span class="mi">2021</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">01</span><span class="n">T22</span><span class="p">:</span><span class="mi">06</span><span class="p">:</span><span class="mi">23</span> <span class="n">Deadline</span><span class="o">=</span><span class="n">N</span><span class="o">/</span><span class="n">A</span>
+   <span class="n">PreemptTime</span><span class="o">=</span><span class="kc">None</span> <span class="n">SuspendTime</span><span class="o">=</span><span class="kc">None</span> <span class="n">SecsPreSuspend</span><span class="o">=</span><span class="mi">0</span>
+   <span class="n">LastSchedEval</span><span class="o">=</span><span class="mi">2021</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">01</span><span class="n">T21</span><span class="p">:</span><span class="mi">06</span><span class="p">:</span><span class="mi">23</span>
+   <span class="n">Partition</span><span class="o">=</span><span class="n">normal</span> <span class="n">AllocNode</span><span class="p">:</span><span class="n">Sid</span><span class="o">=</span><span class="n">ixtlilton</span><span class="p">:</span><span class="mi">13609</span>
+   <span class="n">ReqNodeList</span><span class="o">=</span><span class="p">(</span><span class="n">null</span><span class="p">)</span> <span class="n">ExcNodeList</span><span class="o">=</span><span class="p">(</span><span class="n">null</span><span class="p">)</span>
+   <span class="n">NodeList</span><span class="o">=</span><span class="n">node01</span>
+   <span class="n">BatchHost</span><span class="o">=</span><span class="n">node01</span>
+   <span class="n">NumNodes</span><span class="o">=</span><span class="mi">1</span> <span class="n">NumCPUs</span><span class="o">=</span><span class="mi">1</span> <span class="n">NumTasks</span><span class="o">=</span><span class="mi">1</span> <span class="n">CPUs</span><span class="o">/</span><span class="n">Task</span><span class="o">=</span><span class="mi">1</span> <span class="n">ReqB</span><span class="p">:</span><span class="n">S</span><span class="p">:</span><span class="n">C</span><span class="p">:</span><span class="n">T</span><span class="o">=</span><span class="mi">0</span><span class="p">:</span><span class="mi">0</span><span class="p">:</span><span class="o">*</span><span class="p">:</span><span class="o">*</span>
+   <span class="n">TRES</span><span class="o">=</span><span class="n">cpu</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">node</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">billing</span><span class="o">=</span><span class="mi">1</span>
+   <span class="n">Socks</span><span class="o">/</span><span class="n">Node</span><span class="o">=*</span> <span class="n">NtasksPerN</span><span class="p">:</span><span class="n">B</span><span class="p">:</span><span class="n">S</span><span class="p">:</span><span class="n">C</span><span class="o">=</span><span class="mi">0</span><span class="p">:</span><span class="mi">0</span><span class="p">:</span><span class="o">*</span><span class="p">:</span><span class="o">*</span> <span class="n">CoreSpec</span><span class="o">=*</span>
+   <span class="n">MinCPUsNode</span><span class="o">=</span><span class="mi">1</span> <span class="n">MinMemoryNode</span><span class="o">=</span><span class="mi">0</span> <span class="n">MinTmpDiskNode</span><span class="o">=</span><span class="mi">0</span>
+   <span class="n">Features</span><span class="o">=</span><span class="p">(</span><span class="n">null</span><span class="p">)</span> <span class="n">DelayBoot</span><span class="o">=</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>
+   <span class="n">Gres</span><span class="o">=</span><span class="p">(</span><span class="n">null</span><span class="p">)</span> <span class="n">Reservation</span><span class="o">=</span><span class="p">(</span><span class="n">null</span><span class="p">)</span>
+   <span class="n">OverSubscribe</span><span class="o">=</span><span class="n">OK</span> <span class="n">Contiguous</span><span class="o">=</span><span class="mi">0</span> <span class="n">Licenses</span><span class="o">=</span><span class="p">(</span><span class="n">null</span><span class="p">)</span> <span class="n">Network</span><span class="o">=</span><span class="p">(</span><span class="n">null</span><span class="p">)</span>
+   <span class="n">Command</span><span class="o">=/</span><span class="n">home</span><span class="o">/</span><span class="n">diego</span><span class="o">/</span><span class="n">tests_slurm</span><span class="o">/</span><span class="n">test_napping</span><span class="o">/</span><span class="n">nap_submission</span><span class="o">.</span><span class="n">slurm</span>
+   <span class="n">WorkDir</span><span class="o">=/</span><span class="n">home</span><span class="o">/</span><span class="n">diego</span><span class="o">/</span><span class="n">tests_slurm</span><span class="o">/</span><span class="n">test_napping</span>
+   <span class="n">StdErr</span><span class="o">=/</span><span class="n">home</span><span class="o">/</span><span class="n">diego</span><span class="o">/</span><span class="n">tests_slurm</span><span class="o">/</span><span class="n">test_napping</span><span class="o">/</span><span class="n">slurm</span><span class="o">.</span><span class="n">err</span>
+   <span class="n">StdIn</span><span class="o">=/</span><span class="n">dev</span><span class="o">/</span><span class="n">null</span>
+   <span class="n">StdOut</span><span class="o">=/</span><span class="n">home</span><span class="o">/</span><span class="n">diego</span><span class="o">/</span><span class="n">tests_slurm</span><span class="o">/</span><span class="n">test_napping</span><span class="o">/</span><span class="n">slurm</span><span class="o">.</span><span class="n">out</span>
+   <span class="n">Power</span><span class="o">=</span>
+</pre></div>
+</div>
+<p>Finnally, once the job is finished, check the content of the resulting files ‘slurm.out’ and
+‘slurm.err’.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>slurm.out<span class="w"> </span>
+&gt;Going<span class="w"> </span>to<span class="w"> </span>sleep<span class="w"> </span><span class="k">in</span><span class="w"> </span>node01
+&gt;Done
+</pre></div>
+</div>
+</section>
+<section id="slurm-submission-instructions">
+<h3>Slurm submission instructions<a class="headerlink" href="#slurm-submission-instructions" title="Permalink to this heading"></a></h3>
+<p>Examples of these files will be stored in github in order to share submission instructions in ixtlilton or any other cluster used by the UIBCDF members.</p>
+<p>In addition to the templates, in the following sections some useful variables and instructions are described.</p>
+<p>Once the bash script is ready, the command to submit it is:</p>
+</section>
+</section>
+<section id="managing-you-submitted-job">
+<h2>Managing you submitted job<a class="headerlink" href="#managing-you-submitted-job" title="Permalink to this heading"></a></h2>
+<p>xx</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+    <a href="https://github.com/uibcdf/Ixtlilton">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
+    </a>
+
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="jupyter.html" class="btn btn-neutral float-left" title="Jupyter" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="workflow_UIBCDF.html" class="btn btn-neutral float-right" title="UIBCDF project’s workflow" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, UIBCDF Lab at the Mexico City Childrens Hospital Federico Gomez and the authors..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

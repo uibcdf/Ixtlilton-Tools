@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>File system &mdash; Ixtlilton 0+untagged.76.g63f39e0.dirty documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Dot files and directories" href="dot_files_and_directories.html" />
+    <link rel="prev" title="Transfer files" href="transfer_files.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            Ixtlilton
+          </a>
+              <div class="version">
+                0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about/main_node.html">Main node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/secondary_nodes.html">Secondary nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/storage_node.html">Storage node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/networks.html">Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/file_system.html">File system</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../about/file_system.html#the-ixtlilton-s-file-system">The Ixtlilton’s file system</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about/file_system.html#sharing-projects-data">Sharing projects data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about/file_system.html#finished-projects">Finished projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about/file_system.html#a-slave-node-file-system">A slave node file system.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about/file_system.html#the-user-file-system">The user file system</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/users_and_groups.html">Users and groups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/environment_modules.html">Environment modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../about/environment_modules.html#what-is-an-environment-module-system">What is an environment module system?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about/environment_modules.html#lmod">Lmod</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about/environment_modules.html#your-own-environment-modules">Your own environment modules</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/queuing_system.html">Queuing system</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="login.html">Login</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transfer_files.html">Transfer files</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">File system</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dot_files_and_directories.html">Dot files and directories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment_variables.html">Environment variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shell_aliases.html">Shell aliases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment_modules.html">Environment modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conda.html">Conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html">Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jupyter.html">Jupyter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="slurm.html">SLURM jobs submission</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workflow_UIBCDF.html">UIBCDF project’s workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html">Tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tools/x.html">XXX</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../admin/guide/index.html">Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/guide/admin_and_monitoring.html">Administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/guide/hardware.html">Hardware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/guide/network.html">Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/guide/volumes_and_file_system.html">Volumes and File System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/guide/users_and_groups.html">Users and Groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/guide/ssh.html">SSH</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/guide/environment_modules.html">Environment Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/guide/conda.html">Conda</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin/tools/index.html">Tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/tools/x.html">XXX</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">API Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../autosummary/ixtlilton_tools.html">ixtlilton_tools</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Ixtlilton</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Guide</a></li>
+      <li class="breadcrumb-item active">File system</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+           <div itemprop="articleBody">
+             
+  <section id="file-system">
+<h1>File system<a class="headerlink" href="#file-system" title="Permalink to this heading"></a></h1>
+<section id="the-ixtlilton-s-file-system">
+<h2>The Ixtlilton’s file system<a class="headerlink" href="#the-ixtlilton-s-file-system" title="Permalink to this heading"></a></h2>
+<p>Before reading about your user file system, have a look to <a class="reference internal" href="../../about/file_system.html"><span class="doc std std-doc">the description of the Ixtlilton’s
+file system</span></a>. Only knowing the volumes structure in Ixtlilton you will understand the logic behind your user file
+system.</p>
+</section>
+<section id="the-user-file-system">
+<h2>The user file system<a class="headerlink" href="#the-user-file-system" title="Permalink to this heading"></a></h2>
+<p>As user, you have three directories with different usage. The main features of these three
+directories are summarized in the following table:</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Directory</p></th>
+<th class="head"><p>Usage</p></th>
+<th class="head"><p>In Mounted Point</p></th>
+<th class="head"><p>Quotas</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>/home/username</p></td>
+<td><p>Local binaries, scripts, user setting files, environments, github repos, <strong>not heavy files</strong></p></td>
+<td><p>/home</p></td>
+<td><p>None yet</p></td>
+</tr>
+<tr class="row-odd"><td><p>/work/username</p></td>
+<td><p>Data from projects and heavy stuff</p></td>
+<td><p>/DATA</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>/scratch/username</p></td>
+<td><p>Temporary data requiring fast reading/writing</p></td>
+<td><p>/HOTDATA</p></td>
+<td><p>None yet</p></td>
+</tr>
+</tbody>
+</table>
+<section id="home">
+<h3>Home<a class="headerlink" href="#home" title="Permalink to this heading"></a></h3>
+<p>Your user has a main home directory: ‘/home/username’. Once you have accessed to Ixtlilton with
+your user account, type:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="nv">$HOME</span>
+</pre></div>
+</div>
+<p>The environment variable <code class="docutils literal notranslate"><span class="pre">HOME</span></code> defines de path of your main directory. You can always go to your home with any of the following two commands:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cdh
+</pre></div>
+</div>
+<p>Your home directory is placed in a 500 Gb SSD drive. An SSD drive has a faster reading and
+writing than a HDD drive. But watch the use you give to your home. This SSD drive is hosting exclusively all
+users home directories. Thereby, the space for your home directory is limited and shared with the other users. At this point there is no space limit for each home directory. It is supposed that the rational use of our home directories avoids taking any action regarding quotas, yet.</p>
+<p><strong>Your home should store scripts, docs, module environments, conda environments, github repos, small
+software and temporary not heavy files for analysis.</strong></p>
+<section id="the-user-local-directory">
+<h4>The user local directory<a class="headerlink" href="#the-user-local-directory" title="Permalink to this heading"></a></h4>
+<p>Your local directory ‘$HOME/local’ is nothing but the symbolic link to the directory ‘$HOME/.local’
+created by default by the Linux OS for every user. This symbolic link is for you to notice the
+place where you must locate your scripts to be invokable from anywhere in your terminal, your
+libraries, etc. The directory ‘$HOME/.local’ is a hidden directory.</p>
+<p>Try to see what’s in your local directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span><span class="nv">$HOME</span>/local
+</pre></div>
+</div>
+<section id="the-home-local-bin-directory">
+<h5>The ‘$HOME/local/bin’ directory<a class="headerlink" href="#the-home-local-bin-directory" title="Permalink to this heading"></a></h5>
+<p>There is a bin directory for your user. This is the place to put your local binaries or your
+scripts with executable rights. Any file with executable rights in this directory will be invokable by you at any time. You can check <a class="reference internal" href="environment_variables.html"><span class="doc std std-doc">the section of the documentation for users
+regarding your environment variables</span></a> and try:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="nv">$PATH</span>
+</pre></div>
+</div>
+<p>As you can see, the path ‘$HOME/opt/bin’ is in the output. As it was said above, your user looks
+for binaries there in addition to the common directories defined by the system for every user.</p>
+</section>
+<section id="the-home-local-etc-directory">
+<h5>The ‘$HOME/local/etc’ directory<a class="headerlink" href="#the-home-local-etc-directory" title="Permalink to this heading"></a></h5>
+<p>Usually, in the unix file system, the etc directory is interpreted as the place to store host-specific system configuration files used by the local binaries.
+Use this directory at your own convenience since its content only affects your user.</p>
+</section>
+<section id="the-home-local-opt-directory">
+<h5>The ‘$HOME/local/opt’ directory<a class="headerlink" href="#the-home-local-opt-directory" title="Permalink to this heading"></a></h5>
+<p>In a unix file system, the opt directory is where third party application software packages are placed (self-contained software which function has nothing to see with the OS and/or self-contained software developed by a third party). Is this directory really necessary for you? Maybe not… You can install software locally in your home directory the way you prefer. But, if you want to make use
+of the <a class="reference internal" href="environment_modules.html"><span class="doc std std-doc">Lmod environment modules manager installed in Ixtlilton</span></a> we suggest you to place the compiled
+version of the software in a directory inside ‘$HOME/opt/apps’, and the corresponding modulefiles in ‘$HOME/opt/modulefiles’. You can find further details about
+this implementation in the subsection <span class="xref myst">“Your own environment modules”</span>.</p>
+<p>Check the value of your environment variables <code class="docutils literal notranslate"><span class="pre">MODULEPATH</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="nv">$MODULEPATH</span>
+</pre></div>
+</div>
+</section>
+<section id="the-home-local-include-directory">
+<h5>The ‘$HOME/local/include’ directory<a class="headerlink" href="#the-home-local-include-directory" title="Permalink to this heading"></a></h5>
+<p>You can place here local C header files if you compile your own C code. Check that this directory
+is included in your environment variable <code class="docutils literal notranslate"><span class="pre">INCLUDE</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="nv">$INCLUDE</span>
+</pre></div>
+</div>
+</section>
+<section id="the-home-local-lib-home-local-lib32-and-home-local-lib64-directories">
+<h5>The ‘$HOME/local/lib’, ‘$HOME/local/lib32’, and ‘$HOME/local/lib64’ directories<a class="headerlink" href="#the-home-local-lib-home-local-lib32-and-home-local-lib64-directories" title="Permalink to this heading"></a></h5>
+<p>Your user has three directories, emulating the same structure a unix SO has, to store local
+libraries. These three directories are included in the <code class="docutils literal notranslate"><span class="pre">LIBRARY_PATH</span></code> and <code class="docutils literal notranslate"><span class="pre">LD_LIBRARY_PATH</span></code>
+environment variables of your user:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="nv">$LIBRARY_PATH</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="nv">$LD_LIBRARY_PATH</span>
+</pre></div>
+</div>
+</section>
+<section id="the-home-local-man-directory">
+<h5>The ‘$HOME/local/man’ directory<a class="headerlink" href="#the-home-local-man-directory" title="Permalink to this heading"></a></h5>
+<p>A unix system has a man directory where the documentation of binaries are stored in the proper
+format to be printed out by the command <code class="docutils literal notranslate"><span class="pre">man</span></code>. Try for instance:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>man<span class="w"> </span>ls
+</pre></div>
+</div>
+<p>If you need to include man files for your binaries or third party software installed locally, the
+directory ‘$HOME/local/man’ is the place. Check your environment variable <code class="docutils literal notranslate"><span class="pre">MANPATH</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="nv">$MANPATH</span>
+</pre></div>
+</div>
+</section>
+<section id="the-home-local-share-directory">
+<h5>The ‘$HOME/local/share’ directory<a class="headerlink" href="#the-home-local-share-directory" title="Permalink to this heading"></a></h5>
+<p>The ‘$HOME/local/share’ directory architecture-independent shareable text files: user setting files
+and so on used by the software installed locally by you or in the OS by the administrator. Do not
+remove information in your ‘$HOME/local/share’ unless you know what you are doing.</p>
+</section>
+<section id="the-home-local-src-directory">
+<h5>The ‘$HOME/local/src’ directory<a class="headerlink" href="#the-home-local-src-directory" title="Permalink to this heading"></a></h5>
+<p>Your ‘$HOME/local/src’ is the place where you should keep the source code and packages locally
+installed and tracked by the Lmod environment modules manager.</p>
+</section>
+</section>
+</section>
+<section id="work">
+<h3>Work<a class="headerlink" href="#work" title="Permalink to this heading"></a></h3>
+<p>Your user has work directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="nv">$WORK</span>
+</pre></div>
+</div>
+<p>You can always go to your work directory with the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cdw
+</pre></div>
+</div>
+<p>Your work directory is placed in the volume DATA. DATA is a 8.2 Tbs raid 5 virtual volume built
+with HDDs drives. HDDs are slower than SDDs, but HDDs memory is much cheaper. Thats the reason why
+HDDs are used to build big volumes, and their expansion is affordable without expensive costs. There
+will be, then, no quotas or limits regarding the user work directory. It is true that this space is shared
+with other users, but as soon as DATA needs more room available new HDDs will be added.</p>
+<p><strong>Your work directory should store heavy stuff of your project, data which is not going to be frequently readed or
+shared with other users. Keep it there what you want as long as you need it. Once a project is finished, the corresponding data
+should be moved to the archived version of the project to be stored in the volume COLD_STORAGE_ROOM.</strong></p>
+</section>
+<section id="scratch">
+<h3>Scratch<a class="headerlink" href="#scratch" title="Permalink to this heading"></a></h3>
+<p>Your user has a scratch directory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>echo $SCRATCH
+</pre></div>
+</div>
+<p>There is an alias to go to your scratch directory easy:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cds</span>
+</pre></div>
+</div>
+<p>Your scratch directory is placed in the HOT_DATA volume. HOT_DATA is a 460 Gbs SSD drive where
+there are only two directories: ‘/HOT_DATA/scratch’ and ‘/HOT_DATA/projects’. The directory
+‘/HOT_DATA/scratch’ is the place where all users have their own scratch directory. And
+‘/HOT_DATA/projects’ is a single directory where shared and frequently readed data is
+temporary stored accessible to all users working in a common project (your user has no read/write rigths by default, ask to the administrators if you need it). Thereby again, the volume is limited and there is no space limit in your scratch directory, but as soon as we have problems of coexistence rigid quotas will be imposed.</p>
+<p><strong>Your scratch directory should be used not to store stuff for a long time, you have your work
+directory for that purpose, but to dump those files which need a fast reading/writing access
+memory during a short term period.</strong></p>
+</section>
+</section>
+<section id="directories-from-the-global-file-system-the-user-should-know">
+<h2>Directories from the global file system the user should know<a class="headerlink" href="#directories-from-the-global-file-system-the-user-should-know" title="Permalink to this heading"></a></h2>
+<p>There are some directories in the Ixtlilton’s file system the user should know. At certain point,
+although only the administrators have by default writing rights, every use would need to access to
+them. Any new user has no, by default, writing rights to these directories. They will be granted
+by the administrators if the user and the case warrant.</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Directory</p></th>
+<th class="head"><p>Usage</p></th>
+<th class="head"><p>In Mounted Point</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>/DATA/projects</p></td>
+<td><p>Shared data from projects</p></td>
+<td><p>/DATA</p></td>
+</tr>
+<tr class="row-odd"><td><p>/DATA/backups</p></td>
+<td><p>Backups directory</p></td>
+<td><p>/DATA</p></td>
+</tr>
+<tr class="row-even"><td><p>/HOTDATA/projects</p></td>
+<td><p>Temporary shared data from projects with fast reading/writing access</p></td>
+<td><p>/HOTDATA</p></td>
+</tr>
+<tr class="row-odd"><td><p>/HOTDATA/TempDATA</p></td>
+<td><p>Temp directory with fast reading/writing access</p></td>
+<td><p>/HOTDATA</p></td>
+</tr>
+<tr class="row-even"><td><p>/ColdStorageRoom/archive</p></td>
+<td><p>Archive where old and sleeping projects are stored compressed</p></td>
+<td><p>/NFS/NAS</p></td>
+</tr>
+<tr class="row-odd"><td><p>/ColdStorageRoom/backups</p></td>
+<td><p>Mirror from /DATA/Backups</p></td>
+<td><p>/NFS/NAS</p></td>
+</tr>
+</tbody>
+</table>
+<p>The user can find further information about these directories in <a class="reference internal" href="../../about/file_system.html"><span class="doc std std-doc">the description of the Ixtlilton’s
+file system</span></a>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+    <a href="https://github.com/uibcdf/Ixtlilton">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
+    </a>
+
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="transfer_files.html" class="btn btn-neutral float-left" title="Transfer files" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="dot_files_and_directories.html" class="btn btn-neutral float-right" title="Dot files and directories" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, UIBCDF Lab at the Mexico City Childrens Hospital Federico Gomez and the authors..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

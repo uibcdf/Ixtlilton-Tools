@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Slurm &mdash; Ixtlilton 0+untagged.76.g63f39e0.dirty documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            Ixtlilton
+          </a>
+              <div class="version">
+                0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about/main_node.html">Main node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/secondary_nodes.html">Secondary nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/storage_node.html">Storage node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/networks.html">Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/file_system.html">File system</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../about/file_system.html#the-ixtlilton-s-file-system">The Ixtlilton’s file system</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about/file_system.html#sharing-projects-data">Sharing projects data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about/file_system.html#finished-projects">Finished projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about/file_system.html#a-slave-node-file-system">A slave node file system.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about/file_system.html#the-user-file-system">The user file system</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/users_and_groups.html">Users and groups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/environment_modules.html">Environment modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../about/environment_modules.html#what-is-an-environment-module-system">What is an environment module system?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about/environment_modules.html#lmod">Lmod</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about/environment_modules.html#your-own-environment-modules">Your own environment modules</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/queuing_system.html">Queuing system</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../user/guide/index.html">Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../user/guide/login.html">Login</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/guide/transfer_files.html">Transfer files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/guide/user_file_system.html">File system</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/guide/dot_files_and_directories.html">Dot files and directories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/guide/environment_variables.html">Environment variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/guide/shell_aliases.html">Shell aliases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/guide/environment_modules.html">Environment modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/guide/conda.html">Conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/guide/git.html">Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/guide/jupyter.html">Jupyter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/guide/slurm.html">SLURM jobs submission</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/guide/workflow_UIBCDF.html">UIBCDF project’s workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/tools/index.html">Tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../user/tools/x.html">XXX</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="admin_and_monitoring.html">Administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware.html">Hardware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="network.html">Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="volumes_and_file_system.html">Volumes and File System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="users_and_groups.html">Users and Groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ssh.html">SSH</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment_modules.html">Environment Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conda.html">Conda</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html">Tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tools/x.html">XXX</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">API Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../autosummary/ixtlilton_tools.html">ixtlilton_tools</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Ixtlilton</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Slurm</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+           <div itemprop="articleBody">
+             
+  <section id="slurm">
+<h1>Slurm<a class="headerlink" href="#slurm" title="Permalink to this heading"></a></h1>
+<p>Sources:
+https://slurm.schedmd.com/quickstart_admin.html <br />
+https://www.slothparadise.com/how-to-install-slurm-on-centos-7-cluster/ <br />
+https://bitsanddragons.wordpress.com/2016/08/22/slurm-on-centos-7/ <br />
+http://sysadm.mielnet.pl/building-and-installing-rpm-slurm-on-centos-7/</p>
+<ul class="simple">
+<li><p>Clocks synchronized across the cluster (Not well solved. Ask Damián)</p></li>
+</ul>
+<p>cluster_exec ‘timedatectl’
+cluster_exec ‘ntpstat’ # to detect nodes with ntpd not running
+In case nptd is not running:
+systemctl enable ntpd</p>
+<p>After waiting some time everything looks syncronized with ntp server.
+cluster_exec ‘clock’; clock
+cluster_exec ‘date’; date</p>
+<p>In some web pages syncronizing the nodes with the master is suggested. I dont need it but this should be asked to Damián.</p>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this heading"></a></h2>
+<p>Only in the server</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">yum</span> <span class="n">install</span> <span class="n">mariadb</span><span class="o">-</span><span class="n">server</span> <span class="n">mariadb</span><span class="o">-</span><span class="n">devel</span> <span class="o">-</span><span class="n">y</span>       <span class="c1">#-IT WAS DONE-</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">MUNGEUSER</span><span class="o">=</span><span class="m">988</span><span class="w">             </span><span class="c1">#-IT WAS DONE (why this number?)-</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">MUNGEGROUP</span><span class="o">=</span><span class="m">983</span><span class="w">            </span><span class="c1">#-IT WAS DONE (why this number?)-</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">CHRONYUSER</span><span class="o">=</span><span class="m">991</span><span class="w">            </span><span class="c1">#-IT WAS DONE (why this number?)-</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">CHRONYGROUP</span><span class="o">=</span><span class="m">988</span><span class="w">           </span><span class="c1">#-IT WAS DONE (why this number?)-</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">SLURMUSER</span><span class="o">=</span><span class="m">1005</span><span class="w">            </span><span class="c1">#-IT WAS NOT DONE-</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">SLURMGROUP</span><span class="o">=</span><span class="m">1005</span><span class="w">           </span><span class="c1">#-IT WAS NOT DONE-</span>
+
+groupadd<span class="w"> </span>-g<span class="w"> </span><span class="nv">$MUNGEGROUP</span><span class="w"> </span>munge<span class="w">    </span><span class="c1">#-IT WAS DONE-</span>
+useradd<span class="w">  </span>-m<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;MUNGE Uid &#39;N&#39; Gid Emporium&quot;</span><span class="w"> </span>-d<span class="w"> </span>/var/lib/munge<span class="w"> </span>-u<span class="w"> </span><span class="nv">$MUNGEUSER</span><span class="w"> </span>-g<span class="w"> </span>munge<span class="w">  </span>-s<span class="w"> </span>/sbin/nologin<span class="w"> </span>munge<span class="w"> </span><span class="c1">#-It WAS DONE (but it was -d /var/run/munge. I did changed to /var/lib/munge)</span>
+<span class="c1">#chrony was already ok</span>
+chrony:x:991:988::/var/lib/chrony:/sbin/nologin
+groupadd<span class="w"> </span>-g<span class="w"> </span><span class="nv">$SLURMGROUP</span><span class="w"> </span>slurm
+useradd<span class="w"> </span>-m<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;SLURM workload manager&quot;</span><span class="w">  </span>-d<span class="w"> </span>/var/lib/slurm<span class="w"> </span>-u<span class="w"> </span><span class="nv">$SLURMUSER</span><span class="w"> </span>-g<span class="w"> </span>slurm<span class="w"> </span>-s<span class="w"> </span>/bin/bash<span class="w"> </span>slurm
+
+cluster_update
+cluster_exec<span class="w"> </span><span class="s1">&#39;mkdir /var/lib/munge; chown -R munge:munge /var/lib/munge&#39;</span>
+cluster_exec<span class="w"> </span><span class="s1">&#39;mkdir /var/lib/slurm; chown -R slurm:slurm /var/lib/slurm&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>yum<span class="w"> </span>install<span class="w"> </span>munge<span class="w"> </span>munge-libs<span class="w"> </span>munge-devel<span class="w"> </span>-y
+cluster_exec<span class="w"> </span><span class="s1">&#39;yum install munge munge-libs munge-devel -y&#39;</span>
+yum<span class="w"> </span>install<span class="w"> </span>rng-tools<span class="w"> </span>-y
+cluster_exec<span class="w"> </span><span class="s1">&#39;yum install rng-tools -y&#39;</span>
+
+rngd<span class="w"> </span>-r<span class="w"> </span>/dev/urandom
+/usr/sbin/create-munge-key<span class="w"> </span>-r
+dd<span class="w"> </span><span class="k">if</span><span class="o">=</span>/dev/urandom<span class="w"> </span><span class="nv">bs</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="nv">count</span><span class="o">=</span><span class="m">1024</span><span class="w"> </span>&gt;<span class="w"> </span>/etc/munge/munge.key
+chown<span class="w"> </span>munge:<span class="w"> </span>/etc/munge/munge.key
+chmod<span class="w"> </span><span class="m">400</span><span class="w"> </span>/etc/munge/munge.key
+
+cluster_exec<span class="w"> </span><span class="s1">&#39;scp ixtlilton:/etc/munge/munge.key /etc/munge/munge.key&#39;</span>
+cluster_exec<span class="w"> </span><span class="s1">&#39;chown munge: /etc/munge/munge.key; chmod 400 /etc/munge/munge.key&#39;</span>
+cluster_exec<span class="w"> </span><span class="s1">&#39;chown -R munge: /etc/munge/ /var/log/munge/ ; chmod 0700 /etc/munge/ /var/log/munge/&#39;</span>
+
+systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>munge
+systemctl<span class="w"> </span>start<span class="w"> </span>munge
+
+cluster_exec<span class="w"> </span><span class="s1">&#39;systemctl enable munge&#39;</span>
+cluster_exec<span class="w"> </span><span class="s1">&#39;systemctl start munge&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">yum</span> <span class="n">install</span> <span class="n">openssl</span> <span class="n">openssl</span><span class="o">-</span><span class="n">devel</span> <span class="n">pam</span><span class="o">-</span><span class="n">devel</span> <span class="n">numactl</span> <span class="n">numactl</span><span class="o">-</span><span class="n">devel</span> <span class="n">hwloc</span> <span class="n">hwloc</span><span class="o">-</span><span class="n">devel</span> <span class="n">lua</span> <span class="n">lua</span><span class="o">-</span><span class="n">devel</span> <span class="n">readline</span><span class="o">-</span><span class="n">devel</span> <span class="n">rrdtool</span><span class="o">-</span><span class="n">devel</span> <span class="n">ncurses</span><span class="o">-</span><span class="n">devel</span> <span class="n">man2html</span> <span class="n">libibmad</span> <span class="n">libibumad</span> <span class="o">-</span><span class="n">y</span>
+
+<span class="n">cluster_exec</span> <span class="s1">&#39;yum install openssl openssl-devel pam-devel numactl numactl-devel hwloc hwloc-devel lua lua-devel readline-devel rrdtool-devel ncurses-devel man2html libibmad libibumad -y&#39;</span>
+
+<span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">slurm</span><span class="o">/</span><span class="n">pkg</span><span class="o">/</span><span class="mf">17.11.2</span>
+<span class="n">cd</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">slurm</span><span class="o">/</span><span class="n">pkg</span><span class="o">/</span><span class="mf">17.11.2</span>
+<span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">download</span><span class="o">.</span><span class="n">schedmd</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">slurm</span><span class="o">/</span><span class="n">slurm</span><span class="o">-</span><span class="mf">17.11.2</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">bz2</span>
+<span class="n">rpmbuild</span> <span class="o">-</span><span class="n">ta</span> <span class="n">slurm</span><span class="o">-</span><span class="mf">16.05.4</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">bz2</span>
+<span class="n">mkdir</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">slurm</span><span class="o">/</span><span class="n">pkg</span><span class="o">/</span><span class="mf">17.11.2</span><span class="o">/</span><span class="n">rpms</span>
+<span class="n">cp</span> <span class="o">/</span><span class="n">root</span><span class="o">/</span><span class="n">rpmbuild</span><span class="o">/</span><span class="n">RPMS</span><span class="o">/</span><span class="n">x86_64</span><span class="o">/</span><span class="n">slurm</span><span class="o">*</span><span class="mf">17.11.2</span><span class="o">-</span><span class="mf">1.</span><span class="n">el7</span><span class="o">.</span><span class="n">centos</span><span class="o">.</span><span class="n">x86_64</span><span class="o">.</span><span class="n">rpm</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">slurm</span><span class="o">/</span><span class="n">pkg</span><span class="o">/</span><span class="mf">17.11.2</span><span class="o">/</span><span class="n">rpms</span><span class="o">/.</span>
+<span class="n">cd</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">slurm</span><span class="o">/</span><span class="n">pkg</span><span class="o">/</span><span class="mf">17.11.2</span><span class="o">/</span><span class="n">rpms</span><span class="o">/</span>
+<span class="n">yum</span> <span class="o">--</span><span class="n">nogpgcheck</span> <span class="n">localinstall</span> \
+<span class="n">slurm</span><span class="o">-</span><span class="mf">17.11.2</span><span class="o">-</span><span class="mf">1.</span><span class="n">el7</span><span class="o">.</span><span class="n">centos</span><span class="o">.</span><span class="n">x86_64</span><span class="o">.</span><span class="n">rpm</span> \
+<span class="n">slurm</span><span class="o">-</span><span class="n">contribs</span><span class="o">-</span><span class="mf">17.11.2</span><span class="o">-</span><span class="mf">1.</span><span class="n">el7</span><span class="o">.</span><span class="n">centos</span><span class="o">.</span><span class="n">x86_64</span><span class="o">.</span><span class="n">rpm</span> \
+<span class="n">slurm</span><span class="o">-</span><span class="n">devel</span><span class="o">-</span><span class="mf">17.11.2</span><span class="o">-</span><span class="mf">1.</span><span class="n">el7</span><span class="o">.</span><span class="n">centos</span><span class="o">.</span><span class="n">x86_64</span><span class="o">.</span><span class="n">rpm</span> \
+<span class="n">slurm</span><span class="o">-</span><span class="n">example</span><span class="o">-</span><span class="n">configs</span><span class="o">-</span><span class="mf">17.11.2</span><span class="o">-</span><span class="mf">1.</span><span class="n">el7</span><span class="o">.</span><span class="n">centos</span><span class="o">.</span><span class="n">x86_64</span><span class="o">.</span><span class="n">rpm</span> \
+<span class="n">slurm</span><span class="o">-</span><span class="n">libpmi</span><span class="o">-</span><span class="mf">17.11.2</span><span class="o">-</span><span class="mf">1.</span><span class="n">el7</span><span class="o">.</span><span class="n">centos</span><span class="o">.</span><span class="n">x86_64</span><span class="o">.</span><span class="n">rpm</span> \
+<span class="n">slurm</span><span class="o">-</span><span class="n">openlava</span><span class="o">-</span><span class="mf">17.11.2</span><span class="o">-</span><span class="mf">1.</span><span class="n">el7</span><span class="o">.</span><span class="n">centos</span><span class="o">.</span><span class="n">x86_64</span><span class="o">.</span><span class="n">rpm</span> \
+<span class="n">slurm</span><span class="o">-</span><span class="n">pam_slurm</span><span class="o">-</span><span class="mf">17.11.2</span><span class="o">-</span><span class="mf">1.</span><span class="n">el7</span><span class="o">.</span><span class="n">centos</span><span class="o">.</span><span class="n">x86_64</span><span class="o">.</span><span class="n">rpm</span> \
+<span class="n">slurm</span><span class="o">-</span><span class="n">perlapi</span><span class="o">-</span><span class="mf">17.11.2</span><span class="o">-</span><span class="mf">1.</span><span class="n">el7</span><span class="o">.</span><span class="n">centos</span><span class="o">.</span><span class="n">x86_64</span><span class="o">.</span><span class="n">rpm</span> \
+<span class="n">slurm</span><span class="o">-</span><span class="n">slurmctld</span><span class="o">-</span><span class="mf">17.11.2</span><span class="o">-</span><span class="mf">1.</span><span class="n">el7</span><span class="o">.</span><span class="n">centos</span><span class="o">.</span><span class="n">x86_64</span><span class="o">.</span><span class="n">rpm</span> \
+<span class="n">slurm</span><span class="o">-</span><span class="n">slurmd</span><span class="o">-</span><span class="mf">17.11.2</span><span class="o">-</span><span class="mf">1.</span><span class="n">el7</span><span class="o">.</span><span class="n">centos</span><span class="o">.</span><span class="n">x86_64</span><span class="o">.</span><span class="n">rpm</span> \
+<span class="n">slurm</span><span class="o">-</span><span class="n">slurmdbd</span><span class="o">-</span><span class="mf">17.11.2</span><span class="o">-</span><span class="mf">1.</span><span class="n">el7</span><span class="o">.</span><span class="n">centos</span><span class="o">.</span><span class="n">x86_64</span><span class="o">.</span><span class="n">rpm</span> \
+<span class="n">slurm</span><span class="o">-</span><span class="n">torque</span><span class="o">-</span><span class="mf">17.11.2</span><span class="o">-</span><span class="mf">1.</span><span class="n">el7</span><span class="o">.</span><span class="n">centos</span><span class="o">.</span><span class="n">x86_64</span><span class="o">.</span><span class="n">rpm</span>
+
+<span class="n">cluster_exec</span> <span class="s1">&#39;cd /opt/src/slurm/pkg/17.11.2/rpms; yum --nogpgcheck localinstall slurm-17.11.2-1.el7.centos.x86_64.rpm slurm-contribs-17.11.2-1.el7.centos.x86_64.rpm slurm-devel-17.11.2-1.el7.centos.x86_64.rpm slurm-example-configs-17.11.2-1.el7.centos.x86_64.rpm slurm-libpmi-17.11.2-1.el7.centos.x86_64.rpm slurm-openlava-17.11.2-1.el7.centos.x86_64.rpm slurm-pam_slurm-17.11.2-1.el7.centos.x86_64.rpm slurm-perlapi-17.11.2-1.el7.centos.x86_64.rpm slurm-slurmctld-17.11.2-1.el7.centos.x86_64.rpm slurm-slurmd-17.11.2-1.el7.centos.x86_64.rpm slurm-slurmdbd-17.11.2-1.el7.centos.x86_64.rpm slurm-torque-17.11.2-1.el7.centos.x86_64.rpm -y&#39;</span>
+</pre></div>
+</div>
+<p>We generate the slurm config file using the online tool https://slurm.schedmd.com/configurator.easy.html
+The result is copied to /etc/slurm in the master and looks like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># slurm.conf file generated by configurator easy.html.</span>
+<span class="c1"># Put this file on all nodes of your cluster.</span>
+<span class="c1"># See the slurm.conf man page for more information.</span>
+<span class="c1">#</span>
+<span class="n">ControlMachine</span><span class="o">=</span><span class="n">ixtlilton</span>
+<span class="n">ControlAddr</span><span class="o">=</span><span class="mf">192.168.0.100</span>
+<span class="c1"># </span>
+<span class="c1">#MailProg=/bin/mail </span>
+<span class="n">MpiDefault</span><span class="o">=</span><span class="n">none</span>
+<span class="c1">#MpiParams=ports=#-# </span>
+<span class="n">ProctrackType</span><span class="o">=</span><span class="n">proctrack</span><span class="o">/</span><span class="n">cgroup</span>
+<span class="n">ReturnToService</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">SlurmctldPidFile</span><span class="o">=/</span><span class="n">var</span><span class="o">/</span><span class="n">run</span><span class="o">/</span><span class="n">slurmctld</span><span class="o">.</span><span class="n">pid</span>
+<span class="c1">#SlurmctldPort=6817 </span>
+<span class="n">SlurmdPidFile</span><span class="o">=/</span><span class="n">var</span><span class="o">/</span><span class="n">run</span><span class="o">/</span><span class="n">slurmd</span><span class="o">.</span><span class="n">pid</span>
+<span class="c1">#SlurmdPort=6818 </span>
+<span class="n">SlurmdSpoolDir</span><span class="o">=/</span><span class="n">var</span><span class="o">/</span><span class="n">spool</span><span class="o">/</span><span class="n">slurmd</span>
+<span class="n">SlurmUser</span><span class="o">=</span><span class="n">slurm</span>
+<span class="c1">#SlurmdUser=root </span>
+<span class="n">StateSaveLocation</span><span class="o">=/</span><span class="n">var</span><span class="o">/</span><span class="n">spool</span><span class="o">/</span><span class="n">slurmctld</span>
+<span class="n">SwitchType</span><span class="o">=</span><span class="n">switch</span><span class="o">/</span><span class="n">none</span>
+<span class="n">TaskPlugin</span><span class="o">=</span><span class="n">task</span><span class="o">/</span><span class="n">none</span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># TIMERS </span>
+<span class="c1">#KillWait=30 </span>
+<span class="c1">#MinJobAge=300 </span>
+<span class="c1">#SlurmctldTimeout=120 </span>
+<span class="c1">#SlurmdTimeout=300 </span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># SCHEDULING </span>
+<span class="n">FastSchedule</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">SchedulerType</span><span class="o">=</span><span class="n">sched</span><span class="o">/</span><span class="n">backfill</span>
+<span class="n">SelectType</span><span class="o">=</span><span class="n">select</span><span class="o">/</span><span class="n">linear</span>
+<span class="c1">#SelectTypeParameters=</span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># LOGGING AND ACCOUNTING </span>
+<span class="n">AccountingStorageType</span><span class="o">=</span><span class="n">accounting_storage</span><span class="o">/</span><span class="n">none</span>
+<span class="n">ClusterName</span><span class="o">=</span><span class="n">Ixtlilton</span>
+<span class="c1">#JobAcctGatherFrequency=30 </span>
+<span class="n">JobAcctGatherType</span><span class="o">=</span><span class="n">jobacct_gather</span><span class="o">/</span><span class="n">none</span>
+<span class="c1">#SlurmctldDebug=3 </span>
+<span class="n">SlurmctldLogFile</span><span class="o">=/</span><span class="n">var</span><span class="o">/</span><span class="n">log</span><span class="o">/</span><span class="n">slurmctld</span><span class="o">.</span><span class="n">log</span>
+<span class="c1">#SlurmdDebug=3 </span>
+<span class="n">SlurmdLogFile</span><span class="o">=/</span><span class="n">var</span><span class="o">/</span><span class="n">log</span><span class="o">/</span><span class="n">slurmd</span><span class="o">.</span><span class="n">log</span>
+<span class="c1"># </span>
+<span class="c1"># </span>
+<span class="c1"># COMPUTE NODES</span>
+<span class="n">NodeName</span><span class="o">=</span><span class="n">ixtlilton</span> <span class="n">NodeAddr</span><span class="o">=</span><span class="mf">192.168.0.100</span> <span class="n">CPUs</span><span class="o">=</span><span class="mi">20</span> <span class="n">RealMemory</span><span class="o">=</span><span class="mi">62000</span> <span class="n">Sockets</span><span class="o">=</span><span class="mi">2</span> <span class="n">CoresPerSocket</span><span class="o">=</span><span class="mi">10</span> <span class="n">ThreadsPerCore</span><span class="o">=</span><span class="mi">1</span> <span class="n">State</span><span class="o">=</span><span class="n">UNKNOWN</span> 
+<span class="n">NodeName</span><span class="o">=</span><span class="n">node01</span> <span class="n">NodeAddr</span><span class="o">=</span><span class="mf">192.168.0.1</span> <span class="n">CPUs</span><span class="o">=</span><span class="mi">20</span> <span class="n">RealMemory</span><span class="o">=</span><span class="mi">62000</span> <span class="n">Sockets</span><span class="o">=</span><span class="mi">2</span> <span class="n">CoresPerSocket</span><span class="o">=</span><span class="mi">10</span> <span class="n">ThreadsPerCore</span><span class="o">=</span><span class="mi">1</span> <span class="n">State</span><span class="o">=</span><span class="n">UNKNOWN</span>
+<span class="n">NodeName</span><span class="o">=</span><span class="n">node02</span> <span class="n">NodeAddr</span><span class="o">=</span><span class="mf">192.168.0.2</span> <span class="n">CPUs</span><span class="o">=</span><span class="mi">20</span> <span class="n">RealMemory</span><span class="o">=</span><span class="mi">62000</span> <span class="n">Sockets</span><span class="o">=</span><span class="mi">2</span> <span class="n">CoresPerSocket</span><span class="o">=</span><span class="mi">10</span> <span class="n">ThreadsPerCore</span><span class="o">=</span><span class="mi">1</span> <span class="n">State</span><span class="o">=</span><span class="n">UNKNOWN</span>
+<span class="n">NodeName</span><span class="o">=</span><span class="n">node03</span> <span class="n">NodeAddr</span><span class="o">=</span><span class="mf">192.168.0.3</span> <span class="n">CPUs</span><span class="o">=</span><span class="mi">20</span> <span class="n">RealMemory</span><span class="o">=</span><span class="mi">62000</span> <span class="n">Sockets</span><span class="o">=</span><span class="mi">2</span> <span class="n">CoresPerSocket</span><span class="o">=</span><span class="mi">10</span> <span class="n">ThreadsPerCore</span><span class="o">=</span><span class="mi">1</span> <span class="n">State</span><span class="o">=</span><span class="n">UNKNOWN</span>
+<span class="n">NodeName</span><span class="o">=</span><span class="n">node04</span> <span class="n">NodeAddr</span><span class="o">=</span><span class="mf">192.168.0.4</span> <span class="n">CPUs</span><span class="o">=</span><span class="mi">20</span> <span class="n">RealMemory</span><span class="o">=</span><span class="mi">62000</span> <span class="n">Sockets</span><span class="o">=</span><span class="mi">2</span> <span class="n">CoresPerSocket</span><span class="o">=</span><span class="mi">10</span> <span class="n">ThreadsPerCore</span><span class="o">=</span><span class="mi">1</span> <span class="n">State</span><span class="o">=</span><span class="n">UNKNOWN</span> 
+<span class="n">PartitionName</span><span class="o">=</span><span class="n">debug</span> <span class="n">Nodes</span><span class="o">=</span><span class="n">node0</span><span class="p">[</span><span class="mi">1</span><span class="o">-</span><span class="mi">4</span><span class="p">]</span> <span class="n">Default</span><span class="o">=</span><span class="n">YES</span> <span class="n">MaxTime</span><span class="o">=</span><span class="n">INFINITE</span> <span class="n">State</span><span class="o">=</span><span class="n">UP</span>
+</pre></div>
+</div>
+<p>The file needs to be copied all around:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cluster_exec</span> <span class="s1">&#39;scp ixtlilton:/etc/slurm/slurm.conf /etc/slurm/slurm.conf&#39;</span>
+</pre></div>
+</div>
+<p>Finnal details in the master:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>/var/spool/slurmctld
+chown<span class="w"> </span>slurm:<span class="w"> </span>/var/spool/slurmctld
+chmod<span class="w"> </span><span class="m">755</span><span class="w"> </span>/var/spool/slurmctld
+touch<span class="w"> </span>/var/log/slurmctld.log
+chown<span class="w"> </span>slurm:<span class="w"> </span>/var/log/slurmctld.log
+touch<span class="w"> </span>/var/log/slurm_jobacct.log<span class="w"> </span>/var/log/slurm_jobcomp.log
+chown<span class="w"> </span>slurm:<span class="w"> </span>/var/log/slurm_jobacct.log<span class="w"> </span>/var/log/slurm_jobcomp.log
+mkdir<span class="w"> </span>/var/spool/slurmd
+chown<span class="w"> </span>slurm:<span class="w"> </span>/var/spool/slurmd
+chmod<span class="w"> </span><span class="m">755</span><span class="w"> </span>/var/spool/slurmd
+touch<span class="w"> </span>/var/log/slurmd.log
+chown<span class="w"> </span>slurm:<span class="w"> </span>/var/log/slurmd.log
+</pre></div>
+</div>
+<p>Finnal details in slave nodes:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cluster_exec<span class="w"> </span><span class="s1">&#39;mkdir /var/spool/slurmd; chown slurm: /var/spool/slurmd; chmod 755 /var/spool/slurmd&#39;</span>
+cluster_exec<span class="w"> </span><span class="s1">&#39;touch /var/log/slurmd.log; chown slurm: /var/log/slurmd.log&#39;</span>
+</pre></div>
+</div>
+<p>To test configuration:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>slurmd<span class="w"> </span>-C<span class="p">;</span><span class="w"> </span>cluster_exec<span class="w"> </span><span class="s1">&#39;slurmd -C&#39;</span>
+</pre></div>
+</div>
+<p>Now we create cgroup.conf and cgroup_allowed_devices_file.conf in everynode. At this moment the configuration was taken from the examples /etc/slurm/cgroup.conf.example and /etc/slurm/cgroup_allowed_devices_file.conf.example</p>
+<p>/etc/slurm/cgroup.conf</p>
+<div class="highlight-CgroupMountpoint=&quot;/sys/fs/cgroup&quot; notranslate"><div class="highlight"><pre><span></span>CgroupReleaseAgentDir=&quot;/etc/slurm/cgroup&quot;
+AllowedDevicesFile=&quot;/etc/slurm/cgroup_allowed_devices_file.conf&quot;
+CgroupAutomount=yes
+
+ConstrainDevices=yes
+ConstrainCores=no
+ConstrainRAMSpace=yes
+ConstrainSwapSpace=no
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cluster_exec</span> <span class="s1">&#39;scp ixtlilton:/etc/slurm/cgroup.conf /etc/slurm/cgroup.conf&#39;</span>
+</pre></div>
+</div>
+<p>cgroup_allowed_devices_file.conf:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">null</span>
+<span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">urandom</span>
+<span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">zero</span>
+<span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sda</span><span class="o">*</span>
+<span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">cpu</span><span class="o">/*/*</span>
+<span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">pts</span><span class="o">/*</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cluster_exec</span> <span class="s1">&#39;scp ixtlilton:/etc/slurm/cgroup_allowed_devices_file.conf /etc/slurm/cgroup_allowed_devices_file.conf&#39;</span>
+</pre></div>
+</div>
+<p>The firewall has to be stopped everywhere (or at least in any slave node see: https://www.slothparadise.com/how-to-install-slurm-on-centos-7-cluster/). I do it everywhere, just in case.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">systemctl</span> <span class="n">stop</span> <span class="n">firewalld</span><span class="p">;</span> <span class="n">systemctl</span> <span class="n">disable</span> <span class="n">firewalld</span>
+<span class="n">cluster_exec</span> <span class="s1">&#39;systemctl stop firewalld; systemctl disable firewalld&#39;</span>
+</pre></div>
+</div>
+<p>Checking clocks are syncronized along the cluster:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cluster_exec<span class="w"> </span><span class="s1">&#39;date&#39;</span><span class="p">;</span><span class="w"> </span>date
+cluster_exec<span class="w"> </span><span class="s1">&#39;clock&#39;</span><span class="p">;</span><span class="w"> </span>clock
+</pre></div>
+</div>
+<p>Now we can try to wake Slurm up.
+On every node:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>slurmd.service
+systemctl<span class="w"> </span>start<span class="w"> </span>slurmd.service
+systemctl<span class="w"> </span>status<span class="w"> </span>slurmd.service
+cluster_exec<span class="w"> </span><span class="s1">&#39;systemctl enable slurmd.service&#39;</span>
+cluster_exec<span class="w"> </span><span class="s1">&#39;systemctl start slurmd.service&#39;</span>
+cluster_exec<span class="w"> </span><span class="s1">&#39;systemctl status slurmd.service&#39;</span>
+</pre></div>
+</div>
+<p>On the master:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">systemctl</span> <span class="n">enable</span> <span class="n">slurmctld</span><span class="o">.</span><span class="n">service</span>
+<span class="n">systemctl</span> <span class="n">start</span> <span class="n">slurmctld</span><span class="o">.</span><span class="n">service</span>
+<span class="n">systemctl</span> <span class="n">status</span> <span class="n">slurmctld</span><span class="o">.</span><span class="n">service</span>
+</pre></div>
+</div>
+</section>
+<section id="administration">
+<h2>Administration<a class="headerlink" href="#administration" title="Permalink to this heading"></a></h2>
+<p>Diplaying compute nodes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scontrol</span> <span class="n">show</span> <span class="n">nodes</span>
+</pre></div>
+</div>
+<p>To display the job queue:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scontrol</span> <span class="n">show</span> <span class="n">jobs</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scontrol</span> <span class="n">show</span> <span class="n">daemons</span>
+<span class="n">salloc</span>
+<span class="n">sinfo</span>
+<span class="n">squeue</span>
+<span class="n">smap</span>
+<span class="n">sview</span>
+<span class="n">scontrol</span> <span class="n">show</span> <span class="n">config</span>
+<span class="n">sstat</span>
+<span class="n">sreport</span>
+</pre></div>
+</div>
+<section id="daemons">
+<h3>Daemons<a class="headerlink" href="#daemons" title="Permalink to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>scontrol<span class="w"> </span>show<span class="w"> </span>daemons
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>systemctl<span class="w"> </span>status<span class="w"> </span>slurmd.service
+</pre></div>
+</div>
+</section>
+<section id="show-the-partitions">
+<h3>Show the partitions<a class="headerlink" href="#show-the-partitions" title="Permalink to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sinfo
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>scontrol<span class="w"> </span>show<span class="w"> </span>partitions
+</pre></div>
+</div>
+</section>
+<section id="updating-the-configuration-and-restarting-the-daemons">
+<h3>Updating the configuration and restarting the daemons<a class="headerlink" href="#updating-the-configuration-and-restarting-the-daemons" title="Permalink to this heading"></a></h3>
+<p>See script update_and_restart_slurmd.sh.</p>
+</section>
+<section id="how-to-add-a-new-node">
+<h3>How to add a new node<a class="headerlink" href="#how-to-add-a-new-node" title="Permalink to this heading"></a></h3>
+<p>Stop slurmctld
+Add/remove nodes in slurm.conf
+update_and_restart_slurmd</p>
+</section>
+<section id="how-to-create-a-new-partition">
+<h3>How to create a new partition<a class="headerlink" href="#how-to-create-a-new-partition" title="Permalink to this heading"></a></h3>
+<p>Edit the file ‘/etc/slurm/slurm.conf’ and in the section ‘#PARTITIONS’ add the corresponding new
+line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PartitionName</span><span class="o">=</span><span class="n">tests</span> <span class="n">Nodes</span><span class="o">=</span><span class="n">ixtlilton</span> <span class="n">Default</span><span class="o">=</span><span class="n">YES</span> <span class="n">PriorityJobFactor</span><span class="o">=</span><span class="mi">20000</span> <span class="n">MaxTime</span><span class="o">=</span><span class="n">INFINITE</span> <span class="n">State</span><span class="o">=</span><span class="n">UP</span> <span class="n">OverSubscribe</span><span class="o">=</span><span class="n">NO</span> <span class="n">Shared</span><span class="o">=</span><span class="n">Yes</span>
+<span class="n">PartitionName</span><span class="o">=</span><span class="n">mds</span> <span class="n">Nodes</span><span class="o">=</span><span class="n">node01</span><span class="p">,</span><span class="n">node02</span><span class="p">,</span><span class="n">node03</span><span class="p">,</span><span class="n">node04</span> <span class="n">Default</span><span class="o">=</span><span class="n">NO</span> <span class="n">PriorityJobFactor</span><span class="o">=</span><span class="mi">10000</span> <span class="n">MaxTime</span><span class="o">=</span><span class="n">INFINITE</span> <span class="n">State</span><span class="o">=</span><span class="n">UP</span> <span class="n">OverSubscribe</span><span class="o">=</span><span class="n">NO</span> <span class="n">Shared</span><span class="o">=</span><span class="n">Yes</span>
+<span class="n">PartitionName</span><span class="o">=</span><span class="n">gpus</span> <span class="n">Nodes</span><span class="o">=</span><span class="n">ixtlilton</span><span class="p">,</span><span class="n">node01</span><span class="p">,</span><span class="n">node02</span><span class="p">,</span><span class="n">node03</span><span class="p">,</span><span class="n">node04</span> <span class="n">Default</span><span class="o">=</span><span class="n">NO</span> <span class="n">PriorityJobFactor</span><span class="o">=</span><span class="mi">10000</span> <span class="n">MaxTime</span><span class="o">=</span><span class="n">INFINITE</span> <span class="n">State</span><span class="o">=</span><span class="n">UP</span> <span class="n">OverSubscribe</span><span class="o">=</span><span class="n">NO</span> <span class="n">Shared</span><span class="o">=</span><span class="n">Yes</span>
+<span class="n">PartitionName</span><span class="o">=</span><span class="n">guests</span> <span class="n">Nodes</span><span class="o">=</span><span class="n">node04</span> <span class="n">Default</span><span class="o">=</span><span class="n">NO</span> <span class="n">PriorityJobFactor</span><span class="o">=</span><span class="mi">10000</span> <span class="n">MaxTime</span><span class="o">=</span><span class="mi">168</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span> <span class="n">State</span><span class="o">=</span><span class="n">UP</span> <span class="n">OverSubscribe</span><span class="o">=</span><span class="n">NO</span> <span class="n">Shared</span><span class="o">=</span><span class="n">Yes</span>
+</pre></div>
+</div>
+<p>For the changes in the configuration file to take effect:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>update_and_restart_slurmd
+</pre></div>
+</div>
+</section>
+<section id="limiting-users-access-to-partitions">
+<h3>Limiting users access to partitions<a class="headerlink" href="#limiting-users-access-to-partitions" title="Permalink to this heading"></a></h3>
+<p>Access to partitions can be limited to unix groups. In the partitions definition section of
+‘/etc/slurm.conf’ a new variable must be added to the partition with the number of the groups comma
+separated:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PartitionName</span><span class="o">=</span><span class="n">tests</span> <span class="n">Nodes</span><span class="o">=</span><span class="n">ixtlilton</span> <span class="n">Default</span><span class="o">=</span><span class="n">YES</span> <span class="n">PriorityJobFactor</span><span class="o">=</span><span class="mi">20000</span> <span class="n">MaxTime</span><span class="o">=</span><span class="n">INFINITE</span> <span class="n">State</span><span class="o">=</span><span class="n">UP</span> <span class="n">OverSubscribe</span><span class="o">=</span><span class="n">NO</span> <span class="n">Shared</span><span class="o">=</span><span class="n">Yes</span> <span class="n">AllowGroups</span><span class="o">=</span><span class="n">liliana</span><span class="p">,</span><span class="n">diego</span>
+<span class="n">PartitionName</span><span class="o">=</span><span class="n">mds</span> <span class="n">Nodes</span><span class="o">=</span><span class="n">node01</span><span class="p">,</span><span class="n">node02</span><span class="p">,</span><span class="n">node03</span><span class="p">,</span><span class="n">node04</span> <span class="n">Default</span><span class="o">=</span><span class="n">NO</span> <span class="n">PriorityJobFactor</span><span class="o">=</span><span class="mi">10000</span> <span class="n">MaxTime</span><span class="o">=</span><span class="n">INFINITE</span> <span class="n">State</span><span class="o">=</span><span class="n">UP</span> <span class="n">OverSubscribe</span><span class="o">=</span><span class="n">NO</span> <span class="n">Shared</span><span class="o">=</span><span class="n">Yes</span> <span class="n">AllowGroups</span><span class="o">=</span><span class="n">liliana</span><span class="p">,</span><span class="n">diego</span>
+<span class="n">PartitionName</span><span class="o">=</span><span class="n">gpus</span> <span class="n">Nodes</span><span class="o">=</span><span class="n">ixtlilton</span><span class="p">,</span><span class="n">node01</span><span class="p">,</span><span class="n">node02</span><span class="p">,</span><span class="n">node03</span><span class="p">,</span><span class="n">node04</span> <span class="n">Default</span><span class="o">=</span><span class="n">NO</span> <span class="n">PriorityJobFactor</span><span class="o">=</span><span class="mi">10000</span> <span class="n">MaxTime</span><span class="o">=</span><span class="n">INFINITE</span> <span class="n">State</span><span class="o">=</span><span class="n">UP</span> <span class="n">OverSubscribe</span><span class="o">=</span><span class="n">NO</span> <span class="n">Shared</span><span class="o">=</span><span class="n">Yes</span> <span class="n">AllowGroups</span><span class="o">=</span><span class="n">liliana</span><span class="p">,</span><span class="n">diego</span>
+<span class="n">PartitionName</span><span class="o">=</span><span class="n">guests</span> <span class="n">Nodes</span><span class="o">=</span><span class="n">node04</span> <span class="n">Default</span><span class="o">=</span><span class="n">NO</span> <span class="n">PriorityJobFactor</span><span class="o">=</span><span class="mi">10000</span> <span class="n">MaxTime</span><span class="o">=</span><span class="mi">168</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span> <span class="n">State</span><span class="o">=</span><span class="n">UP</span> <span class="n">OverSubscribe</span><span class="o">=</span><span class="n">NO</span> <span class="n">Shared</span><span class="o">=</span><span class="n">Yes</span> <span class="n">AllowGroups</span><span class="o">=</span><span class="n">guest</span>
+</pre></div>
+</div>
+<p>After editing the file, the slurm daemon needs to be restarted:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>update_and_restart_slurmd
+update_and_restart_slurmd
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong><em>More Info:</em></strong><br />
+https://slurm.schedmd.com/
+https://wiki.fysik.dtu.dk/niflheim/Slurm_configuration<br />
+https://www.dkrz.de/up/systems/mistral/running-jobs/slurm-introduction
+http://bioinformatics-core-shared-training.github.io/hpc/SLURM-Summary.pdf
+https://github.com/B-UMMI/INNUENDO/wiki/4.-Setting-up-SLURM-partitions-and-nodes
+https://vsoch.github.io/lessons/sherlock-jobs/</p>
+</div></blockquote>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+    <a href="https://github.com/uibcdf/Ixtlilton">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
+    </a>
+
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, UIBCDF Lab at the Mexico City Childrens Hospital Federico Gomez and the authors..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

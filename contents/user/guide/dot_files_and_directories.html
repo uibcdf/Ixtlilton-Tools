@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dot files and directories &mdash; Ixtlilton 0+untagged.76.g63f39e0.dirty documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Environment variables" href="environment_variables.html" />
+    <link rel="prev" title="File system" href="user_file_system.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            Ixtlilton
+          </a>
+              <div class="version">
+                0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about/main_node.html">Main node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/secondary_nodes.html">Secondary nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/storage_node.html">Storage node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/networks.html">Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/file_system.html">File system</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../about/file_system.html#the-ixtlilton-s-file-system">The Ixtlilton’s file system</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about/file_system.html#sharing-projects-data">Sharing projects data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about/file_system.html#finished-projects">Finished projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about/file_system.html#a-slave-node-file-system">A slave node file system.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about/file_system.html#the-user-file-system">The user file system</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/users_and_groups.html">Users and groups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/environment_modules.html">Environment modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../about/environment_modules.html#what-is-an-environment-module-system">What is an environment module system?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about/environment_modules.html#lmod">Lmod</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about/environment_modules.html#your-own-environment-modules">Your own environment modules</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/queuing_system.html">Queuing system</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="login.html">Login</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transfer_files.html">Transfer files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_file_system.html">File system</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Dot files and directories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment_variables.html">Environment variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shell_aliases.html">Shell aliases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment_modules.html">Environment modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conda.html">Conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html">Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jupyter.html">Jupyter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="slurm.html">SLURM jobs submission</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workflow_UIBCDF.html">UIBCDF project’s workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html">Tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tools/x.html">XXX</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../admin/guide/index.html">Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/guide/admin_and_monitoring.html">Administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/guide/hardware.html">Hardware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/guide/network.html">Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/guide/volumes_and_file_system.html">Volumes and File System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/guide/users_and_groups.html">Users and Groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/guide/ssh.html">SSH</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/guide/environment_modules.html">Environment Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/guide/conda.html">Conda</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin/tools/index.html">Tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/tools/x.html">XXX</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">API Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../autosummary/ixtlilton_tools.html">ixtlilton_tools</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Ixtlilton</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Guide</a></li>
+      <li class="breadcrumb-item active">Dot files and directories</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+           <div itemprop="articleBody">
+             
+  <section id="dot-files-and-directories">
+<h1>Dot files and directories<a class="headerlink" href="#dot-files-and-directories" title="Permalink to this heading"></a></h1>
+<p>In a unix OS, the dot files or directories are those whose name starts with “.”. This only fact makes them hidden. Try to type in your terminal de following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span><span class="nv">$HOME</span>
+ls
+</pre></div>
+</div>
+<p>and now:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>-a
+</pre></div>
+</div>
+<p>Many files that you probably didn’t know, if you are a Linux newbie, appeared. And why they are
+hidden? Because they contain configuration commands, setting options or internal scripts defining the behaviour of your user, OS processes, or other third-party software. This files should not be modified by inexperienced users. And in case they are, it is something done with little frequency.</p>
+<p>Let’s have a look to some of them. If the computer, Ixtlilton in this case, is your work tool, it
+is your duty to know how it works.</p>
+<section id="bashrc">
+<h2>‘.bashrc’<a class="headerlink" href="#bashrc" title="Permalink to this heading"></a></h2>
+<p>The file ‘.bashrc’ is one of the most important files to define the behaviour of your user and
+terminal. Actually, this file is executed every time you open a new terminal, or you log in. Do you
+want to test it? Open this file with your text editor and add as its first line:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Welcome back pal!&quot;</span>
+</pre></div>
+</div>
+<p>Now save the file, close it, close the terminal or log out your session… and open a new terminal or log in again. Aha! you see… the file ‘.bashrc’ can be used to define the format and colors of your prompt, to load auxiliary files with scripts run before the user can do anything, and to trigger processes before a user works in its terminal.</p>
+<p>You could define here the definition of new environment variables. Try to add a line as:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">KEYCODE</span><span class="o">=</span><span class="s1">&#39;123456&#39;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">VAR</span><span class="o">=</span><span class="m">100</span>
+</pre></div>
+</div>
+<p>Reload your ‘.bashrc’ closing and opening your terminal or session, or doing:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>.bashrc
+</pre></div>
+</div>
+<p>And type:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="nv">$KEYCODE</span>
+</pre></div>
+</div>
+<p>or:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span>$<span class="o">[</span><span class="nv">$VAR</span>+100<span class="o">]</span>
+</pre></div>
+</div>
+<p>Now, you are probably wondering -if you are linux user with few experience-: is this then the place
+where the user variables <code class="docutils literal notranslate"><span class="pre">HOME</span></code>, <code class="docutils literal notranslate"><span class="pre">WORK</span></code> or <code class="docutils literal notranslate"><span class="pre">SCRATCH</span></code>? That’s right, but to load the definition of these
+variables in every user, this is done in a common file with path ‘opt/etc/user_bashrc’ where the
+following lines are placed:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">PS1</span><span class="o">=</span><span class="s2">&quot;────────\n\033[1;37;42m{`hostname`}:\033[2;34m \w\033[0;0m \n\[\033[30;47m\][\[\033[31m\]\u\[\033[30;47m\]@:\W]</span>$<span class="s2">\[\033[00m\](\#)\[\$prevCmd\]-&gt;\[</span><span class="nv">$RST</span><span class="s2">\]&quot;</span>
+
+<span class="nb">export</span><span class="w"> </span><span class="nv">HOME</span><span class="o">=</span>/home/<span class="nv">$USER</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">WORK</span><span class="o">=</span>/work/<span class="nv">$USER</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">SCRATCH</span><span class="o">=</span>/scratch/<span class="nv">$USER</span>
+
+<span class="nb">export</span><span class="w"> </span><span class="nv">DATA</span><span class="o">=</span>/projects/DATA
+<span class="nb">export</span><span class="w"> </span><span class="nv">HOTDATA</span><span class="o">=</span>/projects/HOTDATA
+
+<span class="nb">export</span><span class="w"> </span><span class="nv">HISTSIZE</span><span class="o">=</span><span class="m">10000</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">HISTFILESIZE</span><span class="o">=</span><span class="m">10000</span>
+
+<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$HOME</span>/.local/bin<span class="si">${</span><span class="nv">PATH</span><span class="si">}</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">LIBRARY_PATH</span><span class="o">=</span><span class="nv">$HOME</span>/.local/lib:<span class="nv">$HOME</span>/.local/lib32:<span class="nv">$HOME</span>/.local/lib64:<span class="si">${</span><span class="nv">LIBRARY_PATH</span><span class="si">}</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="nv">$HOME</span>/.local/lib:<span class="nv">$HOME</span>/.local/lib32:<span class="nv">$HOME</span>/.local/lib64:<span class="si">${</span><span class="nv">LD_LIBRARY_PATH</span><span class="si">}</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">INCLUDE</span><span class="o">=</span><span class="nv">$HOME</span>/.local/include:<span class="si">${</span><span class="nv">INCLUDE</span><span class="si">}</span>
+
+<span class="c1"># Modulefiles</span>
+module<span class="w"> </span>use<span class="w"> </span><span class="nv">$HOME</span>/.local/opt/modulefiles
+
+<span class="c1"># &gt;&gt;&gt; conda initialize &gt;&gt;&gt;</span>
+<span class="c1"># !! Contents within this block are managed by &#39;conda init&#39; !!</span>
+<span class="nv">__conda_setup</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span><span class="s1">&#39;/opt2/apps/conda/bin/conda&#39;</span><span class="w"> </span><span class="s1">&#39;shell.bash&#39;</span><span class="w"> </span><span class="s1">&#39;hook&#39;</span><span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>/dev/null<span class="k">)</span><span class="s2">&quot;</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$?</span><span class="w"> </span>-eq<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nb">eval</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$__conda_setup</span><span class="s2">&quot;</span>
+<span class="k">else</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;/opt2/apps/conda/etc/profile.d/conda.sh&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">        </span>.<span class="w"> </span><span class="s2">&quot;/opt2/apps/conda/etc/profile.d/conda.sh&quot;</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/opt2/apps/conda/bin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>
+<span class="w">    </span><span class="k">fi</span>
+<span class="k">fi</span>
+<span class="nb">unset</span><span class="w"> </span>__conda_setup
+</pre></div>
+</div>
+<p>And this file is loaded by your ‘$HOME/.bashrc’ file with the lines:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Source global user definitions</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span>/opt/etc/user_bashrc<span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">        </span>.<span class="w"> </span>/opt/etc/user_bashrc
+<span class="k">fi</span>
+</pre></div>
+</div>
+<p>Many programs and scripts use this file to trigger the initial set up for the user. You can see how
+‘conda’ usually adds some few lines. In your workstation or laptop, if you work with conda, you
+will probably see a section like the following in your ‘~/.bashrc’ file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># &gt;&gt;&gt; conda initialize &gt;&gt;&gt;</span>
+...
+...
+...
+<span class="nb">unset</span><span class="w"> </span>__conda_setup
+</pre></div>
+</div>
+<p>The administrators put these lines in ‘/opt/etc/user_bashrc’ to have these orders centralized for
+all users in case the configuration of conda changes in Ixtlilton.</p>
+<p>What other things can you do with you ‘.bashrc’? You can define the behaviour of your terminal, prompt, commands history record, etc. But to conclude this section, let’s pay attention to the piece of code in your ‘$HOME/.bashrc’:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># My alias definitions</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span>~/.bash_aliases<span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span>.<span class="w"> </span>~/.bash_aliases
+<span class="k">fi</span>
+</pre></div>
+</div>
+<p>Your ‘.bashrc’ file is executing, if exists, another shell script named ‘.bash_aliases’. Let’s see what this file is in the following section.</p>
+</section>
+<section id="bash-aliases">
+<h2>‘.bash_aliases’<a class="headerlink" href="#bash-aliases" title="Permalink to this heading"></a></h2>
+<p>If you are reading this section you might not be familiar with the concept of ‘alias’ in linux.
+You can define aliases for commands in your terminal. Try:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">alias</span><span class="w"> </span><span class="nv">list</span><span class="o">=</span><span class="s2">&quot;ls&quot;</span>
+</pre></div>
+</div>
+<p>Now you can type in your terminal “list” and the <code class="docutils literal notranslate"><span class="pre">ls</span></code> command will be executed. You have defined an
+alias. But this alias is not permanent. This alias will be forgotten as soon as you close your
+terminal. That’s why the alias must be define every time you open a session or a terminal. And this
+can be done by means of the same ‘$HOME/.bashrc’ or by any other file loaded by ‘$HOME/.bashrc’.</p>
+<p>Thus, in case you want to define your own aliases, you can do it by adding them as new lines in your ‘$HOME/.bashrc’. Or, if
+you want to keep your ‘.bashrc’ well organized, you can put these aliases definition in your
+‘.bash_aliases’ file. To show you the way, the administrators included the first useful alias in
+this former file as you can see in the section <a class="reference internal" href="shell_aliases.html"><span class="doc std std-doc">“Shell aliases”</span></a>.</p>
+</section>
+<section id="bash-profile">
+<h2>‘.bash_profile’<a class="headerlink" href="#bash-profile" title="Permalink to this heading"></a></h2>
+<p>This shell script does not exist by default in all Linux distributions for users. The effect of this
+script in the case of Ixtlilton users is a bit redundant. The role played by ‘.bash_profile’ is similar
+to the one played by ‘.bashrc’, but in different moments:</p>
+<ul class="simple">
+<li><p>‘.bash_profile’ is executed when the user opens a new session.</p></li>
+<li><p>‘.bashrc’ is executed when the user executes bash</p></li>
+</ul>
+<p>But in the case of Ixtlilton there is no difference, since the user ‘.bash_profile’ is loading the ‘.bashrc’ file of the same user:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get the aliases and functions</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span>~/.bashrc<span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">        </span>.<span class="w"> </span>~/.bashrc
+<span class="k">fi</span>
+</pre></div>
+</div>
+</section>
+<section id="bash-history">
+<h2>‘.bash_history’<a class="headerlink" href="#bash-history" title="Permalink to this heading"></a></h2>
+<p>The ‘.bash_history’ is not a shell script. This dot file stores the recent list of commands your
+user executed in chronological order. Did you notice that using the ‘up arrow’ key in your terminal, or
+making use of the reverse-search with ‘ctrl-r’, you can recover a command that was receantly
+executed? This is because your history record is stored in ‘.bash_history’.</p>
+</section>
+<section id="ssh">
+<h2>‘.ssh’<a class="headerlink" href="#ssh" title="Permalink to this heading"></a></h2>
+<p>As it was introduced in the user guide section ‘<a class="reference internal" href="login.html"><span class="doc std std-doc">Login</span></a>’, the SSH protocol is used to make
+secure shell remote connections. This protocol, executed with the command ‘ssh’, needs some
+user settings and credentials. And the directory ‘$HOME/.ssh’ is the place to store them.</p>
+<p>Among the files you can find in your ‘$HOME/.ssh’, there is one you should know if you are GitHub
+user: ‘$HOME/.ssh/id_rsa.pub’. This file stores the RSA key of your user. And this key is an
+addition security filter to approve a remote connection between two machines. The machine receiving
+the remote access petition can be configured to deny any ssh login request if the RSA public key is
+not recognized as authorized -even if the user and passwords are ok-. Or, in case you want to, or
+you have to, authorized remote connections without password, the SSH protocol can be configured to
+work only with the RSA keys as validation method. This is the case of the remote data transfer with ‘git’ between your local repository clone and your remote GitHub repository.</p>
+</section>
+<section id="google-authenticator">
+<h2>‘.google_authenticator’<a class="headerlink" href="#google-authenticator" title="Permalink to this heading"></a></h2>
+<p>Ixtlilton has the Google Authenticator two-factor login mechanism enabled for remote conexions.
+Your two factor authentication credentials are stored in this file.</p>
+</section>
+<section id="emacs-emacs-d-vim-vimrc-and-viminfo">
+<h2>‘.emacs’, ‘.emacs.d’, ‘.vim’, ‘.vimrc’, and ‘.viminfo’<a class="headerlink" href="#emacs-emacs-d-vim-vimrc-and-viminfo" title="Permalink to this heading"></a></h2>
+<p>Text editors can also be very customizable. Some of them let you define commands, routines,
+shortcuts, etc. In case you use emacs or vim you can find in your home directory hidden files and
+directories as the ones in the title of this subsection.</p>
+</section>
+<section id="gitconfig">
+<h2>‘.gitconfig’<a class="headerlink" href="#gitconfig" title="Permalink to this heading"></a></h2>
+<p>Git also needs a place to store your user name and email, as well as some other user option as the
+preferred text editor or your default branch name. This user settings can be defined via command
+line (with the command ‘git-config’), but if you know the ‘.gitconfig’ syntax, you can also do it
+editing this dot file.</p>
+</section>
+<section id="conda-and-condarc">
+<h2>‘.conda’ and ‘condarc’<a class="headerlink" href="#conda-and-condarc" title="Permalink to this heading"></a></h2>
+<p>Conda is the package and enviroments installed in Ixtlilton. The administrators performed a central
+installation but each user has its own setting options and the possibility to define a private list
+of environments. Again, this is defined in a couple of dot files and directories in your ‘$HOME’. As such, the file ‘$HOME/.condarc’ stores your default list of conda channels and some configuration options of your user as the auto-activation of your base environment. Additionally the directory ‘$HOME/.conda’ include some internal information used by conda related with your user, as your list of environments.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+    <a href="https://github.com/uibcdf/Ixtlilton">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
+    </a>
+
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="user_file_system.html" class="btn btn-neutral float-left" title="File system" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="environment_variables.html" class="btn btn-neutral float-right" title="Environment variables" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, UIBCDF Lab at the Mexico City Childrens Hospital Federico Gomez and the authors..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

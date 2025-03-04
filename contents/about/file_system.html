@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>File system &mdash; Ixtlilton 0+untagged.76.g63f39e0.dirty documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Users and groups" href="users_and_groups.html" />
+    <link rel="prev" title="Networks" href="networks.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Ixtlilton
+          </a>
+              <div class="version">
+                0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="main_node.html">Main node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="secondary_nodes.html">Secondary nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="storage_node.html">Storage node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="networks.html">Networks</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">File system</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#the-ixtlilton-s-file-system">The Ixtlilton’s file system</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sharing-projects-data">Sharing projects data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#finished-projects">Finished projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#a-slave-node-file-system">A slave node file system.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-user-file-system">The user file system</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="users_and_groups.html">Users and groups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment_modules.html">Environment modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="environment_modules.html#what-is-an-environment-module-system">What is an environment module system?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment_modules.html#lmod">Lmod</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment_modules.html#your-own-environment-modules">Your own environment modules</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="queuing_system.html">Queuing system</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user/guide/index.html">Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../user/guide/login.html">Login</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user/guide/transfer_files.html">Transfer files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user/guide/user_file_system.html">File system</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user/guide/dot_files_and_directories.html">Dot files and directories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user/guide/environment_variables.html">Environment variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user/guide/shell_aliases.html">Shell aliases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user/guide/environment_modules.html">Environment modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user/guide/conda.html">Conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user/guide/git.html">Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user/guide/jupyter.html">Jupyter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user/guide/slurm.html">SLURM jobs submission</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user/guide/workflow_UIBCDF.html">UIBCDF project’s workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../user/tools/index.html">Tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../user/tools/x.html">XXX</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin/guide/index.html">Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../admin/guide/admin_and_monitoring.html">Administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/guide/hardware.html">Hardware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/guide/network.html">Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/guide/volumes_and_file_system.html">Volumes and File System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/guide/users_and_groups.html">Users and Groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/guide/ssh.html">SSH</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/guide/environment_modules.html">Environment Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/guide/conda.html">Conda</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../admin/tools/index.html">Tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../admin/tools/x.html">XXX</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">API Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../autosummary/ixtlilton_tools.html">ixtlilton_tools</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Ixtlilton</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">File system</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+           <div itemprop="articleBody">
+             
+  <section id="file-system">
+<h1>File system<a class="headerlink" href="#file-system" title="Permalink to this heading"></a></h1>
+<section id="the-ixtlilton-s-file-system">
+<h2>The Ixtlilton’s file system<a class="headerlink" href="#the-ixtlilton-s-file-system" title="Permalink to this heading"></a></h2>
+<p>The following sections describe the file system mounted in the master node of Ixtlilton.
+Below, in the section ‘’, the file system of every slave node is described. Users should also know
+about how a slave node is configured, but their interaction with them will be done only through the
+jobs submitted to the SLURM workload manager.</p>
+<p>This is the table summarizing the global file system:</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Mounted Volume</p></th>
+<th class="head"><p>Size</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>/</p></td>
+<td><p>223 Gb</p></td>
+<td><p>SSD</p></td>
+</tr>
+<tr class="row-odd"><td><p>/home</p></td>
+<td><p>465.8 Gb</p></td>
+<td><p>SSD</p></td>
+</tr>
+<tr class="row-even"><td><p>/HOT_DATA</p></td>
+<td><p>465.8 Gb</p></td>
+<td><p>SSD</p></td>
+</tr>
+<tr class="row-odd"><td><p>/DATA</p></td>
+<td><p>8.2 Tb</p></td>
+<td><p>Raid 5 HDD</p></td>
+</tr>
+<tr class="row-even"><td><p>/COLD_STORAGE_ROOM</p></td>
+<td><p>11 Tb</p></td>
+<td><p>Raid 5 HDD</p></td>
+</tr>
+</tbody>
+</table>
+<section id="root">
+<h3>ROOT<a class="headerlink" href="#root" title="Permalink to this heading"></a></h3>
+</section>
+<section id="home">
+<h3>HOME<a class="headerlink" href="#home" title="Permalink to this heading"></a></h3>
+<p>There is an 466 Gbs SSD drive with a unique volume hosting the directory <code class="docutils literal notranslate"><span class="pre">/home</span></code>.
+This place stores the home directory of every user. The writing/reading speed is fast, but the
+memory limited here. In a first moment there will be no space quotas applied to each home
+directory, but there will be be quotas if needed.</p>
+<p>Users know that their own work directory must be used to store their scripts, docs, module environments, conda environments, github repos, small software and temporary light files for analysis</p>
+</section>
+<section id="data">
+<h3>DATA<a class="headerlink" href="#data" title="Permalink to this heading"></a></h3>
+<p>DATA is a virtual raid 5 volume built with HDDs drives. This kind of drives have a slow
+reading/writing speed, but this memory is cheap. Today this volume adds up to 8.2 Tbs, but will be
+increased as soon as there is no room left to play its role.</p>
+<p>Two directories are found in DATA: <code class="docutils literal notranslate"><span class="pre">/DATA/work</span></code> and <code class="docutils literal notranslate"><span class="pre">/DATA/projects</span></code></p>
+<section id="work">
+<h4>Work<a class="headerlink" href="#work" title="Permalink to this heading"></a></h4>
+<p>The directory <code class="docutils literal notranslate"><span class="pre">/DATA/work</span></code> stores the work directory of every user. Users know that this folder is
+used to store heavy, not shared with other users, and not frequently read data or files during a
+long term period. Once the project is finished all these files and data will be moved to the
+COLD_STORAGE_ROOM for its indefinite storage.</p>
+</section>
+<section id="projects">
+<h4>Projects<a class="headerlink" href="#projects" title="Permalink to this heading"></a></h4>
+<p>There is in DATA a directory, <code class="docutils literal notranslate"><span class="pre">/DATA/projects</span></code>, where heavy and not frequently read data should
+be stored. These files, or data, have to be organised in folders with names evoking each project.
+And every user participating in the project must have rights to use it. Files here have to be
+accessible for every coworker to avoid duplicity of files.</p>
+<p>Users should not make multiple copies of what it is stored here, if not necessary. All users
+analysing a common file should do it from here, not from their own copy. And, if fast access is
+needed to the data, there is specific shared directory to temporary keep an accessible copy to every coworker
+as well: <code class="docutils literal notranslate"><span class="pre">HOT_DATA/projects</span></code>.</p>
+</section>
+</section>
+<section id="hot-data">
+<h3>HOT_DATA<a class="headerlink" href="#hot-data" title="Permalink to this heading"></a></h3>
+<p>HOT_DATA is a 465.8 Gb SSD drive. Reading and writting access is fast, but this kind of memory is
+expensive and it should not be used to store data <em>sine die</em>. By contrast, this volume gives us the
+chance to have a place where those actual files are placed to enjoy a high speed access. Two
+directories are found in HOT_DATA: <code class="docutils literal notranslate"><span class="pre">/HOT_DATA/scratch</span></code> and <code class="docutils literal notranslate"><span class="pre">/HOT_DATA/projects</span></code>. There are no
+quotas yet, but since room is limited, there will be space limit rules if necessary.</p>
+<section id="scratch">
+<h4>Scratch<a class="headerlink" href="#scratch" title="Permalink to this heading"></a></h4>
+<p>The directory <code class="docutils literal notranslate"><span class="pre">/HOT_DATA/scratch</span></code> hosts the scratch directory of every single user. It is reported
+in the user guide sections that this directory has to be used as a sandbox to put temporary working
+files, heavy if it is needed, not accessible or shared with other users, to enjoy fast reading
+access to them. In other supercomputers or cluster, there is a space limit in each scratch
+directory and in addition a life-time limit is also imposed. Files with a life longer than 30 days
+are automatically removed, for example. By now, no similar rules are defined, yet.</p>
+<p>Users know the function of their own scracth directory since it is reported in the section ‘’.</p>
+</section>
+<section id="id1">
+<h4>Projects<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h4>
+<p>Those heavy files belonging to a project, such as recent md trajectories, which have to be
+accessible to more than a user, and need to be repeteadly read, have to be temporary placed in
+<code class="docutils literal notranslate"><span class="pre">/HOT_DATA/projects</span></code>. These files have to be organised in directories with a name related with each
+project, to ensure a quick identification by anyone.</p>
+<p>Again, there is now no need to fix a limite in space, but it will be done as soon as problems arise.
+Because of that, users must remove the files when high speed access is not longer needed.</p>
+</section>
+</section>
+<section id="cold-storage-room">
+<h3>COLD_STORAGE_ROOM<a class="headerlink" href="#cold-storage-room" title="Permalink to this heading"></a></h3>
+<p>There is an external NAS attached to Ixtlilton. The volume COLD_STORAGE_ROOM is nowadays settled
+there, in a virtual raid 5 of HDDs adding up to 11 Tb.</p>
+<p>The main function of this volume is to keep backups and old projects safe during an undefined period
+of time. That’s the reason why the volume is off the master node. High speed access is not a
+pririoty, but safety.</p>
+<p>In the near future, this has to be in a larger raid volume, in an exclusive node. Not in a NAS.</p>
+<p>Two directories are split the volume: <code class="docutils literal notranslate"><span class="pre">/COLD_STORAGE_ROOM/archive</span></code> and <code class="docutils literal notranslate"><span class="pre">/COLD_STORAGE_ROOM/backups</span></code>.</p>
+<section id="archive">
+<h4>Archive<a class="headerlink" href="#archive" title="Permalink to this heading"></a></h4>
+<p>The directory <code class="docutils literal notranslate"><span class="pre">/COLD_STORAGE_ROOM/archive</span></code>, as its own name suggests, stores old projects. These
+projects must be placed here well documented and compressed. They should be easily recovered in
+case spin-off projects are opened in the future.</p>
+</section>
+<section id="backups">
+<h4>Backups<a class="headerlink" href="#backups" title="Permalink to this heading"></a></h4>
+<p>This directory keeps automatic backups of important files and data. The backups policy is not
+defined yet.</p>
+</section>
+</section>
+</section>
+<section id="sharing-projects-data">
+<h2>Sharing projects data<a class="headerlink" href="#sharing-projects-data" title="Permalink to this heading"></a></h2>
+<p>Two directories, in volumes DATA and HOT_DATA, are defined to share heavy files belonging to a
+project which should be accessible to any coworker: <code class="docutils literal notranslate"><span class="pre">/DATA/projects</span></code> and <code class="docutils literal notranslate"><span class="pre">/HOT_DATA/projects</span></code>.</p>
+<p>The main idea behind this two directories is avoiding multiple copies of the same file. Imagine,
+for instance, thereis 150 Gb of trajectories analized simultaneously by three users. There is no
+need for every coworker to keep their own copy of the data. That would occupy 300 extra Gb needlessly. To keep this clear and simple, both former directories will store a single copy with all rights granted.</p>
+<p>Two things make <code class="docutils literal notranslate"><span class="pre">/DATA/projects</span></code> and <code class="docutils literal notranslate"><span class="pre">/HOT_DATA/projects</span></code> different:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">/DATA/projects</span></code> is in a slow access volume with not size limit virtually.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/HOT_DATA/projects</span></code> is in a high speed access volume with a small size, less than 500 Gb shared
+among projects and scratch directories of users.</p></li>
+</ul>
+</section>
+<section id="finished-projects">
+<h2>Finished projects<a class="headerlink" href="#finished-projects" title="Permalink to this heading"></a></h2>
+<p>Once a project is finished a good documenting job has to be done. The whole project, with all data
+(compressed), has to be kept for the future. And every aspect of the project, every result, must be easily
+reproducible with all what is included in the package. As if it were a time capsule.</p>
+<p>Finished projects have to be stored in <code class="docutils literal notranslate"><span class="pre">/COLD_STORAGE_ROOM/archive</span></code>.</p>
+</section>
+<section id="a-slave-node-file-system">
+<h2>A slave node file system.<a class="headerlink" href="#a-slave-node-file-system" title="Permalink to this heading"></a></h2>
+<section id="local">
+<h3>Local<a class="headerlink" href="#local" title="Permalink to this heading"></a></h3>
+</section>
+<section id="imported-by-nfs">
+<h3>Imported by NFS<a class="headerlink" href="#imported-by-nfs" title="Permalink to this heading"></a></h3>
+</section>
+</section>
+<section id="the-user-file-system">
+<h2>The user file system<a class="headerlink" href="#the-user-file-system" title="Permalink to this heading"></a></h2>
+<p>The description of the user file system can be found in the section <span class="xref myst">‘Instructions for users: File
+system’</span>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+    <a href="https://github.com/uibcdf/Ixtlilton">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
+    </a>
+
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="networks.html" class="btn btn-neutral float-left" title="Networks" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="users_and_groups.html" class="btn btn-neutral float-right" title="Users and groups" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, UIBCDF Lab at the Mexico City Childrens Hospital Federico Gomez and the authors..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

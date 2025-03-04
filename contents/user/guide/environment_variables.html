@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Environment variables &mdash; Ixtlilton 0+untagged.76.g63f39e0.dirty documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Shell aliases" href="shell_aliases.html" />
+    <link rel="prev" title="Dot files and directories" href="dot_files_and_directories.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            Ixtlilton
+          </a>
+              <div class="version">
+                0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about/main_node.html">Main node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/secondary_nodes.html">Secondary nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/storage_node.html">Storage node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/networks.html">Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/file_system.html">File system</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../about/file_system.html#the-ixtlilton-s-file-system">The Ixtlilton’s file system</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about/file_system.html#sharing-projects-data">Sharing projects data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about/file_system.html#finished-projects">Finished projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about/file_system.html#a-slave-node-file-system">A slave node file system.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about/file_system.html#the-user-file-system">The user file system</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/users_and_groups.html">Users and groups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/environment_modules.html">Environment modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../about/environment_modules.html#what-is-an-environment-module-system">What is an environment module system?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about/environment_modules.html#lmod">Lmod</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about/environment_modules.html#your-own-environment-modules">Your own environment modules</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/queuing_system.html">Queuing system</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="login.html">Login</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transfer_files.html">Transfer files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_file_system.html">File system</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dot_files_and_directories.html">Dot files and directories</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Environment variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shell_aliases.html">Shell aliases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment_modules.html">Environment modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conda.html">Conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html">Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jupyter.html">Jupyter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="slurm.html">SLURM jobs submission</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workflow_UIBCDF.html">UIBCDF project’s workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html">Tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tools/x.html">XXX</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../admin/guide/index.html">Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/guide/admin_and_monitoring.html">Administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/guide/hardware.html">Hardware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/guide/network.html">Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/guide/volumes_and_file_system.html">Volumes and File System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/guide/users_and_groups.html">Users and Groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/guide/ssh.html">SSH</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/guide/environment_modules.html">Environment Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/guide/conda.html">Conda</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin/tools/index.html">Tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/tools/x.html">XXX</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">API Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../autosummary/ixtlilton_tools.html">ixtlilton_tools</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Ixtlilton</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Guide</a></li>
+      <li class="breadcrumb-item active">Environment variables</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+           <div itemprop="articleBody">
+             
+  <section id="environment-variables">
+<h1>Environment variables<a class="headerlink" href="#environment-variables" title="Permalink to this heading"></a></h1>
+<p>The environment variables are variables defined in your shell session by you or the OS with name
+and value. They are used by the OS and third applications to define their behaviour depending
+on the user choice or setup.</p>
+<p>Let’s first how to define a shell variable. Type in a terminal:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">ACME_LICENSE_CODE</span><span class="o">=</span><span class="s1">&#39;xdk434%EQ}&#39;</span>
+</pre></div>
+</div>
+<p>And now lets print out the value of our first shell variable:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="nv">$ACME_LICENSE_CODE</span>
+</pre></div>
+</div>
+<p>Values can also be integers, float, double or boolean. Let’s play a bit bash scripting with different variables:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">TOPYEAR</span><span class="o">=</span><span class="m">2020</span>
+<span class="nv">NOW</span><span class="o">=</span><span class="sb">`</span>date<span class="w"> </span>+<span class="s1">&#39;%Y&#39;</span><span class="sb">`</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="nv">$NOW</span><span class="w"> </span>-lt<span class="w"> </span>TOPYEAR<span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="nv">WORKS</span><span class="o">=</span>true<span class="p">;</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="nv">WORKS</span><span class="o">=</span>false<span class="p">;</span><span class="w"> </span><span class="k">fi</span>
+<span class="k">if</span><span class="w"> </span>!<span class="w"> </span><span class="nv">$WORKS</span><span class="p">;</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;The ACME License expired&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">fi</span>
+</pre></div>
+</div>
+<p>Now, if you want that other than your user can access to the value of a variable, you need to turn
+the shell variable into an environment variable:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span>ACME_LICENSE_CODE
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">ACME_LICENSE_CODE</span><span class="o">=</span><span class="s1">&#39;xdk434%EQ}&#39;</span>
+</pre></div>
+</div>
+<p>Finnally, you can print out in the terminal all your user environment variables
+with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span>
+</pre></div>
+</div>
+<section id="your-user">
+<h2>Your user<a class="headerlink" href="#your-user" title="Permalink to this heading"></a></h2>
+<p>There are three variables keeping information about the sessions user:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="nv">$USER</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="nv">$USERNAME</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="nv">$LOGNAME</span>
+</pre></div>
+</div>
+</section>
+<section id="where-your-user-is-and-was">
+<h2>Where your user is and was<a class="headerlink" href="#where-your-user-is-and-was" title="Permalink to this heading"></a></h2>
+<p>There are a couple of variables useful to drive your user in a script. Try the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd ~
+cd local
+echo $PWD
+echo $OLDPWD
+</pre></div>
+</div>
+<p>Now you can guess how the following command knows what was the last place you visited:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd -
+echo $PWD
+</pre></div>
+</div>
+</section>
+<section id="navigating-in-your-file-system">
+<h2>Navigating in your file system<a class="headerlink" href="#navigating-in-your-file-system" title="Permalink to this heading"></a></h2>
+<p>There are some variables you should know to be used as shortcuts of directories. This can make your
+bash scripting or your interaction with your terminal lighter.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="nv">$HOME</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="nv">$WORK</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="nv">$SCRATCH</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="nv">$DATA</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="nv">$HOTDATA</span>
+</pre></div>
+</div>
+</section>
+<section id="path-variable">
+<h2>Path variable<a class="headerlink" href="#path-variable" title="Permalink to this heading"></a></h2>
+<p>Your Path variable includes the list of directories where your user is going to look for binnaries
+and executable scripts:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="nv">$PATH</span>
+</pre></div>
+</div>
+<p>You can for instank invoke the command <code class="docutils literal notranslate"><span class="pre">ls</span></code> at any moment and place because it is located in a
+directory included in your <code class="docutils literal notranslate"><span class="pre">PATH</span></code> environment variable.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">which</span> <span class="n">ls</span>
+</pre></div>
+</div>
+</section>
+<section id="library-variables">
+<h2>Library variables<a class="headerlink" href="#library-variables" title="Permalink to this heading"></a></h2>
+<p>If you need to include libraries locally in your user to be called by compilers, e.g., make use of
+your directories ‘$HOME/local/lib’, ‘$HOME/local/lib32’, and ‘$HOME/local/lib64’. They are already in
+your environment variables usually referred with this purpose:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="nv">$LIBRARY_PATH</span>
+</pre></div>
+</div>
+<p>and</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="nv">$LD_LIBRARY_PATH</span>
+</pre></div>
+</div>
+</section>
+<section id="environment-modulefiles">
+<h2>Environment modulefiles<a class="headerlink" href="#environment-modulefiles" title="Permalink to this heading"></a></h2>
+<p>The environment modules lets you interact with the applications installed by the administrators or locally by you. As you can see in <a class="reference internal" href="user_file_system.html"><span class="doc std std-doc">the description of your user file system</span></a>, there is place where Lmod will look for your modulefiles: ‘$HOME/local/opt/modulefiles’. The way to communicate
+this to Lmod is including this path in your <code class="docutils literal notranslate"><span class="pre">MODULEPATH</span></code> environment variable:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="nv">$MODULEPATH</span>
+</pre></div>
+</div>
+<p>Check the section <a class="reference internal" href="environment_modules.html"><span class="doc std std-doc">“Environment modules”</span></a> if you are not familiar it.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There are many other environment modules defined for your session. You can easily find information about them on internet.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Have a look to the section of this user guide name ‘Dot files and
+directories’. You might want to define some other environment variables.</p>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+    <a href="https://github.com/uibcdf/Ixtlilton">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
+    </a>
+
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="dot_files_and_directories.html" class="btn btn-neutral float-left" title="Dot files and directories" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="shell_aliases.html" class="btn btn-neutral float-right" title="Shell aliases" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, UIBCDF Lab at the Mexico City Childrens Hospital Federico Gomez and the authors..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
