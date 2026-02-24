@@ -1,0 +1,9 @@
+GPU INSTALLATION CHECKLIST
+
+[ ] Riser cables firmly connected
+[ ] GPUs secured with stabilizers
+[ ] Power cables dedicated per GPU
+[ ] No cables obstructing fans
+[ ] All GPUs detected in BIOS
+[ ] Idle temperatures normal
+[ ] CUDA device order documented

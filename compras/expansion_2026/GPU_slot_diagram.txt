@@ -1,0 +1,13 @@
+GPU SLOT DIAGRAM (REFERENCE)
+
+NODE A
+Slot 1: RTX 5090 (direct)
+Slot 2: RTX 5070 Ti (slot)
+Riser 1 position: RTX 5070 Ti
+Riser 2 position: RTX 5070
+
+NODE B
+Slot 1: RTX 5070
+Slot 2: RTX 2080 Ti
+Riser 1 position: RTX 2080 Ti
+Riser 2 position: RTX 5070

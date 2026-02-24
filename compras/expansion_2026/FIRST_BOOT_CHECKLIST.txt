@@ -1,0 +1,9 @@
+FIRST BOOT CHECKLIST
+
+[ ] BIOS detects all GPUs
+[ ] IPMI accessible
+[ ] Fans operating correctly
+[ ] PSU rails stable
+[ ] GPU temps <50°C idle
+[ ] OS sees all devices (nvidia-smi)
+[ ] No PCIe errors in logs
